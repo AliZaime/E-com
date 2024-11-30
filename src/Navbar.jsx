@@ -37,7 +37,6 @@ useEffect(() => {
                         <div
                             className="logo-container"
                             onMouseEnter={() => setShowMenu(true)} // Affiche le menu au survol
-                            onMouseLeave={() => setShowMenu(false)} // Cache le menu au départ
                         >
                             <img src="/images/person.png" alt="Logo" style={{ width: "25px", height: "25px" }} />
                             {showMenu && (

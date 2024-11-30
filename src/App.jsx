@@ -6,6 +6,8 @@ import Smartphones from './Smartphones';
 import "./Smartphones.css"
 import Footer from './Footer'; // Chemin du fichier Footer.jsx
 import Inscription from './Inscription'; // Chemin du fichier Inscription.jsx
+import Connection from './Connection';
+import '@fortawesome/fontawesome-free/css/all.min.css';
 
 function App(){
     return(
@@ -14,8 +16,11 @@ function App(){
         <Navbar />
         <main>
             <Routes>
+
             <Route path="/Smartphones" element={<Smartphones />} />
             <Route path="/Inscription" element={<Inscription />} />
+            <Route path="/Connection" element={<Connection />} />
+
             </Routes>
         </main>
         
