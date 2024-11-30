@@ -1,0 +1,19 @@
+/* SecondNavbar.css */
+.second_navbar {
+    display: flex;
+    align-items: center;
+    padding: 10px 20px;
+    background-color: #efeeee; /* Change to match your design */
+    color: rgb(0, 0, 0);
+}
+
+.navbar-logo {
+    width: 80px; /* Adjust the size of the logo */
+    height: auto;
+    margin-right: 15px;
+}
+
+.navbar-title {
+    font-size: 24px;
+    font-weight: bold;
+}
