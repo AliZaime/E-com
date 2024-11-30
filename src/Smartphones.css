@@ -1,0 +1,218 @@
+.smartphones-page {
+    padding: 20px;
+    text-align: center;
+    background-color: #f9f9f9;
+    margin-bottom: 30px;
+    
+  }
+  
+  .breadcrumb {
+    text-align: left;
+    margin-bottom: 20px;
+    font-size: 14px;
+    color: #888;
+  }
+  
+  .breadcrumb a {
+    color: #333;
+    text-decoration: none;
+  }
+  
+  h1 {
+    font-size: 28px;
+    color: #333;
+    margin-bottom: 10px;
+  }
+  
+  .subtitle {
+    font-size: 16px;
+    color: #555;
+    margin-bottom: 30px;
+  }
+  
+  .smartphones-grid {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    flex-wrap: wrap;
+  }
+  
+  .smartphone-card {
+    background-color: #e6f7a9;
+    border-radius: 10px;
+    padding: 20px;
+    width: 200px;
+    text-align: center;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: transform 0.2s ease;
+  }
+  
+  .smartphone-card:hover {
+    transform: scale(1.05);
+  }
+  
+  .smartphone-image {
+    width: 100%;
+    height: auto;
+    border-radius: 8px;
+    margin-bottom: 15px;
+  }
+  
+  h3 {
+    font-size: 18px;
+    color: #333;
+  }
+
+
+
+  .mostbuyed-smartphones {
+    margin: 40px auto;
+    text-align: center; /* Centrer le titre */
+    padding: 20px; /* Espacement autour */
+  }
+  
+  .mostbuyed-smartphones h1 {
+    font-size: 24px;
+    font-weight: bold;
+    margin-bottom: 20px; /* Espacement sous le titre */
+    color: #333333; /* Couleur sombre pour le titre */
+  }
+  
+  /* Conteneur des produits */
+  .product-container {
+    display: flex;
+    flex-wrap: wrap; /* Permet de passer à la ligne si nécessaire */
+    justify-content: center; /* Centre les produits horizontalement */
+    gap: 20px; /* Espacement entre les cartes */
+    margin-top: 20px;
+  }
+  
+  /* Style des cartes de produits */
+  .product-card {
+    display: flex;
+    flex-direction: column; /* Contenu aligné verticalement */
+    align-items: center; /* Centrer le contenu horizontalement */
+    justify-content: space-between;
+    width: 220px; /* Largeur fixe pour uniformité */
+    height: 350px; /* Hauteur fixe */
+    border: 1px solid #e0e0e0; /* Bordure grise légère */
+    border-radius: 10px; /* Coins arrondis */
+    padding: 15px; /* Espacement intérieur */
+    background-color: #ffffff; /* Fond blanc */
+    box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1); /* Ombre douce */
+    transition: transform 0.2s, box-shadow 0.2s; /* Animation au survol */
+  }
+  
+  /* Effet au survol des cartes */
+  .product-card:hover {
+    transform: translateY(-5px); /* Légère montée */
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2); /* Ombre plus marquée */
+  }
+  
+  /* Style des images */
+  .product-card img {
+    width: 100%; /* Largeur totale de la carte */
+    height: 150px; /* Hauteur uniforme */
+    object-fit: contain; /* Garde les proportions de l'image */
+    border-radius: 5px; /* Coins légèrement arrondis */
+    background-color: #f9f9f9; /* Fond clair pour images avec transparence */
+    margin-bottom: 10px; /* Espacement sous l'image */
+  }
+  
+  /* Titre du produit */
+  .product-card h3 {
+    font-size: 16px;
+    font-weight: bold;
+    color: #333333; /* Couleur sombre */
+    text-align: center;
+    margin-bottom: 10px;
+  }
+  
+  /* Informations complémentaires (stockage, couleur, etc.) */
+  .product-card p {
+    font-size: 14px;
+    color: #666666; /* Gris clair */
+    margin-bottom: 5px;
+    text-align: center;
+  }
+  
+  /* Note et avis */
+  .product-card p:nth-child(4) {
+    font-size: 14px;
+    color: #ff9800; /* Couleur orange pour les étoiles */
+  }
+  
+  /* Bloc des prix */
+  .product-card p:last-child {
+    display: flex;
+    flex-direction: column; /* Les prix sont affichés verticalement */
+    align-items: center;
+    gap: 5px;
+  }
+  
+  /* Prix actuel */
+  .current-price {
+    font-size: 18px;
+    font-weight: bold;
+    color: #4caf50; /* Couleur verte pour le prix actuel */
+  }
+  
+  /* Ancien prix */
+  .old-price {
+    font-size: 14px;
+    text-decoration: line-through; /* Barre l'ancien prix */
+    color: #f44336; /* Couleur rouge */
+  }
+
+  
+/* Conteneur des boutons de pagination */
+.pagination-controls {
+  display: flex;
+  justify-content: flex-end;
+  gap: 20px; /* Espacement entre les boutons */
+  margin-top: 20px; /* Espacement au-dessus des boutons */
+  margin-right: 200px;
+}
+
+/* Style des boutons */
+.pagination-controls button {
+  padding: 10px 20px; /* Espacement intérieur du bouton */
+  font-size: 16px; /* Taille du texte */
+  font-weight: bold; /* Texte en gras */
+  background-color: #000000; /* Couleur de fond bleue */
+  color: white; /* Texte en blanc */
+  border: none;
+  border-radius: 50%; /* Forme ronde */
+  cursor: pointer;
+  transition: background-color 0.3s, transform 0.3s; /* Transition pour les effets */
+  width: 50px; /* Largeur du bouton */
+  height: 50px; /* Hauteur du bouton pour être rond */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* Effet au survol */
+.pagination-controls button:hover {
+  transform: scale(1.05); /* Légère augmentation de la taille */
+}
+
+/* État disabled des boutons */
+.pagination-controls button:disabled {
+  background-color: #e0e0e0; /* Fond gris pour les boutons désactivés */
+  color: #bdbdbd; /* Texte gris pour les boutons désactivés */
+  cursor: not-allowed; /* Curseur interdit */
+  transform: none; /* Pas d'agrandissement lors du survol */
+}
+
+/* Pour rendre l'alignement plus esthétique sur mobile */
+@media (max-width: 600px) {
+  .pagination-controls {
+    flex-direction: column; /* Colonne pour petits écrans */
+    gap: 10px;
+  }
+
+  .pagination-controls button {
+    width: 100%; /* Largeur à 100% pour les petits écrans */
+  }
+}
