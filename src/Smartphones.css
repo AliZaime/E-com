@@ -15,7 +15,13 @@
   .breadcrumb a {
     color: #333;
     text-decoration: none;
+    display: inline-block;
   }
+
+  .breadcrumb a:hover{
+    transform: scale(1.1);
+  }
+  
   
   h1 {
     font-size: 28px;
