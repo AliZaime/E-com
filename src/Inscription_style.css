@@ -44,7 +44,7 @@ body{
     margin-left: 15px;
 }
 
-button{
+form button{
     width: 100%;
     padding: 10px;
     border: 1px solid #ddd;
@@ -53,7 +53,7 @@ button{
     transition: background-color 0.5s ease;
 }
 
-button:hover{
+form button:hover{
     cursor: pointer;
     background-color: rgb(45, 163, 123);
     transform: scale(1.05);

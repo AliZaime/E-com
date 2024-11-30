@@ -51,7 +51,7 @@ function Footer() {
         </div>
       </div>
       <hr />
-      <p className='copy'>&copy; 2024 Trendify. All rights reserved.</p>
+      <p className='copy'>&copy; 2024 TechSpot. All rights reserved.</p>
     </footer>
   );
 };

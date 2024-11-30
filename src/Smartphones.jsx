@@ -15,6 +15,10 @@ const Smartphones = () => {
         { id: 4, name: 'iPhone 8', image: '/images/iphone8.avif', storage: '64 Go', color: 'Gris sidéral', unlocked: 'Débloqué', rating: '4.2/5', reviews: 2195, currentPrice: 109.74, oldPrice: 299.0 },
         { id: 5, name: 'iPhone 14', image: '/images/iphone14.jpg', storage: '256 Go', color: 'Blanc', unlocked: 'Débloqué', rating: '4.6/5', reviews: 5050, currentPrice: 1029.0, oldPrice: 1200.0 },
         { id: 6, name: 'Galaxy Z Fold 4', image: '/images/fold4.jpg', storage: '512 Go', color: 'Noir', unlocked: 'Débloqué', rating: '4.8/5', reviews: 1200, currentPrice: 1500.0, oldPrice: 1800.0 },
+        { id: 7, name: 'Galaxy Z Fold 4', image: '/images/fold4.jpg', storage: '512 Go', color: 'Noir', unlocked: 'Débloqué', rating: '4.8/5', reviews: 1200, currentPrice: 1500.0, oldPrice: 1800.0 },
+        { id: 8, name: 'Galaxy Z Fold 4', image: '/images/fold4.jpg', storage: '512 Go', color: 'Noir', unlocked: 'Débloqué', rating: '4.8/5', reviews: 1200, currentPrice: 1500.0, oldPrice: 1800.0 },
+        { id: 9, name: 'Galaxy Z Fold 4', image: '/images/fold4.jpg', storage: '512 Go', color: 'Noir', unlocked: 'Débloqué', rating: '4.8/5', reviews: 1200, currentPrice: 1500.0, oldPrice: 1800.0 },
+        { id: 10, name: 'Galaxy Z Fold 4', image: '/images/fold4.jpg', storage: '512 Go', color: 'Noir', unlocked: 'Débloqué', rating: '4.8/5', reviews: 1200, currentPrice: 1500.0, oldPrice: 1800.0 },
         // Ajoute plus de produits ici...
       ];
 

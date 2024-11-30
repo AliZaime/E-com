@@ -1,7 +1,5 @@
 import React, { useState } from "react";
-import SecondNavbar from "./SecondNavbar.jsx";
 import './Inscription_style.css';
-import Footer from "./Footer.jsx";
 
 function Inscription() {
     const [formData, setFormData] = useState({
@@ -94,7 +92,6 @@ function Inscription() {
 
     return (
         <>
-            <SecondNavbar />
             {successMessage && (
                 <div className="message">{successMessage}</div>
             )}
@@ -170,7 +167,6 @@ function Inscription() {
                     </form>
                 </div>
             </div>
-            <Footer/>
         </>
     );
 }

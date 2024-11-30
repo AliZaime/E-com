@@ -22,13 +22,13 @@ const Navbar = () => {
                 </div>
                 <div className="navbar-actions">
                         <img src="/images/morocco.png" alt="MAR" style={{ width: "40px", height: "25px" }}/>
-                    <a href="/">
-                        <img
-                            src="/images/person.png"
-                            alt="log"
-                            style={{ width: "25px", height: "25px" }}
-                        />
-                    </a>
+                        <Link to="/Inscription">
+                            <img
+                                src="/images/person.png"
+                                alt="log"
+                                style={{ width: "25px", height: "25px" }}
+                            />
+                        </Link>
                     <a href="/">
                         <img
                             src="/images/shopping_cart.png"
