@@ -1,0 +1,75 @@
+.navbar{
+    display: flex;
+    flex-direction: column;
+    margin: 0 30px;
+}
+
+.nav1{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+.nav2{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.navbar-logo{
+  display: flex;
+  gap: 20px;
+  align-items: center;
+  width: 100px;
+  height: auto;
+  margin-right: 40px;
+}
+.navbar-logo img {
+  width: 50%;
+  height: 50%;
+  border-radius: 50%;
+}
+
+.navbar-logo p{
+  display: flex;
+  font-size: 20px;
+  font-weight: 600;
+}
+
+.navbar-search input{
+    width: 500px; 
+    height: 30px; 
+    font-size: 16px; 
+    border-radius: 5px; 
+    border: 1px solid #ccc;
+    font-family: Sour Gummy, sans-serif
+  }
+
+  .navbar-links{
+    display: flex;
+    gap: 30px;
+  }
+
+  .navbar-links a{
+    text-decoration: none;
+    font-family: Sour Gummy, sans-serif
+  }
+
+  .navbar-actions{
+    display: flex;
+    gap: 20px;
+  }
+
+  .navbar-categories{
+    display: flex;
+    justify-content: center;
+    gap: 50px;
+  }
+
+  .navbar-categories a{
+    text-decoration: none;
+    font-family: Sour Gummy, sans-serif
+  }
+  
