@@ -117,10 +117,11 @@ function Connection() {
                         <i className="fa-solid fa-right-to-bracket"></i> Connexion
                     </button>
                 </form>
+                
                 <button className="googlebtn">
                         <img src="/images/google.webp" alt="Google" />
                         <h3>Google</h3>
-                    </button>
+                </button>
 
                     <button className="googlebtn">
                         <img src="/images/apple.png" alt="Apple" />

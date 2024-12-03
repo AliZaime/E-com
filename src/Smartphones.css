@@ -121,7 +121,7 @@
     object-fit: contain; /* Garde les proportions de l'image */
     border-radius: 5px; /* Coins légèrement arrondis */
     background-color: #f9f9f9; /* Fond clair pour images avec transparence */
-    margin-bottom: 10px; /* Espacement sous l'image */
+    margin-bottom: 10px; /* Espacement sous l'image */ 
   }
   
   /* Titre du produit */
@@ -220,4 +220,8 @@
   .pagination-controls button {
     width: 100%; /* Largeur à 100% pour les petits écrans */
   }
+}
+.googlebtn{
+  display: flex;
+  margin-top: 20px;
 }
