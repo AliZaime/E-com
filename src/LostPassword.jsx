@@ -1,18 +1,15 @@
-import "./Connection.css";
+import "./LostPassword.css";
 import React, { useState } from "react";
-import { Link } from "react-router-dom";
 
-function Connection() {
+function LostPassword() {
     const data = [
-        { mail: "hmizourais557@gmail.com", password: "hamzay989" },
-        { mail: "hamzaraisbussi@gmail.com", password: "Halamadrid2004" },
-        { mail: "h.rais@esisa.ac.ma", password: "hamzayxq" },
-        { mail: "hamzarais798@gmail.com", password: "iftahyasimsim" },
+        { mail: "hmizourais557@gmail.com"},
+        { mail: "hamzaraisbussi@gmail.com"},
+        { mail: "h.rais@esisa.ac.ma"},
+        { mail: "hamzarais798@gmail.com"},
     ];
 
-    const [passwordVisible, setPasswordVisible] = useState(false);
     const [email, setEmail] = useState("");
-    const [password, setPassword] = useState("");
     const [message, setMessage] = useState("");
     const [messageClass, setMessageClass] = useState("");
     const [showMessage, setShowMessage] = useState(false);
@@ -21,24 +18,21 @@ function Connection() {
         setEmail(event.target.value);
     };
 
-    const handlePasswordChange = (event) => {
-        setPassword(event.target.value);
-    };
-
     const clearInput = () => {
         setEmail(""); // Réinitialiser l'email
     };
 
     const verifierconnexion = () => {
         const userFound = data.some(
-            (item) => item.mail === email.trim() && item.password === password.trim()
+            (item) => item.mail === email.trim()
         );
 
         if (userFound) {
-            setMessage("Connexion réussie !");
+            setMessage("Verifier votre E-mail !");
             setMessageClass("succes");
-        } else {
-            setMessage("Échec de la connexion !");
+        }
+        else {
+            setMessage("E-mail non trouvé !");
             setMessageClass("denied");
         }
 
@@ -54,9 +48,6 @@ function Connection() {
         }, 3000);
     };
 
-    const togglePasswordVisibility = () => {
-        setPasswordVisible((prevState) => !prevState);
-    };
 
     return (
         <>
@@ -72,7 +63,7 @@ function Connection() {
                 </p>
             )}
             <div className="connform">
-                <h4>Qui va là ?</h4>
+                <h4>Forgot your Password ?</h4>
                 <form>
                     {/* Email input */}
                     <div className="inputdiv" id="emailinput">
@@ -97,44 +88,16 @@ function Connection() {
                         </div>
                     </div>
 
-                    {/* Password input */}
-                    <div className="inputdiv">
-                        <input
-                            type={passwordVisible ? "text" : "password"}
-                            placeholder="Mot de passe"
-                            id="password"
-                            value={password}
-                            onChange={handlePasswordChange}
-                            required
-                        />
-                        <i
-                            className={`fa-solid ${passwordVisible ? "fa-eye-slash" : "fa-eye"} eye-icon`}
-                            onClick={togglePasswordVisibility}
-                            style={{ cursor: "pointer" }}
-                        ></i>
-                    </div>
-
-                    
-                    <Link to="/LostPassword" className="lostpassword">mot de passe oublié ?</Link>
 
                     <button className="connexion" type="button" onClick={verifierconnexion}>
-                        <i className="fa-solid fa-right-to-bracket"></i> Connexion
+                        <i className="fa-solid fa-right-to-bracket"></i> RESET PASSWORD
                     </button>
                 </form>
 
-                <button className="googlebtn">
-                        <img src="/images/google.webp" alt="Google" />
-                        <h3>Google</h3>
-                </button>
-
-                    <button className="googlebtn">
-                        <img src="/images/apple.png" alt="Apple" />
-                        <h3>Apple</h3>
-                    </button>
             </div>
 
         </>
     );
 }
 
-export default Connection;
+export default LostPassword ;
