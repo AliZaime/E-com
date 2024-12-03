@@ -1,5 +1,13 @@
 import React from 'react';
 import './Footer_style.css'; // Assurez-vous de créer un fichier CSS pour le style
+import { Link } from 'react-router-dom';
+
+const scrollToSection = () => {
+  const navbar = document.querySelector('.navbar');
+  if (navbar) {
+    navbar.scrollIntoView({ behavior: 'smooth' });
+  }
+};
 
 function Footer() {
   return (
@@ -9,10 +17,10 @@ function Footer() {
         <div className="footer-column">
           <h4>À propos</h4>
           <ul>
-            <li><a href="#about">About Us</a></li>
-            <li><a href="#mission">Our Mission</a></li>
-            <li><a href="#history">Company History</a></li>
-            <li><a href="#testimonials">Customer Testimonials</a></li>
+            <li><Link to="/AboutUS" onClick={scrollToSection}>About Us</Link></li>
+            <li><Link to="/OurMission" onClick={scrollToSection}>Our Mission</Link></li>
+            <li><Link to="/CompanyHistory" onClick={scrollToSection}>Company History</Link></li>
+            <li><Link to="/CustomerTestimonials" onClick={scrollToSection}>Customer Testimonials</Link></li>
           </ul>
         </div>
 
@@ -20,7 +28,7 @@ function Footer() {
         <div className="footer-column">
           <h4>Useful Links</h4>
           <ul>
-            <li><a href="#home">Home</a></li>
+            <li><Link to="/App" onClick={scrollToSection}>Home</Link></li>
             <li><a href="#catalog">Product Catalog</a></li>
             <li><a href="#blog">Blog</a></li>
             <li><a href="#offers">Special Offers</a></li>
