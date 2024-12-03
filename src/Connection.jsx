@@ -1,7 +1,9 @@
 import "./Connection.css";
 import React, { useState } from "react";
+import { useNavigate } from "react-router-dom"; // Importation de useNavigate
 
 function Connection() {
+    const navigate = useNavigate(); // Initialisation de la navigation
     const data = [
         { mail: "hmizourais557@gmail.com", password: "hamzay989" },
         { mail: "hamzaraisbussi@gmail.com", password: "Halamadrid2004" },
@@ -36,6 +38,11 @@ function Connection() {
         if (userFound) {
             setMessage("Connexion réussie !");
             setMessageClass("succes");
+            // Redirection vers la page principale après 2 secondes
+            setTimeout(() => {
+                navigate("/"); // Redirige vers la page d'accueil
+            }, 2000);
+
         } else {
             setMessage("Échec de la connexion !");
             setMessageClass("denied");
