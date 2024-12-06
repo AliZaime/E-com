@@ -35,6 +35,7 @@ useEffect(() => {
                         <img src="/images/morocco.png" alt="MAR" style={{ width: "40px", height: "25px" }}/>
                         
                         <div
+                            id='account'
                             className="logo-container"
                             onMouseEnter={() => setShowMenu(true)} // Affiche le menu au survol
                         >
