@@ -7,11 +7,7 @@ import "./Smartphones.css"
 import Footer from './Footer'; // Chemin du fichier Footer.jsx
 import Inscription from './Inscription'; // Chemin du fichier Inscription.jsx
 import Connection from './Connection';
-import AboutUS from './AboutUS'; // Chemin du fichier AboutUS.jsx
-import OurMission from './OurMission';
-import CompanyHistory from './CompanyHistory';
-import CustomerTestimonials from './CustomerTestimonials';
-//import '@fortawesome/fontawesome-free/css/all.min.css';
+
 
 function App(){
     return(
@@ -20,8 +16,8 @@ function App(){
         <Navbar />
         
         <main>
+            <Home/>
             <Routes>
-
             <Route path="/Smartphones" element={<Smartphones />} />
             <Route path="/Inscription" element={<Inscription />} />
             <Route path="/Connection" element={<Connection />} />
