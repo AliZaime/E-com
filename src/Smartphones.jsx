@@ -1,12 +1,13 @@
 import React, { useState } from 'react';
 import './Smartphones.css';
+import { Link } from 'react-router-dom';
 
 const Smartphones = () => {
     const smartphones = [
-        { id: 1, name: 'iPhone', image: "/images/most-wanted--iphone-15--desktop.avif"},
-        { id: 2, name: 'Samsung Galaxy', image: '/images/most-wanted--galaxy-s23--desktop.avif' },
-        { id: 3, name: 'Google Pixel', image: '/images/most-wanted--google-pixel-8--desktop.avif' },
-        { id: 4, name: 'Toutes les marques', image: '/images/most-wanted--all-brands--desktop.avif'}
+        { id: 1, name: 'iPhone', image: "/images/most-wanted--iphone-15--desktop.avif",lien:"/iPhone"},
+        { id: 2, name: 'Samsung Galaxy', image: '/images/most-wanted--galaxy-s23--desktop.avif',lien:"" },
+        { id: 3, name: 'Google Pixel', image: '/images/most-wanted--google-pixel-8--desktop.avif',lien:"" },
+        { id: 4, name: 'Toutes les marques', image: '/images/most-wanted--all-brands--desktop.avif',lien:""}
       ];  
     const products = [
         { id: 1, name: 'iPhone 13', image: '/images/iphone13.avif', storage: '128 Go', color: 'Minuit', unlocked: 'Débloqué', rating: '4.4/5', reviews: 21245, currentPrice: 424.0, oldPrice: 749.0 },
@@ -51,10 +52,17 @@ const Smartphones = () => {
           <p className="subtitle">Achetez des smartphones et plus encore</p>
           <div className="smartphones-grid">
               {smartphones.map((phone) => (
-                  <div key={phone.id} className="smartphone-card">
-                      <img src={phone.image} alt={phone.name} className="smartphone-image" />
-                      <h3>{phone.name}</h3>
-                  </div>
+                  phone.lien ? (
+                    <Link key={phone.id} className="smartphone-card" to={phone.lien}>
+                        <img src={phone.image} alt={phone.name} className="smartphone-image" />
+                        <h3>{phone.name}</h3>
+                    </Link>
+                ) : (
+                    <div key={phone.id} className="smartphone-card">
+                        <img src={phone.image} alt={phone.name} className="smartphone-image" />
+                        <h3>{phone.name}</h3>
+                    </div>
+                )
               ))}
           </div>
       </div>

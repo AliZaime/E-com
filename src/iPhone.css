@@ -1,0 +1,477 @@
+.iphonepage{
+    width: 85%;
+    margin-left: 7%;
+    display: flex; /* Utilisez Flexbox */
+    flex-direction: column;
+    justify-content: space-between;
+  }
+  .container{
+    width: 100%;
+  }
+  .breadcrumb {
+    text-align: left;
+    margin-bottom: 20px;
+    font-size: 14px;
+    color: #888;
+  }
+  
+  .breadcrumb a {
+    color: #333;
+    text-decoration: none;
+    display: inline-block;
+  }
+  
+  .breadcrumb a:hover{
+    transform: scale(1.1);
+  }
+  
+  /* Conteneur principal */
+  .infoserviceContainer {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    background-color: #f5f7fa; /* Couleur d'arrière-plan */
+    padding: 20px 10px;
+    gap: 50px;
+    width: 75%;
+    margin-left: 12%;
+    border-radius: 10px; /* Coins arrondis */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Légère ombre */
+  }
+  
+  /* Style des blocs individuels */
+  .Info {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    gap: 10px; /* Espacement entre l'icône et le texte */
+  }
+  
+  /* Icônes Font Awesome */
+  .Info i {
+    font-size: 28px; /* Taille de l'icône */
+    color: #000; /* Couleur de l'icône */
+  }
+  
+  /* Texte descriptif */
+  .Info p {
+    margin: 0;
+    font-size: 15px; /* Taille du texte */
+    color: #333; /* Couleur du texte */
+    font-weight: bold; /* Légèrement en gras */
+  }
+  .intro{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+  }
+  .sometext{
+    width: 85%;
+    text-align: start;
+  }
+  .sometext p{
+      font-size: 18px;
+      width: 95%;
+      color: #333; /* Couleur du texte */
+      font-weight: bold; /* Légèrement en gras */
+  }
+  /* Conteneur principal */
+  .sort-container {
+    display: inline-block;
+    font-family: Arial, sans-serif;
+    font-size: 14px;
+    color: #333;
+    border: 1px solid black;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    padding: 10px;
+    border-radius: 10px;
+    width: auto;
+  }
+  
+  /* Label du menu déroulant */
+  .sort-container label {
+    display: block;
+    margin-bottom: 5px;
+    color: #333;
+    font-weight: bold;
+  }
+  
+  /* Style de la liste déroulante */
+  .sort-dropdown {
+    background-color: #f5f7fa; /* Fond */
+    border: none;
+    padding: 8px 12px; /* Espacement interne */
+    font-size: 14px;
+    color: #333;
+    cursor: pointer;
+    width: 200px;
+  }
+  .sort-dropdown:focus{
+    outline: none;
+  }
+  
+  /* Style des options */
+  .sort-dropdown option {
+    padding: 10px;
+    background: #fff;
+    color: #333;
+    border: none;
+  }
+  .aside_catalogue{
+    width: 100%;
+    display: flex;
+    height: auto;
+    flex-direction: row;
+    gap: 35px;
+  }
+  .asidediv{
+    width: 30%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
+  .rangepricefilter{
+    width: 100%;
+    background-color: #f5f7fa;
+    border-radius: 10px;
+    padding:10px;
+  }
+  .sortrangeinput{
+    display: flex;
+    flex-direction: row;
+    gap: 15px;
+    justify-content: space-around;
+    align-items: center;
+    height: 50px;
+  }
+  .price-value{
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    padding: 8px;
+    gap: 5px;
+    border: 1px solid black;
+    border-radius: 7px;
+  }
+  .price-value label {
+    display: block;
+    font-size: 12px;
+    color: #666;
+  }
+  .price-value input {
+    width: 60px;
+    outline: none;
+    text-align: center;
+    font-size: 14px;
+    font-weight: bold;
+    color: #333;
+    border: none;
+    border-radius: 4px;
+    padding: 2px;
+    background: transparent;
+  }
+  .rangepricefilter p{
+    margin-left: 15%;
+    color: black;
+    font-weight: bold;
+    font-size: 15px;
+  }
+  .divcolor{
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    border: 1px solid black;
+  }
+  .cataloguediv{
+    width: 70%;
+    padding: 10px;
+    height: auto;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 35px;
+    justify-content: center;
+  }
+  .phonecard{
+    width: 30%;
+    height: 400px;
+    display: flex;
+    flex-direction: column;
+    background-color: #f5f7fa;
+    border-radius: 5px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    
+    overflow: hidden;
+  
+  }
+  .phonecard:hover{
+    transform: scale(1.1);
+  }
+  .phoneinfo h2, 
+  .phoneinfo p, 
+  .phoneinfo h4, 
+  .phoneinfo h6 {
+  margin:0; /* Supprime les marges par défaut */
+  padding: 5px; /* Supprime les paddings par défaut */
+  font-family: Arial, sans-serif;
+  }
+  /*la div qui contient l'image du tel plus les couleur disponibles en tel*/
+  .imageandcolors{
+  width: 100%;
+  height: 55%;
+  display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0;
+    justify-content: center;
+  }
+  /*la div qui contient l'image*/
+  .phoneimage{
+    width: 45%;
+    height: 85%;
+  }
+  /*la div div contient les petit div qui représente les couleurs*/
+  .phonecolors{
+    width: 100%;
+    height: 15%;
+    display: flex;
+    flex-direction: row;
+    gap: 5px;
+    padding: 5px;
+    justify-content: center;
+    
+  }
+  .phoneinfo{
+    display: flex;
+    flex-direction: column;
+    height: 45%;
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    width: 300px;
+    text-align: center;
+  }
+  .oldprice{
+    text-decoration: line-through;
+    color: grey;
+  }
+  .apartirde{
+    color: grey;
+  }
+  .ratingreviews{
+    font-weight: 600;
+    font-size: 15px;
+  }
+  /*la place ou il y a soit top vente ou discount*/
+  .messagearea{
+    width: 100%;
+    min-height: 10%;
+    max-height: 10%;
+    padding: 0;
+    display: flex;
+    align-items: center;
+  }
+  /*la place ou j'ai la photo les couleur et les info comme le prix et le rating ...*/
+  .phoneinfoarea{
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+  /*le nom de la class qui contient le message du produit*/
+  .phonemessage{
+    background-color: #dedfe0;
+    border-radius: 10px;
+    padding: 5px;
+    width: 45%;
+  }
+  
+  /*la partie du fltre de modele*/
+  
+  /*la bar de search du modele*/
+  .Modele{
+    width: 100%;
+    background-color: #f5f7fa;
+    border-radius: 10px;
+    padding:10px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: start;
+    gap: 10px;
+  }
+  /* le css de la partie du filtre modele de l'input en text */
+  .Modelinputcontainer{
+    height: 55px;
+    width: 85%;
+    border: 1px solid black;
+    border-radius: 10px;
+    padding: 5px;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    gap: 5px;
+  }
+  .inputmodel{
+    width: 90%;
+    height: 95%;
+    border: none;
+    background-color: transparent;
+  }
+  .inputmodel:focus{
+    outline: none;
+  }
+  .Modelinputcontainer i{
+    font-size: 25px;
+  }
+  
+  /*  le css de la partie du filtre modele de l'input avec les checkbox*/
+  .ckeck-list{
+    width: 100%;
+    padding:5px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    font-size: 20px;
+    font-family: Arial, Helvetica, sans-serif;
+  }
+  .ckeck-list input[type="checkbox"] {
+    width: 20px;
+    height: 20px;
+  }
+  .ckeck-list label{
+    display: flex;
+    flex-direction: row;
+    gap: 10px;
+  }
+  
+  /*style de la partie du filtre color*/
+  .Couleur{
+    width: 100%;
+    background-color: #f5f7fa;
+    border-radius: 10px;
+    padding:10px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: start;
+    gap: 10px;
+  }
+  .Couleurinputcontainer{
+    height: 55px;
+    width: 85%;
+    border: 1px solid black;
+    border-radius: 10px;
+    padding: 5px;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    gap: 5px;
+  }
+  .inputCouleur{
+    width: 90%;
+    height: 95%;
+    border: none;
+    background-color: transparent;
+  }
+  .inputCouleur:focus{
+    outline: none;
+  }
+  .Couleurinputcontainer i{
+    font-size: 25px;
+  }
+  
+  /*le Style de la partie des commentaire*/
+  .commentaire{
+    width: 80%;
+    padding: 10px;
+    border-radius: 10px;
+    margin-left: 15%;
+    height: auto;
+    display: flex;
+    flex-direction: column;
+    margin-top: 10%;
+    gap: 20px;
+  }
+  .commentaire_Card{
+    width: 100%;
+    padding: 15px;
+    height: auto;
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+    border-bottom: 1px solid #d8d8d8;
+  }
+  .Name_icon_dateAchat{
+    display: flex;
+    flex-direction: row;
+    gap: 25px;
+    align-items: center;
+    margin-top: 5px;
+  }
+  .Comment_Icon{
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 20px;
+    font-weight: bold;
+    color: #333; 
+    text-transform: uppercase;
+  }
+  .Name_dateAchat p:first-child {
+    font-weight: bold;
+    font-size: 18px;
+    margin: 0;
+    color: #333;
+  }
+  .Name_dateAchat p:last-child {
+    font-size: 14px;
+    color: #888;
+    margin: 0;
+  }
+  .Rating {
+    font-size: 16px;
+    margin: 10px 0;
+    color: #ff9900;
+    display: flex;
+    align-items: start;
+    margin-top: 5px;
+  }
+  .message_commentaire {
+    margin: 15px 0;
+    font-size: 16px;
+    line-height: 1.6;
+    color: #444;
+    display: flex;
+    text-align: start;
+    width: 90%;
+    margin-top: 5px;
+  
+  }
+  .pays_dateCommentaire {
+    margin: 10px 0;
+    font-size: 14px;
+    color: #666;
+    margin-top: 5px;
+  }
+  .type_couleur_etat {
+    font-size: 14px;
+    font-weight: bold;
+    color: #333;
+    padding: 5px 10px; /* Espace intérieur */
+    border-radius: 5px; /* Coins arrondis */
+    white-space: nowrap; /* Empêche le texte de s'étaler sur plusieurs lignes */
+    text-align: left; /* Assure un alignement correct si du texte est présent */
+    margin-top: 5px;
+  }
