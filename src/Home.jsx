@@ -10,10 +10,10 @@ function Home() {
 
   useEffect(() => {
     const interval = setInterval(() => {
-      nextSlide();
+      setCurrentIndex((prevIndex) => (prevIndex + 1) % slides.length);
     }, 5000);
-    return () => clearInterval(interval); // Clean up the interval
-  }, [currentIndex]);
+    return () => clearInterval(interval);
+  }, [slides.length]);
 
   const showSlide = (index) => {
     setCurrentIndex(index);
