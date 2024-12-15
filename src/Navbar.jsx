@@ -1,76 +1,131 @@
-import React, { useState, useEffect } from 'react';
-import './Navbar.css'; // Fichier CSS pour styliser la navbar
-import { Link } from 'react-router-dom'; // Importer Link pour les liens de navigation
+import React, { useState } from "react";
+import { Link } from "react-router-dom";
+import "./Navbar.css";
 
 const Navbar = () => {
-  const [showMenu, setShowMenu] = useState(false);
+  const [isSidebarOpen, setIsSidebarOpen] = useState(false);
+  const [activeDropdown, setActiveDropdown] = useState(null);
 
-  useEffect(() => {
-    if (showMenu) {
-      document.body.classList.add("blurred");
+  const toggleSidebar = () => {
+    setIsSidebarOpen(!isSidebarOpen);
+  };
+
+  const toggleDropdown = (dropdown) => {
+    if (activeDropdown === dropdown) {
+      setActiveDropdown(null); // Si le dropdown est déjà actif, on le ferme
     } else {
-      document.body.classList.remove("blurred");
+      setActiveDropdown(dropdown); // Sinon, on l'active
     }
-    return () => document.body.classList.remove("blurred");
-  }, [showMenu]);
+  };
+
+  const closeSidebar = () => {
+    setIsSidebarOpen(false);
+  };
 
   return (
     <nav className="navbar">
-      <div className="nav1">
-        <div className="navbar-logo">
-          <img src="/images/TechSpot.png" alt="TechSpot" />
-          <Link to="/" style={{ fontFamily: "'Protest Revolution', sans-serif" }}>TechSpot</Link>
+      <div className="part1">
+        <div className="logo">
+          <Link to={"/"}>TechSpot</Link>
         </div>
-        <div className="navbar-links">
-          <Link to="/revendre">Revendre</Link>
-          <Link to="/notre-pacte-qualite">Notre Pacte Qualité</Link>
-          <Link to="/backstories">BackStories</Link>
-          <Link to="/aide">Aide</Link>
-        </div>
-        <div className="navbar-search">
+
+        <div className="search-bar">
           <input type="text" placeholder="Que cherchez-vous ?" />
-          <button>🔍</button>
+          <button type="button">🔍</button>
         </div>
-        <div className="navbar-actions">
-          <img src="/images/morocco.png" alt="MAR" style={{ width: "40px", height: "25px" }} />
+
+        <div className="icons">
+          {/* Cart Dropdown */}
           <div
-            id="account"
-            className="logo-container"
-            onMouseEnter={() => setShowMenu(true)}
+            className={`icon ${activeDropdown === "cart" ? "active" : ""}`}
+            onClick={() => toggleDropdown("cart")}
           >
-            <img src="/images/person.png" alt="Logo" style={{ width: "25px", height: "25px" }} />
-            {showMenu && (
-              <div
-                className="hover-menu"
-                onMouseEnter={() => setShowMenu(true)}
-                onMouseLeave={() => setShowMenu(false)}
-              >
-                <button onClick={() => (window.location.href = "/Connection")}>Log In</button>
-                <button onClick={() => (window.location.href = "/Inscription")}>Sign In</button>
+            🛒
+            {activeDropdown === "cart" && (
+              <div className="dropdown-menu">
+                <p>Votre panier est vide</p>
+                <a href="/Panier">Voir le panier</a>
               </div>
             )}
           </div>
-          <Link to="/">
-            <img
-              src="/images/shopping_cart.png"
-              alt="cart"
-              style={{ width: "25px", height: "25px" }}
-            />
-          </Link>
+
+          {/* Login Dropdown */}
+          <div
+            className={`icon ${activeDropdown === "login" ? "active" : ""}`}
+            onClick={() => toggleDropdown("login")}
+          >
+            👤
+            {activeDropdown === "login" && (
+              <div className="dropdown-menu login-menu">
+                <a href="/connection">Log in</a>
+                <a href="/Inscription">Sign in</a>
+              </div>
+            )}
+          </div>
+          <svg
+            onClick={toggleSidebar}
+            xmlns="http://www.w3.org/2000/svg"
+            height="24px"
+            viewBox="0 -960 960 960"
+            width="24px"
+            fill="#000000"
+          >
+            <path d="M120-240v-80h720v80H120Zm0-200v-80h720v80H120Zm0-200v-80h720v80H120Z" />
+          </svg>
         </div>
       </div>
-      <div className="nav2">
-        <div className="navbar-categories">
-          <Link to="/black-friday" className="highlight">Black Friday</Link>
-          <Link to="/smartphones">Smartphones</Link>
-          <Link to="/ordinateurs-portables">Ordinateurs portables</Link>
-          <Link to="/tablettes">Tablettes</Link>
-          <Link to="/consoles">Consoles</Link>
-          <Link to="/montres-connectees">Montres connectées</Link>
-          <Link to="/audio">Audio</Link>
-          <Link to="/appareils-electromenagers">Appareils électroménagers</Link>
-          <Link to="/autres">Autres</Link>
-        </div>
+
+      <div className="part2">
+        <ul className={`nav-links ${isSidebarOpen ? "sidebar-open" : ""}`}>
+          <li>
+            <Link className="link" to={"/Smartphones"} onClick={closeSidebar}>
+              Smartphones
+            </Link>
+          </li>
+          <li>
+            <Link
+              className="link"
+              to={"/OrdinateursPortable"}
+              onClick={closeSidebar}
+            >
+              Ordinateurs portables
+            </Link>
+          </li>
+          <li>
+            <Link className="link" to={"/Tablettes"} onClick={closeSidebar}>
+              Tablettes
+            </Link>
+          </li>
+          <li>
+            <Link className="link" to={"/Consoles"} onClick={closeSidebar}>
+              Consoles
+            </Link>
+          </li>
+          <li>
+            <Link className="link" to={"/Montres"} onClick={closeSidebar}>
+              Montres connectées
+            </Link>
+          </li>
+          <li>
+            <Link className="link" to={"/Audio"} onClick={closeSidebar}>
+              Audio
+            </Link>
+          </li>
+          <li>
+            <Link
+              className="link"
+              to={"/Electromenagers"}
+              onClick={closeSidebar}
+            >
+              Appareils électroménagers
+            </Link>
+          </li>
+          <li>
+            <Link className="link" to={"/Autres"} onClick={closeSidebar}>
+              Autres
+            </Link>
+          </li>
+        </ul>
       </div>
     </nav>
   );
