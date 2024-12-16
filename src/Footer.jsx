@@ -28,7 +28,7 @@ function Footer() {
         <div className="footer-column">
           <h4>Useful Links</h4>
           <ul>
-            <li><Link to="/App" onClick={scrollToSection}>Home</Link></li>
+            <li><Link to="/" onClick={scrollToSection}>Home</Link></li>
             <li><a href="#catalog">Product Catalog</a></li>
             <li><a href="#blog">Blog</a></li>
             <li><a href="#offers">Special Offers</a></li>
