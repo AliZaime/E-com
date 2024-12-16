@@ -156,7 +156,7 @@
     flex-direction: column;
     gap: 10px;
   }
-  @media (max-width:900px) {
+  @media (max-width:670px) {
     .asidediv{
       display: none;
     }
@@ -222,7 +222,7 @@
     gap: 35px;
     justify-content: center;
   }
-  @media (max-width:900px) {
+  @media (max-width:670px) {
     .cataloguediv{
       flex-direction: column;
       width: 100%; 
@@ -241,6 +241,11 @@
   
   }
   @media (max-width:900px) {
+    .phonecard{
+      width: 40%;
+    }
+  }
+  @media (max-width:670px) {
     .phonecard{
       width: 100%;
     }
