@@ -119,8 +119,8 @@ function Connection() {
                             style={{ cursor: "pointer" }}
                         ></i>
                     </div>
-                    <Link to={"/Inscription"}>Sign in</Link>
-                    <Link to={"/LostPassword"}>Reset Password</Link>
+                    <Link style={{textDecoration:'None'}} to={"/Inscription"}>Sign in</Link>
+                    <Link style={{textDecoration:'None'}} to={"/LostPassword"}>Reset Password</Link>
 
                     <button className="connexion" type="button" onClick={verifierconnexion}>
                         <i className="fa-solid fa-right-to-bracket"></i> Connexion
