@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import "./Navbar.css";
 
-const Navbar = () => {
+const Navbar = ({ isLoggedIn, handleLogout }) => {
   const [isSidebarOpen, setIsSidebarOpen] = useState(false);
   const [activeDropdown, setActiveDropdown] = useState(null);
 
@@ -49,7 +49,7 @@ const Navbar = () => {
             )}
           </div>
 
-          {/* Login Dropdown */}
+          {/* Afficher le profil ou les options de connexion */}
           <div
             className={`icon ${activeDropdown === "login" ? "active" : ""}`}
             onClick={() => toggleDropdown("login")}
@@ -57,11 +57,21 @@ const Navbar = () => {
             👤
             {activeDropdown === "login" && (
               <div className="dropdown-menu login-menu">
-                <a href="/connection">Log in</a>
-                <a href="/Inscription">Sign in</a>
+                {!isLoggedIn ? (
+                  <>
+                    <a href="/connection">Log in</a>
+                    <a href="/inscription">Sign in</a>
+                  </>
+                ) : (
+                  <>
+                    <a href="/profile">Profil</a>
+                    <Link onClick={handleLogout} to={"/"}>Log out</Link>
+                  </>
+                )}
               </div>
             )}
           </div>
+          
           <svg
             onClick={toggleSidebar}
             xmlns="http://www.w3.org/2000/svg"
