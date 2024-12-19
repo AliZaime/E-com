@@ -173,7 +173,29 @@
   transition: background 0.3s ease, color 0.3s ease, box-shadow 0.3s ease;
 }
 
+.dropdown-menu button {
+  width: 100%;
+  display: block;
+  text-decoration: none;
+  color: #333;
+  padding: 10px;
+  margin: 8px 0;
+  text-align: center;
+  background-color: white;
+  border: 1px solid #000000;
+  border-radius: 8px;
+  font-size: 1em;
+  transition: background 0.3s ease, color 0.3s ease, box-shadow 0.3s ease;
+}
+
 .dropdown-menu a:hover {
+  background: rgb(0, 0, 0);
+  color: white;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  border: 1px solid #ffffff;
+}
+
+.dropdown-menu button:hover {
   background: rgb(0, 0, 0);
   color: white;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);

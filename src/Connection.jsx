@@ -1,8 +1,8 @@
 import "./Connection.css";
 import React, { useState } from "react";
-import { useNavigate,Link } from "react-router-dom"; // Importation de useNavigate
+import { useNavigate, Link } from "react-router-dom";
 
-function Connection() {
+function Connection({ handleLogin }) {
     const navigate = useNavigate(); // Initialisation de la navigation
     const data = [
         { mail: "hmizourais557@gmail.com", password: "hamzay989" },
@@ -17,6 +17,7 @@ function Connection() {
     const [message, setMessage] = useState("");
     const [messageClass, setMessageClass] = useState("");
     const [showMessage, setShowMessage] = useState(false);
+
 
     const handleEmailChange = (event) => {
         setEmail(event.target.value);
@@ -38,11 +39,11 @@ function Connection() {
         if (userFound) {
             setMessage("Connexion réussie !");
             setMessageClass("succes");
-            // Redirection vers la page principale après 2 secondes
+            localStorage.setItem("isLogged", "conecté");
+            handleLogin(); // Appelle la fonction de connexion du parent
             setTimeout(() => {
                 navigate("/"); // Redirige vers la page d'accueil
             }, 2000);
-
         } else {
             setMessage("Échec de la connexion !");
             setMessageClass("denied");
@@ -66,7 +67,7 @@ function Connection() {
 
     return (
         <>
-         {showMessage && (
+            {showMessage && (
                 <p id="connxionState" className={messageClass}>
                     {message}
                     <i
@@ -119,25 +120,28 @@ function Connection() {
                             style={{ cursor: "pointer" }}
                         ></i>
                     </div>
-                    <Link style={{textDecoration:'None'}} to={"/Inscription"}>Sign in</Link>
-                    <Link style={{textDecoration:'None'}} to={"/LostPassword"}>Reset Password</Link>
+                    <Link style={{ textDecoration: "none" }} to={"/Inscription"}>
+                        Sign in
+                    </Link>
+                    <Link style={{ textDecoration: "none" }} to={"/LostPassword"}>
+                        Reset Password
+                    </Link>
 
                     <button className="connexion" type="button" onClick={verifierconnexion}>
                         <i className="fa-solid fa-right-to-bracket"></i> Connexion
                     </button>
                 </form>
-                
+
                 <button className="googlebtn">
-                        <img src="/images/google.webp" alt="Google" />
-                        <h3>Google</h3>
+                    <img src="/images/google.webp" alt="Google" />
+                    <h3>Google</h3>
                 </button>
 
-                    <button className="googlebtn">
-                        <img src="/images/apple.png" alt="Apple" />
-                        <h3>Apple</h3>
-                    </button>
+                <button className="googlebtn">
+                    <img src="/images/apple.png" alt="Apple" />
+                    <h3>Apple</h3>
+                </button>
             </div>
-
         </>
     );
 }

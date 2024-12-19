@@ -29,11 +29,11 @@ function LostPassword() {
         );
 
         if (userFound) {
-            setMessage("E-mail Envoyer");
+            setMessage("Verifier votre Mail");
             setMessageClass("succes");
 
         } else {
-            setMessage("Email non correcte !");
+            setMessage("E-mail non correcte !");
             setMessageClass("denied");
         }
 
