@@ -44,7 +44,7 @@ function Home() {
  
 
   const [startIndex, setStartIndex] = useState(0);
-  const itemsPerPage = 4;
+  const itemsPerPage = 3;
 
   const handleNext = () => {
     if (startIndex + itemsPerPage < products.length) {
@@ -155,7 +155,7 @@ function Home() {
           <p>Reprise au meilleur prix</p>
         </div>
         <div className="benefit">
-          <img src="A7/pieces-de-monnaie.png" alt="" />
+        <i class="fa-solid fa-coins"></i>
           <p>Retours gratuits jusqu'au 31/01</p>
         </div>
         <div className="benefit">
