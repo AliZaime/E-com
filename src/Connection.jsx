@@ -43,7 +43,7 @@ function Connection({ handleLogin }) {
             handleLogin(); // Appelle la fonction de connexion du parent
             setTimeout(() => {
                 navigate("/"); // Redirige vers la page d'accueil
-            }, 1000);
+            }, 1000);//rediriger apres 1 seconde
         } else {
             setMessage("Échec de la connexion !");
             setMessageClass("denied");
