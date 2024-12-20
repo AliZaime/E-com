@@ -17,7 +17,11 @@ import Panier from './Panier';
 import PaymentForm from './Paymentform';
 
 function App() {
-  const [isLoggedIn, setIsLoggedIn] = useState(false);
+  const [isLoggedIn, setIsLoggedIn] = useState(() => {
+    const storedStatus = localStorage.getItem("isLogged");
+    return storedStatus === "connecter"; // Retourne true si "connecter", sinon false
+});
+
 
   // Fonction pour gérer la connexion
   const handleLogin = () => {
@@ -27,6 +31,7 @@ function App() {
   // Fonction pour gérer la déconnexion
   const handleLogout = () => {
     setIsLoggedIn(false); // L'utilisateur se déconnecte
+    localStorage.setItem("isLogged","deconnecter")
   };
 
   return (

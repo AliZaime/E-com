@@ -39,11 +39,11 @@ function Connection({ handleLogin }) {
         if (userFound) {
             setMessage("Connexion réussie !");
             setMessageClass("succes");
-            localStorage.setItem("isLogged", "conecté");
+            localStorage.setItem("isLogged", "connecter");
             handleLogin(); // Appelle la fonction de connexion du parent
             setTimeout(() => {
                 navigate("/"); // Redirige vers la page d'accueil
-            }, 1000);//rediriger apres 1 seconde
+            }, 1000);
         } else {
             setMessage("Échec de la connexion !");
             setMessageClass("denied");

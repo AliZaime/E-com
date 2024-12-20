@@ -63,17 +63,28 @@ const Navbar = ({ isLoggedIn, handleLogout }) => {
               🛒
               {activeDropdown === "cart" && (
                 <div className="dropdown-menu">
-                  <p>Votre panier est vide</p>
-                  <Link to={"/panier"}>Voir le panier</Link>
+                  {
+                    isLoggedIn ? 
+                    (
+                      <>
+                        <p>Votre panier est vide</p>
+                        <Link to={"/panier"}>Voir le panier</Link>
+                      </>
+                    )
+                    :
+                    (
+                      <>
+                        <a href="/connection">Log in</a>
+                      </>
+                    )
+                  }
+                  
                 </div>
               )}
             </div>
 
             {/* Profil ou Connexion */}
-            <div
-              className={`icon ${activeDropdown === "login" ? "active" : ""}`}
-              onClick={() => toggleDropdown("login")}
-            >
+            <div className={`icon ${activeDropdown === "login" ? "active" : ""}`} onClick={() => toggleDropdown("login")}>
               👤
               {activeDropdown === "login" && (
                 <div className="dropdown-menu login-menu">
