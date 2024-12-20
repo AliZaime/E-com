@@ -64,7 +64,7 @@ const Navbar = ({ isLoggedIn, handleLogout }) => {
               {activeDropdown === "cart" && (
                 <div className="dropdown-menu">
                   <p>Votre panier est vide</p>
-                  <a href="/Panier">Voir le panier</a>
+                  <Link to={"/panier"}>Voir le panier</Link>
                 </div>
               )}
             </div>

@@ -13,6 +13,7 @@ import OurMission from './OurMission';
 import AboutUs from "./AboutUS"
 import './App.css';
 import LostPassword from './LostPassword';
+import Panier from './Panier';
 
 function App() {
   const [isLoggedIn, setIsLoggedIn] = useState(false);
@@ -46,6 +47,7 @@ function App() {
             <Route path="/companyhistory" element={<CompanyHistory />} />
             <Route path="/customertestimonials" element={<CustomerTestimonials />} />
             <Route path="/AboutUs" element={< AboutUs />} />
+            <Route path="/panier" element={<Panier />} />
           </Routes>
         </main>
         
