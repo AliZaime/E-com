@@ -13,6 +13,7 @@ import OurMission from './OurMission';
 import AboutUs from "./AboutUS"
 import './App.css';
 import LostPassword from './LostPassword';
+import Panier from './Panier';
 
 function App() {
   return (
@@ -34,6 +35,7 @@ function App() {
             <Route path="/companyhistory" element={<CompanyHistory />} />
             <Route path="/customertestimonials" element={<CustomerTestimonials />} />
             <Route path="/AboutUs" element={< AboutUs />} />
+            <Route path="/Panier" element={< Panier />} />            
           </Routes>
         </main>
         
