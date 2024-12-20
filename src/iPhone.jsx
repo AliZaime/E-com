@@ -12,16 +12,16 @@ function IPhone() {
 
 
     const products = [
-        { id: 1, name: 'iPhone 13',message:"-41% vs prix neuf" ,image: '/images/iphone13.png', color: ['white','aqua','darkblue','red'], rating: '4.4/5', reviews: 21264, currentPrice: 441.40, oldPrice: 749.0 },
-        { id: 2, name: 'iPhone 15',message:"top vente" , image: '/images/iphone15_1.png', color: ['yellow','white','lightblue','grey'], rating: '4.6/5', reviews: 3242, currentPrice: 706.93, oldPrice: 869.00 },
-        { id: 3, name: 'iphone 11',message:"top vente" , image: '/images/iphone11.png', color: ['black','white','grey','red'], rating: '4.1/5', reviews: 13121, currentPrice: 239.42, oldPrice: 589.00 },
-        { id: 4, name: 'iPhone 12',message:"top vente" , image: '/images/iphone12.png', color: ['grey','lightblue','red','white'], rating: '4.3/5', reviews: 20500, currentPrice: 341.81, oldPrice: 859.00 },
-        { id: 5, name: 'iPhone SE',message:"" , image: '/images/iphoneSE_1.png', color: ['red','black','white'], rating: '4.2/5', reviews: 5187, currentPrice: 130.19, oldPrice: 319.00 },
-        { id: 6, name: 'iPhone 14',message:"" , image: '/images/iphone14_1.png', color: ['lightblue','black','grey','white'], rating: '4.4/5', reviews: 3561, currentPrice: 529.00, oldPrice: 749.00 },
-        { id: 7, name: 'iPhone 11 Pro',message:"" , image: '/images/iphone11_1.png', color: ['black','grey','white','red'], rating: '4.2/5', reviews: 2187, currentPrice: 114.00, oldPrice: 299.00 },
-        { id: 8, name: 'iPhone 14 Pro',message:"" , image: '/images/iphone14Pro.png', color: ['grey','black','white','darkblue'], rating: '4.4/5', reviews: 4502, currentPrice: 651.50, oldPrice: 1329.00 },
-        { id: 9, name: 'iphone 13 Mini',message:"" , image: '/images/iphone13Mini.png', color: ['white','lightblue','black','grey'], rating: '4.3/5', reviews: 5249, currentPrice: 392.79, oldPrice: 809.00 },
-        { id: 11, name: 'iPhone 15 Pro',message:"" , image: '/images/iphone15Pro.png', color: ['white','grey','darkblue','black'], rating: '4.4/5', reviews: 1497, currentPrice: 911.43, oldPrice: 1229.00 },
+        { id: 1, name: 'iPhone 13',message:"-41% vs prix neuf" ,image: '/images/iphone13.png', color: ['white','aqua','darkblue','red'], rating: '4.4/5', reviews: 21264, currentPrice: 441.40, oldPrice: 749.0 ,quantite:1, condition: "Parfait état", vendu_avec: "Câble de chargement"},
+        { id: 2, name: 'iPhone 15',message:"top vente" , image: '/images/iphone15_1.png', color: ['yellow','white','lightblue','grey'], rating: '4.6/5', reviews: 3242, currentPrice: 706.93, oldPrice: 869.00 ,quantite:1, condition: "Parfait état", vendu_avec: "Câble de chargement"},
+        { id: 3, name: 'iphone 11',message:"top vente" , image: '/images/iphone11.png', color: ['black','white','grey','red'], rating: '4.1/5', reviews: 13121, currentPrice: 239.42, oldPrice: 589.00 ,quantite:1, condition: "Parfait état", vendu_avec: "Câble de chargement"},
+        { id: 4, name: 'iPhone 12',message:"top vente" , image: '/images/iphone12.png', color: ['grey','lightblue','red','white'], rating: '4.3/5', reviews: 20500, currentPrice: 341.81, oldPrice: 859.00 ,quantite:1, condition: "Parfait état", vendu_avec: "Câble de chargement"},
+        { id: 5, name: 'iPhone SE',message:"" , image: '/images/iphoneSE_1.png', color: ['red','black','white'], rating: '4.2/5', reviews: 5187, currentPrice: 130.19, oldPrice: 319.00 ,quantite:1, condition: "Parfait état", vendu_avec: "Câble de chargement"},
+        { id: 6, name: 'iPhone 14',message:"" , image: '/images/iphone14_1.png', color: ['lightblue','black','grey','white'], rating: '4.4/5', reviews: 3561, currentPrice: 529.00, oldPrice: 749.00 ,quantite:1, condition: "Parfait état", vendu_avec: "Câble de chargement"},
+        { id: 7, name: 'iPhone 11 Pro',message:"" , image: '/images/iphone11_1.png', color: ['black','grey','white','red'], rating: '4.2/5', reviews: 2187, currentPrice: 114.00, oldPrice: 299.00 ,quantite:1, condition: "Parfait état", vendu_avec: "Câble de chargement"},
+        { id: 8, name: 'iPhone 14 Pro',message:"" , image: '/images/iphone14Pro.png', color: ['grey','black','white','darkblue'], rating: '4.4/5', reviews: 4502, currentPrice: 651.50, oldPrice: 1329.00 ,quantite:1, condition: "Parfait état", vendu_avec: "Câble de chargement"},
+        { id: 9, name: 'iphone 13 Mini',message:"" , image: '/images/iphone13Mini.png', color: ['white','lightblue','black','grey'], rating: '4.3/5', reviews: 5249, currentPrice: 392.79, oldPrice: 809.00 ,quantite:1, condition: "Parfait état", vendu_avec: "Câble de chargement"},
+        { id: 11, name: 'iPhone 15 Pro',message:"" , image: '/images/iphone15Pro.png', color: ['white','grey','darkblue','black'], rating: '4.4/5', reviews: 1497, currentPrice: 911.43, oldPrice: 1229.00 ,quantite:1, condition: "Parfait état", vendu_avec: "Câble de chargement"},
       ];
       /* le usestate pour capturer les modification des input de modele */
       const [checkeditem, setCheckedItem] = useState({
@@ -201,6 +201,20 @@ function IPhone() {
         }
         console.log(`la liste filtrer : ${filtredproducts.map((product)=>`${product.name} - ${product.currentPrice}`)}`)
         return filtredproducts;
+      }
+      
+      function addToCart(product) {
+        // Récupérer le panier depuis le localStorage ou initialiser une liste vide
+        const cart = JSON.parse(localStorage.getItem("cart")) || [];
+      
+        // Ajouter le produit au panier
+        cart.push(product);
+      
+        // Mettre à jour le localStorage
+        localStorage.setItem("cart", JSON.stringify(cart));
+      
+        // Optionnel : notifier l'utilisateur que le produit a été ajouté
+        alert(`${product.name} a été ajouté au panier.`);
       }
       
 
@@ -426,6 +440,10 @@ function IPhone() {
                                 <h4 className="courantprice">{item.currentPrice} €</h4>
                                 <h4 className="oldprice">{item.oldPrice} € neuf</h4>
                               </div>
+                            </div>
+                            <div className="overlay">
+                              <button className="overlay-btn" onClick={() => addToCart(item)}>Ajouter au panier</button>
+                              <button className="overlay-btn">Voir le détail</button>
                             </div>
                         </div>)
                     })

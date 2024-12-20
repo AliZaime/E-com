@@ -1,78 +1,179 @@
-import React, { useState, useEffect } from 'react';
-import './Navbar.css'; // Fichier CSS pour styliser la navbar
-import { Link } from 'react-router-dom'; // Importer Link pour les liens de navigation
+import React, { useState } from "react";
+import { Link } from "react-router-dom";
+import "./Navbar.css";
 
-const Navbar = () => {
-  const [showMenu, setShowMenu] = useState(false);
+const Navbar = ({ isLoggedIn, handleLogout }) => {
+  const [isSidebarOpen, setIsSidebarOpen] = useState(false);
+  const [activeDropdown, setActiveDropdown] = useState(null);
+  const [isLoading, setIsLoading] = useState(false); // État pour gérer l'affichage du chargement
 
-  useEffect(() => {
-    if (showMenu) {
-      document.body.classList.add("blurred");
+  const toggleSidebar = () => {
+    setIsSidebarOpen(!isSidebarOpen);
+  };
+
+  const toggleDropdown = (dropdown) => {
+    if (activeDropdown === dropdown) {
+      setActiveDropdown(null);
     } else {
-      document.body.classList.remove("blurred");
+      setActiveDropdown(dropdown);
     }
-    return () => document.body.classList.remove("blurred");
-  }, [showMenu]);
+  };
+
+  const closeSidebar = () => {
+    setIsSidebarOpen(false);
+  };
+
+  const handleLogoutWithDelay = () => {
+    setIsLoading(true); // Active le chargement
+    setTimeout(() => {
+      handleLogout(); // Appelle la fonction de déconnexion
+      setIsLoading(false); // Désactive le chargement
+    }, 2000); // Attente de 2 secondes
+  };
 
   return (
-    <nav className="navbar">
-      <div className="nav1">
-        <div className="navbar-logo">
-          <img src="/images/TechSpot.png" alt="TechSpot" />
-          <Link to="/" style={{ fontFamily: "'Protest Revolution', sans-serif" }}>TechSpot</Link>
+    <>
+      {/* Overlay de chargement */}
+      {isLoading && (
+        <div className="loading-overlay">
+          <div className="spinner"></div>
         </div>
-        <div className="navbar-links">
-          <Link to="/revendre">Revendre</Link>
-          <Link to="/notre-pacte-qualite">Notre Pacte Qualité</Link>
-          <Link to="/backstories">BackStories</Link>
-          <Link to="/aide">Aide</Link>
-        </div>
-        <div className="navbar-search">
-          <input type="text" placeholder="Que cherchez-vous ?" />
-          <button>🔍</button>
-        </div>
-        <div className="navbar-actions">
-          <img src="/images/morocco.png" alt="MAR" style={{ width: "40px", height: "25px" }} />
-          <div
-            id="account"
-            className="logo-container"
-            onMouseEnter={() => setShowMenu(true)}
-          >
-            <img src="/images/person.png" alt="Logo" style={{ width: "25px", height: "25px" }} />
-            {showMenu && (
-              <div
-                className="hover-menu"
-                onMouseEnter={() => setShowMenu(true)}
-                onMouseLeave={() => setShowMenu(false)}
-              >
-                <button onClick={() => (window.location.href = "/Connection")}>Log In</button>
-                <button onClick={() => (window.location.href = "/Inscription")}>Sign In</button>
-              </div>
-            )}
+      )}
+
+      <nav className="navbar">
+        <div className="part1">
+          {/* Logo */}
+          <div className="logo">
+            <Link to={"/"}>TechSpot</Link>
           </div>
-          <Link to="/">
-            <img
-              src="/images/shopping_cart.png"
-              alt="cart"
-              style={{ width: "25px", height: "25px" }}
-            />
-          </Link>
+
+          {/* Barre de recherche */}
+          <div className="search-bar">
+            <input type="text" placeholder="Que cherchez-vous ?" />
+            <button type="button">🔍</button>
+          </div>
+
+          {/* Icônes */}
+          <div className="icons">
+            {/* Panier */}
+            <div
+              className={`icon ${activeDropdown === "cart" ? "active" : ""}`}
+              onClick={() => toggleDropdown("cart")}
+            >
+              🛒
+              {activeDropdown === "cart" && (
+                <div className="dropdown-menu">
+                  {
+                    isLoggedIn ? 
+                    (
+                      <>
+                        <p>Votre panier est vide</p>
+                        <Link to={"/panier"}>Voir le panier</Link>
+                      </>
+                    )
+                    :
+                    (
+                      <>
+                        <a href="/connection">Log in</a>
+                      </>
+                    )
+                  }
+                  
+                </div>
+              )}
+            </div>
+
+            {/* Profil ou Connexion */}
+            <div className={`icon ${activeDropdown === "login" ? "active" : ""}`} onClick={() => toggleDropdown("login")}>
+              👤
+              {activeDropdown === "login" && (
+                <div className="dropdown-menu login-menu">
+                  {!isLoggedIn ? (
+                    <>
+                      <a href="/connection">Log in</a>
+                      <a href="/inscription">Sign in</a>
+                    </>
+                  ) : (
+                    <>
+                      <a href="/profile">Profil</a>
+                      <Link onClick={handleLogoutWithDelay} to="#">
+                        Log out
+                      </Link>
+                    </>
+                  )}
+                </div>
+              )}
+            </div>
+
+            {/* Sidebar */}
+            <svg
+              onClick={toggleSidebar}
+              xmlns="http://www.w3.org/2000/svg"
+              height="24px"
+              viewBox="0 -960 960 960"
+              width="24px"
+              fill="#000000"
+            >
+              <path d="M120-240v-80h720v80H120Zm0-200v-80h720v80H120Zm0-200v-80h720v80H120Z" />
+            </svg>
+          </div>
         </div>
-      </div>
-      <div className="nav2">
-        <div className="navbar-categories">
-          <Link to="/black-friday" className="highlight">Black Friday</Link>
-          <Link to="/smartphones">Smartphones</Link>
-          <Link to="/ordinateurs-portables">Ordinateurs portables</Link>
-          <Link to="/tablettes">Tablettes</Link>
-          <Link to="/consoles">Consoles</Link>
-          <Link to="/montres-connectees">Montres connectées</Link>
-          <Link to="/audio">Audio</Link>
-          <Link to="/appareils-electromenagers">Appareils électroménagers</Link>
-          <Link to="/autres">Autres</Link>
+
+        <div className="part2">
+          {/* Liens de navigation */}
+          <ul className={`nav-links ${isSidebarOpen ? "sidebar-open" : ""}`}>
+            <li>
+              <Link className="link" to={"/Smartphones"} onClick={closeSidebar}>
+                Smartphones
+              </Link>
+            </li>
+            <li>
+              <Link
+                className="link"
+                to={"/OrdinateursPortable"}
+                onClick={closeSidebar}
+              >
+                Ordinateurs portables
+              </Link>
+            </li>
+            <li>
+              <Link className="link" to={"/Tablettes"} onClick={closeSidebar}>
+                Tablettes
+              </Link>
+            </li>
+            <li>
+              <Link className="link" to={"/Consoles"} onClick={closeSidebar}>
+                Consoles
+              </Link>
+            </li>
+            <li>
+              <Link className="link" to={"/Montres"} onClick={closeSidebar}>
+                Montres connectées
+              </Link>
+            </li>
+            <li>
+              <Link className="link" to={"/Audio"} onClick={closeSidebar}>
+                Audio
+              </Link>
+            </li>
+            <li>
+              <Link
+                className="link"
+                to={"/Electromenagers"}
+                onClick={closeSidebar}
+              >
+                Appareils électroménagers
+              </Link>
+            </li>
+            <li>
+              <Link className="link" to={"/Autres"} onClick={closeSidebar}>
+                Autres
+              </Link>
+            </li>
+          </ul>
         </div>
-      </div>
-    </nav>
+      </nav>
+    </>
   );
 };
 
