@@ -8,6 +8,7 @@
     background-color: #f7f9fb; /* Light background */
     padding: 20px;
     margin: 0;
+    font-family: Sour Gummy, sans-serif;
   }
   
   /* Card styling */
@@ -18,14 +19,14 @@
     padding: 30px 40px;
     max-width: 900px;
     text-align: center;
-    font-family: "Arial", sans-serif;
+    margin-bottom: 40px;
   }
   
   /* Title styling */
   .testimonials-title {
     font-size: 2.2rem;
     font-weight: bold;
-    color: #0b72b9;
+    color: #2c3e50;
     margin-bottom: 40px;
   }
   

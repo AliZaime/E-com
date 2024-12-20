@@ -12,6 +12,9 @@ import Home from './Home';
 import OurMission from './OurMission';
 import AboutUs from "./AboutUS"
 import './App.css';
+import FAQ from './FAQ'; 
+import ReturnPolicy from './ReturnPolicy';
+import ContactUs from './ContactUs';
 
 function App() {
   return (
@@ -32,6 +35,9 @@ function App() {
             <Route path="/companyhistory" element={<CompanyHistory />} />
             <Route path="/customertestimonials" element={<CustomerTestimonials />} />
             <Route path="/AboutUs" element={< AboutUs />} />
+            <Route path="/FAQ" element={< FAQ />} />
+            <Route path="/ReturnPolicy" element={< ReturnPolicy />} />
+            <Route path="/ContactUs" element={< ContactUs />} />
           </Routes>
         </main>
         

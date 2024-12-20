@@ -24,25 +24,13 @@ function Footer() {
           </ul>
         </div>
 
-        {/* Colonne 2: Useful Links */}
-        <div className="footer-column">
-          <h4>Useful Links</h4>
-          <ul>
-            <li><Link to="/App" onClick={scrollToSection}>Home</Link></li>
-            <li><a href="#catalog">Product Catalog</a></li>
-            <li><a href="#blog">Blog</a></li>
-            <li><a href="#offers">Special Offers</a></li>
-          </ul>
-        </div>
-
         {/* Colonne 3: Customer Support */}
         <div className="footer-column">
           <h4>Customer Support</h4>
           <ul>
-            <li><a href="#faq">FAQ</a></li>
-            <li><a href="#return-policy">Return Policy</a></li>
-            <li><a href="#warranty">Product Warranty</a></li>
-            <li><a href="#contact">Contact Us</a></li>
+            <li><Link to="/FAQ" onClick={scrollToSection}>FAQ</Link></li>
+            <li><Link to="/ReturnPolicy" onClick={scrollToSection}>Return Policy</Link></li>
+            <li><Link to="/ContactUs" onClick={scrollToSection}>Contact Our Team</Link></li>
           </ul>
         </div>
 
@@ -54,12 +42,19 @@ function Footer() {
             <li><a href="https://twitter.com" target="_blank" rel="noopener noreferrer">Twitter</a></li>
             <li><a href="https://linkedin.com" target="_blank" rel="noopener noreferrer">LinkedIn</a></li>
             <li><a href="https://instagram.com" target="_blank" rel="noopener noreferrer">Instagram</a></li>
-            <li><a href="https://youtube.com" target="_blank" rel="noopener noreferrer">YouTube</a></li>
           </ul>
         </div>
       </div>
       <hr />
-      <p className='copy'>&copy; 2024 TechSpot. All rights reserved.</p>
+      <div className="lastfooter">
+        <p className='copy'>&copy; 2024 TechSpot. All rights reserved.</p>
+        <div className="paiem">
+          <img src="/footer_pic/MasterCard-Logo.png" alt="mastercard" />
+          <img src="/footer_pic/Visa-Logo.png" alt="visa" />
+          <img src="/footer_pic/Paypal_logo.png" alt="paypal" />
+        </div>
+      </div>
+      
     </footer>
   );
 };
