@@ -12,7 +12,9 @@ import Home from './Home';
 import OurMission from './OurMission';
 import AboutUs from "./AboutUS"
 import './App.css';
-
+import FAQ from './FAQ'; 
+import ReturnPolicy from './ReturnPolicy';
+import ContactUs from './ContactUs';
 import LostPassword from './LostPassword';
 import Panier from './Panier';
 import PaymentForm from './Paymentform';
@@ -57,8 +59,9 @@ function App() {
             <Route path="/companyhistory" element={<CompanyHistory />} />
             <Route path="/customertestimonials" element={<CustomerTestimonials />} />
             <Route path="/AboutUs" element={< AboutUs />} />
-
-            =======
+            <Route path="/FAQ" element={< FAQ />} />
+            <Route path="/ReturnPolicy" element={< ReturnPolicy />} />
+            <Route path="/ContactUs" element={< ContactUs />} />
             <Route path="/panier" element={<Panier />} />
             <Route path="/Paiment" element={<PaymentForm />} />
           </Routes>
