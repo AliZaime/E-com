@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import './Painer.css'
+import { Link } from "react-router-dom";
 
 const Panier = () => {
     const [infoprod, setInfoprod] = useState([
@@ -150,8 +151,10 @@ const Panier = () => {
                         <p> Total TTC</p>
                         <p>{calcultotalprice() + 5}€</p>
                     </div>
-
-                    <button className='continue_payment'>Continuer</button>
+                    <Link to={"/Paiment"} className='continue_payment'>Continuer</Link>
+                    
+                    
+                    
                     <p className='payment_securiser'>
                         <i class="fa-solid fa-lock"></i>
                         payment sécuriser
