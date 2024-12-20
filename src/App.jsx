@@ -14,6 +14,7 @@ import AboutUs from "./AboutUS"
 import './App.css';
 import LostPassword from './LostPassword';
 import Panier from './Panier';
+import PaymentForm from './Paymentform';
 
 function App() {
   const [isLoggedIn, setIsLoggedIn] = useState(false);
@@ -48,6 +49,7 @@ function App() {
             <Route path="/customertestimonials" element={<CustomerTestimonials />} />
             <Route path="/AboutUs" element={< AboutUs />} />
             <Route path="/panier" element={<Panier />} />
+            <Route path="/Paiment" element={<PaymentForm />} />
           </Routes>
         </main>
         

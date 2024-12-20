@@ -1,0 +1,105 @@
+body .payment-container{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.payment-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 30px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
+}
+
+h2 {
+    text-align: center;
+    margin-bottom: 20px;
+    color: #333;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+}
+
+.form-row {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 15px;
+}
+
+.form-group {
+    display: flex;
+    flex-direction: column;
+    width: 48%;
+}
+
+label {
+    font-weight: bold;
+    margin-bottom: 5px;
+    color: #555;
+}
+
+input, textarea {
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    outline: none;
+}
+
+input:focus, textarea:focus {
+    border-color: #007bff;
+}
+
+textarea {
+    resize: none;
+}
+
+.checkbox {
+    margin: 15px 0;
+}
+
+.checkbox input {
+    margin-right: 10px;
+}
+
+.card-input {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 10px;
+}
+
+.card-input input {
+    width: 32%;
+}
+
+
+.card-logos {
+    display: flex;
+    justify-content: space-around;
+    margin: 15px 0;
+}
+
+.card-logos img {
+    height: 30px;
+    object-fit: contain;
+}
+
+
+.btn-valider {
+    background-color: #f5a623;
+    color: #fff;
+    padding: 10px;
+    font-weight: bold;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    text-align: center;
+}
+
+.btn-valider:hover {
+    background-color: #e6951e;
+}
