@@ -9,8 +9,7 @@
   .footer-container {
     display: flex;
     flex-wrap: wrap;
-    justify-content: space-between;
-    margin-left: 100px;
+    justify-content: space-evenly;
   }
   
   /* Footer Columns */
@@ -44,10 +43,20 @@
     color: #0ec39f;
   }
   
-  .copy{
+  /* .copy{
     display: flex;
     justify-content: center; 
+  } */
+  .lastfooter {
+    display: flex;
+    justify-content: space-around;
+    text-align: center;
   }
+  .paiem img{
+    width: 40px;
+    height: 40px;
+    margin: 10px;
+ }
 
   /* Responsive Design */
   @media (max-width: 768px) {

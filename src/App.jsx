@@ -12,9 +12,11 @@ import Home from './Home';
 import OurMission from './OurMission';
 import AboutUs from "./AboutUS"
 import './App.css';
+
 import LostPassword from './LostPassword';
 import Panier from './Panier';
 import PaymentForm from './Paymentform';
+
 
 function App() {
   const [isLoggedIn, setIsLoggedIn] = useState(() => {
@@ -55,6 +57,8 @@ function App() {
             <Route path="/companyhistory" element={<CompanyHistory />} />
             <Route path="/customertestimonials" element={<CustomerTestimonials />} />
             <Route path="/AboutUs" element={< AboutUs />} />
+
+            =======
             <Route path="/panier" element={<Panier />} />
             <Route path="/Paiment" element={<PaymentForm />} />
           </Routes>

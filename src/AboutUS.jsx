@@ -19,27 +19,27 @@ function AboutUs() {
         <h2>Meet Our Team</h2>
         <div className="team-members">
           <div className="team-member">
-            <img src="https://via.placeholder.com/150" alt="Ali" />
+            <img src="/membres_pic/ali_pic.jpg" alt="Ali" />
             <h3>Ali Zaime</h3>
             <p>Founder & CEO</p>
           </div>
           <div className="team-member">
-            <img src="https://via.placeholder.com/150" alt="Amine" />
+            <img src="/membres_pic/amine_pic.jpg" alt="Amine" />
             <h3>Mohamed Amine Khatouf</h3>
             <p>Product Manager</p>
           </div>
           <div className="team-member">
-            <img src="https://via.placeholder.com/150" alt="Mohammed" />
+            <img src="/membres_pic/faris_pic.jpg" alt="Mohammed" />
             <h3>Mohammed Faris</h3>
             <p>Lead Developer</p>
           </div>
           <div className="team-member">
-            <img src="https://via.placeholder.com/150" alt="Hamza" />
+            <img src="/membres_pic/hamza_pic.jpg" alt="Hamza" />
             <h3>Hamza Rais</h3>
             <p>Marketing Specialist</p>
           </div>
           <div className="team-member">
-            <img src="https://via.placeholder.com/150" alt="Youness" />
+            <img src="/membres_pic/abouhafs_pic.png" alt="Youness" />
             <h3>Youness Abouhafs</h3>
             <p>Customer Support</p>
           </div>
