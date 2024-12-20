@@ -211,14 +211,12 @@
 }
 
 /* Pour rendre l'alignement plus esthétique sur mobile */
-@media (max-width: 600px) {
-  .pagination-controls {
-    flex-direction: column; /* Colonne pour petits écrans */
-    gap: 10px;
-  }
-
+@media (max-width: 768px) {
   .pagination-controls button {
-    width: 100%; /* Largeur à 100% pour les petits écrans */
+    width: 40px; /* Réduction de la largeur */
+    height: 40px; /* Réduction de la hauteur */
+    font-size: 14px; /* Taille du texte plus petite */
+    padding: 8px 16px;
   }
 }
 .googlebtn{

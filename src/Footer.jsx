@@ -24,6 +24,7 @@ function Footer() {
           </ul>
         </div>
 
+
         {/* Colonne 3: Customer Support */}
         <div className="footer-column">
           <h4>Customer Support</h4>
