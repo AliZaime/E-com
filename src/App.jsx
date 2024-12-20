@@ -22,6 +22,8 @@ function App() {
     return storedStatus === "connecter"; // Retourne true si "connecter", sinon false
 });
 
+//fontion qui permet d'ajouter l'élément choisie dans le panier
+
 
   // Fonction pour gérer la connexion
   const handleLogin = () => {
