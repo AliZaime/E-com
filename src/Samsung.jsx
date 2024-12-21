@@ -290,11 +290,12 @@ function Samsung() {
         <>
         <div className="iphonepage">
           {/* la partie qui se situe avant la partie des filtre et du catalogue */}
-          <div className="container">
-              {/* la partie pour savoir ou on se situe */}
+          {/* la partie pour savoir ou on se situe */}
               <nav className="breadcrumb">
                 <a href="/">Accueil</a> &gt; <a href="/Smartphones">Smartphones</a> &gt; <span>Tous les Samsung</span>
               </nav>
+          <div className="container">
+              
               {/* le contenaire qui contient les services de notre application */}
               <div className="infoserviceContainer">
                   <div className="Info">
