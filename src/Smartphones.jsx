@@ -5,7 +5,7 @@ import { Link } from 'react-router-dom';
 const Smartphones = () => {
     const smartphones = [
         { id: 1, name: 'iPhone', image: "/images/most-wanted--iphone-15--desktop.avif",lien:"/smartphones/iPhone"},
-        { id: 2, name: 'Samsung Galaxy', image: '/images/most-wanted--galaxy-s23--desktop.avif',lien:"" },
+        { id: 2, name: 'Samsung Galaxy', image: '/images/most-wanted--galaxy-s23--desktop.avif',lien:"/smartphones/Samsung" },
         { id: 3, name: 'Google Pixel', image: '/images/most-wanted--google-pixel-8--desktop.avif',lien:"" },
         { id: 4, name: 'Toutes les marques', image: '/images/most-wanted--all-brands--desktop.avif',lien:""}
       ];  
