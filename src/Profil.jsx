@@ -7,7 +7,7 @@ const Profil = () => {
 
   // Charger les données du client depuis le localStorage
   useEffect(() => {
-    const storedClientData = JSON.parse(localStorage.getItem('clientData'));
+    const storedClientData = JSON.parse(localStorage.getItem('formData'));
     const loggedInEmail = localStorage.getItem('isLoggedEmail'); // Utilisez 'isLoggedEmail' pour récupérer l'email
     if (storedClientData && loggedInEmail) {
       const client = storedClientData.find(client => client.email === loggedInEmail);
@@ -32,12 +32,12 @@ const Profil = () => {
   return (
     <div className="profile-container">
       <div className="profile-header">
-        <img src={clientData.avatar} alt="Avatar" className="profile-avatar" />
+        <img src="/membres_pic/hamza_pic.jpg" alt="Avatar" className="profile-avatar" />
         <div className="profile-info">
-          <h2>{clientData.name}</h2>
+          <h2>{clientData.firstname} {clientData.lastname}</h2>
           <p>Email: {clientData.email}</p>
           <p>Téléphone: {clientData.phone}</p>
-          <p>Adresse: {clientData.address}</p>
+          <p>Adresse: {clientData.adresse}</p>
           <p>Membre depuis: {clientData.memberSince}</p>
         </div>
       </div>
@@ -45,18 +45,19 @@ const Profil = () => {
       <div className="purchase-history">
         <h3>Historique des achats</h3>
         <ul>
-          {clientData.purchaseHistory.map((purchase, index) => (
-            <li key={index}>
-              <div>
-                <strong>Commande: {purchase.orderId}</strong>
-                <p>Date: {purchase.date}</p>
-                <p>Articles: {purchase.items}</p>
-                <p>Total: {purchase.total}</p>
-              </div>
+            {clientData.cart.map((item) => (
+            <li key={item.id}>
+                <div>
+                <strong>Commande: </strong>
+                <p>ID : {item.id}</p>
+                <p>Article : {item.name}</p>
+                <p>Price : {item.currentPrice.toFixed(2)} €</p>
+                </div>
             </li>
-          ))}
+            ))}
         </ul>
-      </div>
+        </div>
+
 
       <div className="logout">
         <Link onClick={handleLogoutWithDelay} to={"/"}>
