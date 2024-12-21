@@ -13,6 +13,7 @@ function Inscription() {
         phone: '',
         adresse: '',
         cart: [],
+
     });
 
     const [errors, setErrors] = useState({});

@@ -2,6 +2,26 @@ import React, { useState, useEffect } from "react";
 
 import "./Home.css";
 
+function addToCart(product) {
+  // Récupérer les données utilisateurs depuis le localStorage
+const formData = JSON.parse(localStorage.getItem("formData")) || [];
+const loggedInEmail = localStorage.getItem("isLoggedEmail"); // Email de l'utilisateur connecté
+
+// Trouver l'utilisateur connecté
+const currentUserIndex = formData.findIndex(user => user.email === loggedInEmail);
+
+if (currentUserIndex !== -1) {
+  // Ajouter le produit au panier de l'utilisateur connecté
+  const currentUser = formData[currentUserIndex];
+  currentUser.cart = currentUser.cart || []; // Initialiser le panier si inexistant
+  currentUser.cart.push(product);
+
+  // Mettre à jour les données dans formData
+  formData[currentUserIndex] = currentUser;
+  localStorage.setItem("formData", JSON.stringify(formData));
+}
+}
+
 function Home() {
   const [currentIndex, setCurrentIndex] = useState(0);
   const slides = [
@@ -29,16 +49,16 @@ function Home() {
   };
 
   const products = [
-    { id: 1, name: 'iPhone 13', image: '/images/iphone13.avif', storage: '128 Go', color: 'Minuit', unlocked: 'Débloqué', rating: '4.4/5', reviews: 21245, currentPrice: 424.0, oldPrice: 749.0 },
-    { id: 2, name: 'Galaxy S21 5G', image: '/images/S21.avif', storage: '128 Go', color: 'Gris', unlocked: 'Débloqué', rating: '4.2/5', reviews: 5042, currentPrice: 255.19, oldPrice: 1059.0 },
-    { id: 3, name: 'Google Pixel 7', image: '/images/Googlepixel7.avif', storage: '128 Go', color: 'Vert', unlocked: 'Débloqué', rating: '4.4/5', reviews: 616, currentPrice: 289.68, oldPrice: 649.99 },
-    { id: 4, name: 'iPhone 8', image: '/images/iphone8.avif', storage: '64 Go', color: 'Gris sidéral', unlocked: 'Débloqué', rating: '4.2/5', reviews: 2195, currentPrice: 109.74, oldPrice: 299.0 },
-    { id: 5, name: 'iPhone 14', image: '/images/iphone14.jpg', storage: '256 Go', color: 'Blanc', unlocked: 'Débloqué', rating: '4.6/5', reviews: 5050, currentPrice: 1029.0, oldPrice: 1200.0 },
-    { id: 6, name: 'Galaxy Z Fold 4', image: '/images/fold4.jpg', storage: '512 Go', color: 'Noir', unlocked: 'Débloqué', rating: '4.8/5', reviews: 1200, currentPrice: 1500.0, oldPrice: 1800.0 },
-    { id: 7, name: 'Galaxy Z Fold 4', image: '/images/fold4.jpg', storage: '512 Go', color: 'Noir', unlocked: 'Débloqué', rating: '4.8/5', reviews: 1200, currentPrice: 1500.0, oldPrice: 1800.0 },
-    { id: 8, name: 'Galaxy Z Fold 4', image: '/images/fold4.jpg', storage: '512 Go', color: 'Noir', unlocked: 'Débloqué', rating: '4.8/5', reviews: 1200, currentPrice: 1500.0, oldPrice: 1800.0 },
-    { id: 9, name: 'Galaxy Z Fold 4', image: '/images/fold4.jpg', storage: '512 Go', color: 'Noir', unlocked: 'Débloqué', rating: '4.8/5', reviews: 1200, currentPrice: 1500.0, oldPrice: 1800.0 },
-    { id: 10, name: 'Galaxy Z Fold 4', image: '/images/fold4.jpg', storage: '512 Go', color: 'Noir', unlocked: 'Débloqué', rating: '4.8/5', reviews: 1200, currentPrice: 1500.0, oldPrice: 1800.0 },
+    { id: 1, name: 'iPhone 13', image: '/images/iphone13.avif', storage: '128 Go', color: 'Minuit', unlocked: 'Débloqué', rating: '4.4/5', reviews: 21245, currentPrice: 424.0, oldPrice: 749.0 ,quantite:1, condition: "Parfait état", vendu_avec: "Câble de chargement"},
+    { id: 2, name: 'Galaxy S21 5G', image: '/images/S21.avif', storage: '128 Go', color: 'Gris', unlocked: 'Débloqué', rating: '4.2/5', reviews: 5042, currentPrice: 255.19, oldPrice: 1059.0 ,quantite:1, condition: "Parfait état", vendu_avec: "Câble de chargement"},
+    { id: 3, name: 'Google Pixel 7', image: '/images/Googlepixel7.avif', storage: '128 Go', color: 'Vert', unlocked: 'Débloqué', rating: '4.4/5', reviews: 616, currentPrice: 289.68, oldPrice: 649.99 ,quantite:1, condition: "Parfait état", vendu_avec: "Câble de chargement"},
+    { id: 4, name: 'iPhone 8', image: '/images/iphone8.avif', storage: '64 Go', color: 'Gris sidéral', unlocked: 'Débloqué', rating: '4.2/5', reviews: 2195, currentPrice: 109.74, oldPrice: 299.0 ,quantite:1, condition: "Parfait état", vendu_avec: "Câble de chargement"},
+    { id: 5, name: 'iPhone 14', image: '/images/iphone14.jpg', storage: '256 Go', color: 'Blanc', unlocked: 'Débloqué', rating: '4.6/5', reviews: 5050, currentPrice: 1029.0, oldPrice: 1200.0 ,quantite:1, condition: "Parfait état", vendu_avec: "Câble de chargement"},
+    { id: 6, name: 'Galaxy Z Fold 4', image: '/images/fold4.jpg', storage: '512 Go', color: 'Noir', unlocked: 'Débloqué', rating: '4.8/5', reviews: 1200, currentPrice: 1500.0, oldPrice: 1800.0 ,quantite:1, condition: "Parfait état", vendu_avec: "Câble de chargement"},
+    { id: 7, name: 'Galaxy Z Fold 4', image: '/images/fold4.jpg', storage: '512 Go', color: 'Noir', unlocked: 'Débloqué', rating: '4.8/5', reviews: 1200, currentPrice: 1500.0, oldPrice: 1800.0 ,quantite:1, condition: "Parfait état", vendu_avec: "Câble de chargement"},
+    { id: 8, name: 'Galaxy Z Fold 4', image: '/images/fold4.jpg', storage: '512 Go', color: 'Noir', unlocked: 'Débloqué', rating: '4.8/5', reviews: 1200, currentPrice: 1500.0, oldPrice: 1800.0 ,quantite:1, condition: "Parfait état", vendu_avec: "Câble de chargement"},
+    { id: 9, name: 'Galaxy Z Fold 4', image: '/images/fold4.jpg', storage: '512 Go', color: 'Noir', unlocked: 'Débloqué', rating: '4.8/5', reviews: 1200, currentPrice: 1500.0, oldPrice: 1800.0 ,quantite:1, condition: "Parfait état", vendu_avec: "Câble de chargement"},
+    { id: 10, name: 'Galaxy Z Fold 4', image: '/images/fold4.jpg', storage: '512 Go', color: 'Noir', unlocked: 'Débloqué', rating: '4.8/5', reviews: 1200, currentPrice: 1500.0, oldPrice: 1800.0 ,quantite:1, condition: "Parfait état", vendu_avec: "Câble de chargement"},
   ];
 
  
@@ -60,14 +80,14 @@ function Home() {
 
   const visibleProducts = products.slice(startIndex, Math.min(startIndex + itemsPerPage, products.length));
   const productList = [
-    { id: 1, name: 'iPhone 160', category: 'iPhone', image: '/images/iphone13.avif', storage: '128 Go', color: 'Minuit', unlocked: 'Débloqué', rating: '4.4/5', reviews: 21245, currentPrice: 424.0, oldPrice: 749.0 },
-    { id: 2, name: 'Galaxy S21 5G', category: 'Smartphones Android', image: '/images/S21.avif', storage: '128 Go', color: 'Gris', unlocked: 'Débloqué', rating: '4.2/5', reviews: 5042, currentPrice: 255.19, oldPrice: 1059.0 },
-    { id: 3, name: 'Google Pixel 7', category: 'Smartphones Android', image: '/images/Googlepixel7.avif', storage: '128 Go', color: 'Vert', unlocked: 'Débloqué', rating: '4.4/5', reviews: 616, currentPrice: 289.68, oldPrice: 649.99 },
-    { id: 4, name: 'iPhone 8', category: 'iPhone', image: '/images/iphone8.avif', storage: '64 Go', color: 'Gris sidéral', unlocked: 'Débloqué', rating: '4.2/5', reviews: 2195, currentPrice: 109.74, oldPrice: 299.0 },
-    { id: 5, name: 'iPhone 14', category: 'iPhone', image: '/images/iphone14.jpg', storage: '256 Go', color: 'Blanc', unlocked: 'Débloqué', rating: '4.6/5', reviews: 5050, currentPrice: 1029.0, oldPrice: 1200.0 },
-    { id: 6, name: 'Galaxy Z Fold 4', category: 'Smartphones Android', image: '/images/fold4.jpg', storage: '512 Go', color: 'Noir', unlocked: 'Débloqué', rating: '4.8/5', reviews: 1200, currentPrice: 1500.0, oldPrice: 1800.0 },
-    { id: 7, name: 'iPhone 160', category: 'iPhone', image: '/images/iphone13.avif', storage: '128 Go', color: 'Minuit', unlocked: 'Débloqué', rating: '4.4/5', reviews: 21245, currentPrice: 424.0, oldPrice: 749.0 },
-    { id: 8, name: 'iPhone 160', category: 'iPhone', image: '/images/iphone13.avif', storage: '128 Go', color: 'Minuit', unlocked: 'Débloqué', rating: '4.4/5', reviews: 21245, currentPrice: 424.0, oldPrice: 749.0 },
+    { id: 1, name: 'iPhone 160', category: 'iPhone', image: '/images/iphone13.avif', storage: '128 Go', color: 'Minuit', unlocked: 'Débloqué', rating: '4.4/5', reviews: 21245, currentPrice: 424.0, oldPrice: 749.0 ,quantite:1, condition: "Parfait état", vendu_avec: "Câble de chargement"},
+    { id: 2, name: 'Galaxy S21 5G', category: 'Smartphones Android', image: '/images/S21.avif', storage: '128 Go', color: 'Gris', unlocked: 'Débloqué', rating: '4.2/5', reviews: 5042, currentPrice: 255.19, oldPrice: 1059.0 ,quantite:1, condition: "Parfait état", vendu_avec: "Câble de chargement"},
+    { id: 3, name: 'Google Pixel 7', category: 'Smartphones Android', image: '/images/Googlepixel7.avif', storage: '128 Go', color: 'Vert', unlocked: 'Débloqué', rating: '4.4/5', reviews: 616, currentPrice: 289.68, oldPrice: 649.99 ,quantite:1, condition: "Parfait état", vendu_avec: "Câble de chargement"},
+    { id: 4, name: 'iPhone 8', category: 'iPhone', image: '/images/iphone8.avif', storage: '64 Go', color: 'Gris sidéral', unlocked: 'Débloqué', rating: '4.2/5', reviews: 2195, currentPrice: 109.74, oldPrice: 299.0 ,quantite:1, condition: "Parfait état", vendu_avec: "Câble de chargement"},
+    { id: 5, name: 'iPhone 14', category: 'iPhone', image: '/images/iphone14.jpg', storage: '256 Go', color: 'Blanc', unlocked: 'Débloqué', rating: '4.6/5', reviews: 5050, currentPrice: 1029.0, oldPrice: 1200.0 ,quantite:1, condition: "Parfait état", vendu_avec: "Câble de chargement"},
+    { id: 6, name: 'Galaxy Z Fold 4', category: 'Smartphones Android', image: '/images/fold4.jpg', storage: '512 Go', color: 'Noir', unlocked: 'Débloqué', rating: '4.8/5', reviews: 1200, currentPrice: 1500.0, oldPrice: 1800.0 ,quantite:1, condition: "Parfait état", vendu_avec: "Câble de chargement"},
+    { id: 7, name: 'iPhone 160', category: 'iPhone', image: '/images/iphone13.avif', storage: '128 Go', color: 'Minuit', unlocked: 'Débloqué', rating: '4.4/5', reviews: 21245, currentPrice: 424.0, oldPrice: 749.0 ,quantite:1, condition: "Parfait état", vendu_avec: "Câble de chargement"},
+    { id: 8, name: 'iPhone 160', category: 'iPhone', image: '/images/iphone13.avif', storage: '128 Go', color: 'Minuit', unlocked: 'Débloqué', rating: '4.4/5', reviews: 21245, currentPrice: 424.0, oldPrice: 749.0 ,quantite:1, condition: "Parfait état", vendu_avec: "Câble de chargement"},
     // Add more products as needed
   ];
 
@@ -177,6 +197,10 @@ function Home() {
                 <span className="current-price">{product.currentPrice.toFixed(2)} €</span>
                 <span className="old-price">{product.oldPrice.toFixed(2)} €</span>
               </p>
+              <div className="overlay">
+                <button className="overlay-btn" onClick={() => addToCart(product)}>Ajouter au panier</button>
+                <button className="overlay-btn">Voir le détail</button>
+              </div>
             </div>
           ))}
         </div>
@@ -256,6 +280,10 @@ function Home() {
                   {product.currentPrice.toFixed(2)} €
                 </span>
               </p>
+              <div className="overlay">
+                <button className="overlay-btn" onClick={() => addToCart(product)}>Ajouter au panier</button>
+                <button className="overlay-btn">Voir le détail</button>
+              </div>
             </div>
           ))}
         </div>
