@@ -118,7 +118,7 @@ function Inscription() {
             setSuccessMessage('');
         }, 3000);
     };
-
+/**test */
     useEffect(() => {
         if (successMessage) {
             const timer = setTimeout(() => setSuccessMessage(''), 3000);
