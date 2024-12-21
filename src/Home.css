@@ -311,6 +311,10 @@ gap: 30px;
   background-color: #f2eded; /* Couleur de fond blanche */
   text-align: center;
   overflow: hidden;
+  position: relative;
+}
+.product-cardmo:hover .overlay{
+  bottom: 0;
 }
 
 .badgemo {
@@ -325,6 +329,10 @@ gap: 30px;
 
 /* Changer l'ombre et la taille quand la souris survole la carte */
 .product-card:hover {
+  transform: translateY(-5px); /* Décalage de la carte */
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2); /* Ombre plus prononcée */
+}
+.product-cardmo:hover {
   transform: translateY(-5px); /* Décalage de la carte */
   box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2); /* Ombre plus prononcée */
 }
