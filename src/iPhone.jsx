@@ -23,7 +23,6 @@ function IPhone() {
         { id: 9, name: 'iphone 13 Mini',message:"" , image: '/images/iphone13Mini.png', color: ['white','lightblue','black','grey'], rating: '4.3/5', reviews: 5249, currentPrice: 392.79, oldPrice: 809.00 ,quantite:1, condition: "Parfait état", vendu_avec: "Câble de chargement"},
         { id: 11, name: 'iPhone 15 Pro',message:"" , image: '/images/iphone15Pro.png', color: ['white','grey','darkblue','black'], rating: '4.4/5', reviews: 1497, currentPrice: 911.43, oldPrice: 1229.00 ,quantite:1, condition: "Parfait état", vendu_avec: "Câble de chargement"},
       ];
-
       /* le usestate pour capturer les modification des input de modele */
       const [checkeditem, setCheckedItem] = useState({
         peuimport:false,
@@ -204,18 +203,36 @@ function IPhone() {
         return filtredproducts;
       }
       
+      function addToCart(product) {
+          // Récupérer les données utilisateurs depuis le localStorage
+        const formData = JSON.parse(localStorage.getItem("formData")) || [];
+        const loggedInEmail = localStorage.getItem("isLoggedEmail"); // Email de l'utilisateur connecté
+
+        // Trouver l'utilisateur connecté
+        const currentUserIndex = formData.findIndex(user => user.email === loggedInEmail);
+
+        if (currentUserIndex !== -1) {
+          // Ajouter le produit au panier de l'utilisateur connecté
+          const currentUser = formData[currentUserIndex];
+          currentUser.cart = currentUser.cart || []; // Initialiser le panier si inexistant
+          currentUser.cart.push(product);
+
+          // Mettre à jour les données dans formData
+          formData[currentUserIndex] = currentUser;
+          localStorage.setItem("formData", JSON.stringify(formData));
+        }
+      }
+      
 
     return (
         <>
         <div className="iphonepage">
           {/* la partie qui se situe avant la partie des filtre et du catalogue */}
-          {/* la partie pour savoir ou on se situe */}
+          <div className="container">
+              {/* la partie pour savoir ou on se situe */}
               <nav className="breadcrumb">
                 <a href="/">Accueil</a> &gt; <a href="/Smartphones">Smartphones</a> &gt; <span>Tous les iPhones</span>
               </nav>
-              {/*modification here */}
-          <div className="container">
-              
               {/* le contenaire qui contient les services de notre application */}
               <div className="infoserviceContainer">
                   <div className="Info">
@@ -429,6 +446,10 @@ function IPhone() {
                                 <h4 className="courantprice">{item.currentPrice} €</h4>
                                 <h4 className="oldprice">{item.oldPrice} € neuf</h4>
                               </div>
+                            </div>
+                            <div className="overlay">
+                              <button className="overlay-btn" onClick={() => addToCart(item)}>Ajouter au panier</button>
+                              <button className="overlay-btn">Voir le détail</button>
                             </div>
                         </div>)
                     })

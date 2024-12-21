@@ -8,6 +8,7 @@ function Inscription() {
         email: '',
         password: '',
         confirmpassword: '',
+        cart:[],
     });
 
     const [errors, setErrors] = useState({});
@@ -79,6 +80,7 @@ function Inscription() {
             email: '',
             password: '',
             confirmpassword: '',
+            cart:[]
         });
 
         // Set success message
