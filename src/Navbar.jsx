@@ -31,6 +31,16 @@ const Navbar = ({ isLoggedIn, handleLogout }) => {
     }, 2000); // Attente de 2 secondes
   };
 
+const formData = JSON.parse(localStorage.getItem("formData")) || [];
+const loggedInEmail = localStorage.getItem("isLoggedEmail"); // Email de l'utilisateur connecté
+
+// Trouver l'utilisateur connecté
+const currentUser = formData.find(user => user.email === loggedInEmail);
+
+// Vérifier si le panier de l'utilisateur connecté est vide
+const iscartempty = currentUser ? (currentUser.cart || []).length === 0 : true;
+
+
   return (
     <>
       {/* Overlay de chargement */}
@@ -63,23 +73,44 @@ const Navbar = ({ isLoggedIn, handleLogout }) => {
               🛒
               {activeDropdown === "cart" && (
                 <div className="dropdown-menu">
-                  {
-                    isLoggedIn ? 
-                    (
+                {isLoggedIn ? (
+                    iscartempty ? (
                       <>
-                        <p>Votre panier est vide</p>
-                        <Link to={"/panier"}>Voir le panier</Link>
+                          <p>Votre panier est vide</p>
+                          <Link
+                              to="/panier"
+                              style={{
+                                  pointerEvents: "none",
+                                  cursor: "not-allowed",
+                                  color: "gray",
+                                  textDecoration: "none",
+                                }}
+                            >
+                              Voir le panier
+                            </Link>
                       </>
+                    ) : (
+                        <>
+                            <p>Votre panier contient {currentUser.cart.length} article(s)</p>
+                            <Link
+                                to="/panier"
+                                style={{
+                                    pointerEvents: "auto",
+                                    cursor: "pointer",
+                                    textDecoration: "underline",
+                                }}
+                            >
+                                Voir le panier
+                            </Link>
+                        </>
                     )
-                    :
-                    (
-                      <>
+                ) : (
+                    <>
                         <a href="/connection">Log in</a>
-                      </>
-                    )
-                  }
-                  
-                </div>
+                    </>
+                )}
+            </div>
+            
               )}
             </div>
 

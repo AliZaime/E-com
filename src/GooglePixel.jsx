@@ -1,50 +1,88 @@
+/* eslint-disable react-hooks/exhaustive-deps */
 import React, {useState,useEffect} from "react";
-import './iPhone.css'
-import './Samsung.css'
+import './GooglePixel.css'
 
-function Samsung() {
+function GooglePixel() {
 
     const commentaire = [
-        { id: 1, client: 'Marie T.', iconColor: '#94f5bc', dateAchat: '10 octobre 2024', dateCommentaire: '1 décembre 2024', PaysCommentaire: 'France', rating: '5/5', commentaire: "J'ai acheté un Samsung Galaxy S22 Ultra chez Refondeal et je suis agréablement surprise. L'état est impeccable, pas de rayures visibles, performances au top. La batterie affiche 100% de capacité et tient très bien la charge. Je recommande ce vendeur pour tout achat reconditionné.", typeSamsung: 'Galaxy S22 Ultra', couleur: 'Noir', EtatSamsung: 'Débloqué' },
-        { id: 2, client: 'Kevin P.', iconColor: '#f0c14b', dateAchat: '5 septembre 2024', dateCommentaire: '18 septembre 2024', PaysCommentaire: 'France', rating: '4.8/5', commentaire: "Premier achat sur un site de reconditionné avec ce Samsung Galaxy Z Flip 4 et je suis ravi. Le téléphone est quasiment comme neuf, quelques légères marques sur la charnière mais rien de gênant. Batterie parfaite à 100%, je n'ai rien à redire, c'est une excellente alternative au neuf.", typeSamsung: 'Galaxy Z Flip 4', couleur: 'Lavande', EtatSamsung: 'Débloqué' },
-        { id: 3, client: 'Sophie L.', iconColor: '#edeff3', dateAchat: '22 février 2024', dateCommentaire: '5 mars 2024', PaysCommentaire: 'France', rating: '4.5/5', commentaire: "J'ai acheté un Galaxy A54 en parfait état et il tient ses promesses. Quelques micro-rayures visibles en lumière directe, mais rien de grave pour du reconditionné. Batterie à 95%, ce qui reste correct, et le téléphone fonctionne parfaitement. Très bonne expérience globale.", typeSamsung: 'Galaxy A54', couleur: 'Vert', EtatSamsung: 'Débloqué' }
+        { 
+            id: 1, 
+            client: 'Emma R.', 
+            iconColor: '#94f5bc', 
+            dateAchat: '15 octobre 2024', 
+            dateCommentaire: '5 novembre 2024', 
+            PaysCommentaire: 'France', 
+            rating: '5/5', 
+            commentaire: "J'ai acheté un Google Pixel 8 Pro chez Refondeal et je suis totalement satisfaite. Le téléphone est comme neuf, sans rayures visibles, et fonctionne parfaitement. La batterie est à 100% et tient toute la journée sans problème. Un excellent rapport qualité-prix pour un téléphone reconditionné.", 
+            typeSamsung: 'Google Pixel 8 Pro', 
+            couleur: 'Noir', 
+            EtatSamsung: 'Débloqué'
+        },
+        { 
+            id: 2, 
+            client: 'Lucas B.', 
+            iconColor: '#f0c14b', 
+            dateAchat: '1 septembre 2024', 
+            dateCommentaire: '20 septembre 2024', 
+            PaysCommentaire: 'France', 
+            rating: '4.8/5', 
+            commentaire: "Achat du Google Pixel 8, et je ne suis pas déçu. Le téléphone est quasiment neuf, aucun signe d'usure majeur, juste quelques micro-rayures invisibles à l'œil nu. La batterie tient une journée entière à pleine charge, et l'expérience Android pure est un vrai régal. Je recommande sans hésiter.", 
+            typeSamsung: 'Google Pixel 8', 
+            couleur: 'Blanc', 
+            EtatSamsung: 'Débloqué'
+        },
+        { 
+            id: 3, 
+            client: 'Julien T.', 
+            iconColor: '#edeff3', 
+            dateAchat: '18 février 2024', 
+            dateCommentaire: '7 mars 2024', 
+            PaysCommentaire: 'France', 
+            rating: '4.5/5', 
+            commentaire: "J'ai acheté un Google Pixel 7 Pro et l'état est excellent. Très peu de rayures visibles et la batterie est encore à 95%, ce qui est plus que correct. L'écran OLED est magnifique et l'appareil photo fait de très belles photos. Très bonne expérience de reconditionné.", 
+            typeSamsung: 'Google Pixel 7 Pro', 
+            couleur: 'Vert', 
+            EtatSamsung: 'Débloqué'
+        }
     ];
 
     const products = [
-        { id: 1, name: 'Samsung Galaxy S23', message: "-25% vs prix neuf", image: '/samsungSmart_pic/galaxy-s23.webp', color: ['black', 'lavender', 'green', 'grey'], rating: '4.5/5', reviews: 15264, currentPrice: 599.99, oldPrice: 799.99, quantite: 1, condition: "Parfait état", vendu_avec: "Câble de chargement et adaptateur secteur" },
-        { id: 2, name: 'Samsung Galaxy S22 Ultra', message: "top vente", image: '/samsungSmart_pic/galaxy-s22-ultra.avif', color: ['black', 'white', 'green'], rating: '4.7/5', reviews: 12468, currentPrice: 899.99, oldPrice: 1299.99, quantite: 1, condition: "Parfait état", vendu_avec: "Câble de chargement" },
-        { id: 3, name: 'Samsung Galaxy Z Flip 4', message: "top vente", image: '/samsungSmart_pic/galaxy-z-flip4.avif', color: ['violet', 'black', 'gold', 'blue'], rating: '4.3/5', reviews: 8423, currentPrice: 849.99, oldPrice: 1099.99, quantite: 1, condition: "Parfait état", vendu_avec: "Câble de chargement" },
-        { id: 4, name: 'Samsung Galaxy A54', message: "top vente", image: '/samsungSmart_pic/galaxy-a54.avif', color: ['lime', 'black', 'white', 'violet'], rating: '4.2/5', reviews: 6524, currentPrice: 349.99, oldPrice: 449.99, quantite: 1, condition: "Parfait état", vendu_avec: "Câble de chargement" },
-        { id: 5, name: 'Samsung Galaxy S21 FE', message: "", image: '/samsungSmart_pic/S21FE.png', color: ['lavender', 'olive', 'white'], rating: '4.4/5', reviews: 5120, currentPrice: 499.99, oldPrice: 699.99, quantite: 1, condition: "Parfait état", vendu_avec: "Câble de chargement" },
-        { id: 6, name: 'Samsung Galaxy Z Fold 4', message: "", image: '/samsungSmart_pic/galaxy-z-fold4.avif', color: ['beige', 'black', 'green', 'grey'], rating: '4.6/5', reviews: 3624, currentPrice: 1599.99, oldPrice: 1999.99, quantite: 1, condition: "Parfait état", vendu_avec: "Câble de chargement et S Pen" },
-        { id: 7, name: 'Samsung Galaxy Note 20 Ultra', message: "", image: '/samsungSmart_pic/galaxy-note20-ultra.avif', color: ['beige', 'black', 'white'], rating: '4.5/5', reviews: 10528, currentPrice: 649.99, oldPrice: 1299.99, quantite: 1, condition: "Parfait état", vendu_avec: "Câble de chargement" },
-        { id: 8, name: 'Samsung Galaxy S20', message: "", image: '/samsungSmart_pic/s20.webp', color: ['blue', 'grey', 'pink', 'white'], rating: '4.3/5', reviews: 8203, currentPrice: 299.99, oldPrice: 999.99, quantite: 1, condition: "Parfait état", vendu_avec: "Câble de chargement" },
-        { id: 9, name: 'Samsung Galaxy A14', message: "", image: '/samsungSmart_pic/galaxy-a54.avif', color: ['black', 'silver', 'red', 'green'], rating: '4.1/5', reviews: 2150, currentPrice: 199.99, oldPrice: 249.99, quantite: 1, condition: "Parfait état", vendu_avec: "Câble de chargement" },
-        { id: 10, name: 'Samsung Galaxy S23 Ultra', message: "", image: '/samsungSmart_pic/samsung-galaxy-s23-ultra.webp', color: ['black', 'green', 'lavender'], rating: '4.8/5', reviews: 5129, currentPrice: 1199.99, oldPrice: 1399.99, quantite: 1, condition: "Parfait état", vendu_avec: "Câble de chargement et S Pen" },
-        { id: 11, name: 'Samsung Galaxy A32', message: "-20% aujourd'hui", image: '/samsungSmart_pic/A32.avif', color: ['black', 'white', 'blue'], rating: '4.0/5', reviews: 3249, currentPrice: 219.99, oldPrice: 299.99, quantite: 1, condition: "Parfait état", vendu_avec: "Câble de chargement" },
-        { id: 14, name: 'Samsung Galaxy A23', message: "", image: '/samsungSmart_pic/A23.webp', color: ['orange', 'blue', 'black'], rating: '4.2/5', reviews: 2890, currentPrice: 199.99, oldPrice: 249.99, quantite: 1, condition: "Parfait état", vendu_avec: "Câble de chargement" },
-        { id: 15, name: 'Samsung Galaxy A13', message: "", image: '/samsungSmart_pic/A13.png', color: ['black', 'white', 'green'], rating: '4.0/5', reviews: 1849, currentPrice: 149.99, oldPrice: 199.99, quantite: 1, condition: "Parfait état", vendu_avec: "Câble de chargement" },
-        { id: 16, name: 'Samsung Galaxy M33', message: "", image: '/samsungSmart_pic/M33.png', color: ['blue', 'black'], rating: '4.1/5', reviews: 1549, currentPrice: 279.99, oldPrice: 349.99, quantite: 1, condition: "Parfait état", vendu_avec: "Câble de chargement" },
-        { id: 17, name: 'Samsung Galaxy F14', message: "", image: '/samsungSmart_pic/F14.avif', color: ['green', 'black', 'violet'], rating: '4.0/5', reviews: 1045, currentPrice: 179.99, oldPrice: 229.99, quantite: 1, condition: "Parfait état", vendu_avec: "Câble de chargement" },
-        { id: 18, name: 'Samsung Galaxy S10+', message: "", image: '/samsungSmart_pic/s10.png', color: ['black', 'white'], rating: '4.2/5', reviews: 3421, currentPrice: 249.99, oldPrice: 799.99, quantite: 1, condition: "Parfait état", vendu_avec: "Câble de chargement" },
-        { id: 19, name: 'Samsung Galaxy A50', message: "", image: '/samsungSmart_pic/A50.webp', color: ['black', 'blue', 'white'], rating: '4.1/5', reviews: 2714, currentPrice: 229.99, oldPrice: 299.99, quantite: 1, condition: "Parfait état", vendu_avec: "Câble de chargement" },
-        { id: 21, name: 'Samsung Galaxy S9', message: "Économique", image: '/samsungSmart_pic/s9.png', color: ['violet', 'black'], rating: '4.1/5', reviews: 1420, currentPrice: 199.99, oldPrice: 699.99, quantite: 1, condition: "Parfait état", vendu_avec: "Câble de chargement" },
-        { id: 22, name: 'Samsung Galaxy Z Flip 3', message: "Promo", image: '/samsungSmart_pic/zflip3.png', color: ['blue', 'black'], rating: '4.4/5', reviews: 2751, currentPrice: 649.99, oldPrice: 999.99, quantite: 1, condition: "Parfait état", vendu_avec: "Câble de chargement" },
-        { id: 26, name: 'Samsung Galaxy A02', message: "Pas cher", image: '/samsungSmart_pic/A02.png', color: ['black', 'silver'], rating: '3.9/5', reviews: 874, currentPrice: 99.99, oldPrice: 149.99, quantite: 1, condition: "Parfait état", vendu_avec: "Câble de chargement" },
-        { id: 27, name: 'Samsung Galaxy S8', message: "Ancien modèle", image: '/samsungSmart_pic/s8.webp', color: ['black', 'silver'] , rating: '4.0/5', reviews: 1203, currentPrice: 149.99, oldPrice: 599.99, quantite: 1, condition: "Parfait état", vendu_avec: "Câble de chargement" },
-        { id: 28, name: 'Samsung Galaxy A11', message: "Top deal", image: '/samsungSmart_pic/A11.webp', color: ['red', 'blue', 'black'], rating: '4.0/5', reviews: 1341, currentPrice: 139.99, oldPrice: 199.99, quantite: 1, condition: "Parfait état", vendu_avec: "Câble de chargement" },
-        { id: 29, name: 'Samsung Galaxy J7 Prime', message: "Budget", image: '/samsungSmart_pic/J7prime.png', color: ['gold', 'black'], rating: '3.8/5', reviews: 932, currentPrice: 129.99, oldPrice: 199.99, quantite: 1, condition: "Parfait état", vendu_avec: "Câble de chargement" },
-        { id: 30, name: 'Samsung Galaxy M11', message: "Promo", image: '/samsungSmart_pic/M11.webp', color: ['violet', 'black'], rating: '3.9/5', reviews: 641, currentPrice: 119.99, oldPrice: 179.99, quantite: 1, condition: "Parfait état", vendu_avec: "Câble de chargement" },
+        { id: 1, name: 'Google Pixel 6', message: "-25% vs prix neuf", image: '/GooglePixel_pic/GooglePixel6.png', color: ['black', 'lavender', 'green', 'grey'], rating: '4.5/5', reviews: 15264, currentPrice: 599.99, oldPrice: 799.99, quantite: 1, condition: "Parfait état", vendu_avec: "Câble de chargement et adaptateur secteur" },
+        { id: 2, name: 'Google Pixel 6 Pro', message: "top vente", image: '/GooglePixel_pic/GooglePixel6pro.png', color: ['black', 'white', 'green'], rating: '4.7/5', reviews: 12468, currentPrice: 899.99, oldPrice: 1299.99, quantite: 1, condition: "Parfait état", vendu_avec: "Câble de chargement" },
+        { id: 3, name: 'Google Pixel 5', message: "top vente", image: '/GooglePixel_pic/GooglePixel5.png', color: ['violet', 'black', 'gold', 'blue'], rating: '4.3/5', reviews: 8423, currentPrice: 849.99, oldPrice: 1099.99, quantite: 1, condition: "Parfait état", vendu_avec: "Câble de chargement" },
+        { id: 4, name: 'Google Pixel 4a', message: "top vente", image: '/GooglePixel_pic/GooglePixel4a.png', color: ['lime', 'black', 'white', 'violet'], rating: '4.2/5', reviews: 6524, currentPrice: 349.99, oldPrice: 449.99, quantite: 1, condition: "Parfait état", vendu_avec: "Câble de chargement" },
+        { id: 5, name: 'Google Pixel 4', message: "", image: '/GooglePixel_pic/GooglePixel4.png', color: ['lavender', 'olive', 'white'], rating: '4.4/5', reviews: 5120, currentPrice: 499.99, oldPrice: 699.99, quantite: 1, condition: "Parfait état", vendu_avec: "Câble de chargement" },
+        { id: 6, name: 'Google Pixel 3a', message: "", image: '/GooglePixel_pic/GooglePixel3a.png', color: ['beige', 'black', 'green', 'grey'], rating: '4.6/5', reviews: 3624, currentPrice: 1599.99, oldPrice: 1999.99, quantite: 1, condition: "Parfait état", vendu_avec: "Câble de chargement et S Pen" },
+        { id: 7, name: 'Google Pixel 3 XL', message: "", image: '/GooglePixel_pic/GooglePixel3XL.png', color: ['beige', 'black', 'white'], rating: '4.5/5', reviews: 10528, currentPrice: 649.99, oldPrice: 1299.99, quantite: 1, condition: "Parfait état", vendu_avec: "Câble de chargement" },
+        { id: 8, name: 'Google Pixel 2', message: "", image: '/GooglePixel_pic/GooglePixel2.png', color: ['blue', 'grey', 'pink', 'white'], rating: '4.3/5', reviews: 8203, currentPrice: 299.99, oldPrice: 999.99, quantite: 1, condition: "Parfait état", vendu_avec: "Câble de chargement" },
+        { id: 9, name: 'Google Pixel 2 XL', message: "", image: '/GooglePixel_pic/GooglePixel2XL.png', color: ['black', 'silver', 'red', 'green'], rating: '4.1/5', reviews: 2150, currentPrice: 199.99, oldPrice: 249.99, quantite: 1, condition: "Parfait état", vendu_avec: "Câble de chargement" },
+        { id: 10, name: 'Google Pixel 7', message: "", image: '/GooglePixel_pic/GooglePixel7.png', color: ['black', 'green', 'lavender'], rating: '4.8/5', reviews: 5129, currentPrice: 1199.99, oldPrice: 1399.99, quantite: 1, condition: "Parfait état", vendu_avec: "Câble de chargement et S Pen" },
+        { id: 11, name: 'Google Pixel 8', message: "-20% aujourd'hui", image: '/GooglePixel_pic/GooglePixel8.png', color: ['black', 'white', 'blue'], rating: '4.0/5', reviews: 3249, currentPrice: 219.99, oldPrice: 299.99, quantite: 1, condition: "Parfait état", vendu_avec: "Câble de chargement" },
+        { id: 14, name: 'Google Pixel 8 pro', message: "", image: '/GooglePixel_pic/GooglePixel8pro.png', color: ['orange', 'blue', 'black'], rating: '4.2/5', reviews: 2890, currentPrice: 199.99, oldPrice: 249.99, quantite: 1, condition: "Parfait état", vendu_avec: "Câble de chargement" },
+        { id: 15, name: 'Google Pixel 9', message: "", image: '/GooglePixel_pic/GooglePixel9.png', color: ['black', 'white', 'green'], rating: '4.0/5', reviews: 1849, currentPrice: 149.99, oldPrice: 199.99, quantite: 1, condition: "Parfait état", vendu_avec: "Câble de chargement" },
+        { id: 16, name: 'Google Pixel 9 pro', message: "", image: '/GooglePixel_pic/GooglePixel9pro.png', color: ['blue', 'black'], rating: '4.1/5', reviews: 1549, currentPrice: 279.99, oldPrice: 349.99, quantite: 1, condition: "Parfait état", vendu_avec: "Câble de chargement" },
+        { id: 17, name: 'Google Pixel Fold', message: "", image: '/GooglePixel_pic/GooglePixelFold.png', color: ['green', 'black', 'violet'], rating: '4.0/5', reviews: 1045, currentPrice: 179.99, oldPrice: 229.99, quantite: 1, condition: "Parfait état", vendu_avec: "Câble de chargement" },
+        { id: 18, name: 'Google Pixel 10', message: "", image: '/GooglePixel_pic/GooglePixel9.png', color: ['black', 'white'], rating: '4.2/5', reviews: 3421, currentPrice: 249.99, oldPrice: 799.99, quantite: 1, condition: "Parfait état", vendu_avec: "Câble de chargement" },
     ];
       /* le usestate pour capturer les modification des input de modele */
       const [checkeditem, setCheckedItem] = useState({
         peuimport:false,
-        serieA:false,
-        serieS:false,
-        serieM:false,
-        serieZ:false,
-        serieNote:false,
-        serieJ:false,
+        serie2:false,
+        serie2XL:false,
+        serie3a:false,
+        serie3XL:false,
+        serie4:false,
+        serie4a:false,
+        serie5:false,
+        serie6:false,
+        serie6pro:false,
+        serie7:false,
+        serie8:false,
+        serie8pro:false,
+        serie9:false,
+        serie9pro:false,
+        serieFold:false,
+        serie10:false,
       });
 
       /*la fonction qui est charger du check unique des input de modele*/
@@ -54,12 +92,22 @@ function Samsung() {
         if(checked){
           setCheckedItem({
             peuimport: name === "peuimport",
-            serieA: name === "serieA",
-            serieS: name === "serieS",
-            serieM: name === "serieM",
-            serieZ: name === "serieZ",
-            serieNote: name === "serieNote",
-            serieJ: name === "serieJ",
+            serie2:name === "serie2",
+            serie2XL:name === "serie2XL",
+            serie3a:name === "serie3a",
+            serie3XL:name=== "serie3XL",
+            serie4:name === "serie4",
+            serie4a:name === "serie4a",
+            serie5:name === "serie5",
+            serie6:name === "serie6",
+            serie6pro:name === "serie6pro",
+            serie7:name === "serie7",
+            serie8:name === "serie8",
+            serie8pro:name === "serie8pro",
+            serie9:name === "serie9",
+            serie9pro:name === "serie9pro",
+            serieFold:name === "serieFold",
+            serie10:name === "serie10",
             });
           }
           else{
@@ -203,32 +251,85 @@ function Samsung() {
               : true;
       
           // Filtrage spécifique à la série "SerieA"
-          const isSerieAMatched = 
-            checkeditem["serieA"] && 
-            product.name.toLowerCase().startsWith("samsung galaxy a");
+          const isSerie2Matched = 
+            checkeditem["serie2"]&& 
+            product.name.toLowerCase() === "google pixel 2";
       
           // Filtrage spécifique à la série "SerieS"
-          const isSerieSMatched = 
-            checkeditem["serieS"] && 
-            product.name.toLowerCase().startsWith("samsung galaxy s");
+          const isSerie2XLMatched = 
+            checkeditem["serie2XL"]&& 
+            product.name.toLowerCase() === "google pixel 2 xl"; 
       
-          // Filtrage spécifique à la série "SerieZ"
-          const isSerieZMatched = 
-            checkeditem["serieZ"] && 
-            product.name.toLowerCase().startsWith("samsung galaxy z");
+          // Filtrage spécifique à la série "SerieS"
+          const isSerie3aMatched = 
+            checkeditem["serie3a"]&& 
+            product.name.toLowerCase() === "google pixel 3a";
       
-          // Filtrage spécifique à la série "SerieM"
-          const isSerieMMatched = 
-            checkeditem["serieM"] && 
-            product.name.toLowerCase().startsWith("samsung galaxy m");
+          // Filtrage spécifique à la série "SerieS"
+          const isSerie3XLMatched = 
+            checkeditem["serie3XL"]&& 
+            product.name.toLowerCase() === "google pixel 3 xl";
 
-          const isSerieJMatched = 
-            checkeditem["serieJ"] && 
-            product.name.toLowerCase().startsWith("samsung galaxy j");
+          // Filtrage spécifique à la série "SerieS"
+          const isSerie4Matched = 
+            checkeditem["serie4"]&& 
+            product.name.toLowerCase() === "google pixel 4";
 
-          const isSerieNoteMatched =
-            checkeditem["serieNote"] && 
-            product.name.toLowerCase().startsWith("samsung galaxy note");
+          // Filtrage spécifique à la série "SerieS"
+          const isSerie4aMatched = 
+            checkeditem["serie4a"]&& 
+            product.name.toLowerCase() === "google pixel 4a";
+        
+          // Filtrage spécifique à la série "SerieS"
+          const isSerie5Matched = 
+            checkeditem["serie5"]&& 
+            product.name.toLowerCase() === "google pixel 5";  
+          
+          // Filtrage spécifique à la série "SerieS"
+          const isSerie6Matched = 
+            checkeditem["serie6"]&& 
+            product.name.toLowerCase() === "google pixel 6";
+            
+            // Filtrage spécifique à la série "SerieS"
+          const isSerie6proMatched = 
+          checkeditem["serie6pro"]&& 
+          product.name.toLowerCase() === "google pixel 6 pro";
+
+          // Filtrage spécifique à la série "SerieS"
+          const isSerie7Matched = 
+            checkeditem["serie7"]&& 
+            product.name.toLowerCase() === "google pixel 7";
+
+            // Filtrage spécifique à la série "SerieS"
+          const isSerie8Matched = 
+          checkeditem["serie8"]&& 
+          product.name.toLowerCase() === "google pixel 8";
+
+          // Filtrage spécifique à la série "SerieS"
+          const isSerie8proMatched = 
+            checkeditem["serie8pro"]&& 
+            product.name.toLowerCase() === "google pixel 8 pro";
+
+            // Filtrage spécifique à la série "SerieS"
+          const isSerie9proMatched = 
+          checkeditem["serie9pro"]&& 
+          product.name.toLowerCase() === "google pixel 9 pro";
+
+          // Filtrage spécifique à la série "SerieS"
+          const isSerie9Matched = 
+            checkeditem["serie9"]&& 
+            product.name.toLowerCase() === "google pixel 9";
+
+            // Filtrage spécifique à la série "SerieS"
+          const isSerie10Matched = 
+          checkeditem["serie10"]&& 
+          product.name.toLowerCase() === "google pixel 10";
+
+            // Filtrage spécifique à la série "SerieS"
+          const isSerieFoldMatched = 
+          checkeditem["serieFold"]&& 
+          product.name.toLowerCase() === "google pixel fold";
+            
       
           // Filtrage par couleur
           const isColorMatched =
@@ -246,7 +347,7 @@ function Samsung() {
             (maxprice === 2000 || product.currentPrice <= maxprice);
       
           // Retourner si le produit respecte tous les critères
-          return (isModelMatched || isSerieAMatched || isSerieSMatched || isSerieZMatched || isSerieMMatched || isSerieJMatched || isSerieNoteMatched) && isColorMatched && isPriceMatched;
+          return (isModelMatched || isSerie2Matched || isSerie2XLMatched || isSerie3aMatched || isSerie3XLMatched || isSerie4Matched || isSerie4aMatched || isSerie5Matched || isSerie6Matched || isSerie6proMatched || isSerie7Matched || isSerie8Matched || isSerie8proMatched || isSerie9Matched || isSerie9proMatched || isSerie10Matched || isSerieFoldMatched) && isColorMatched && isPriceMatched;
         });
       
         // Tri des produits selon le prix si un tri est sélectionné
@@ -290,12 +391,11 @@ function Samsung() {
         <>
         <div className="iphonepage">
           {/* la partie qui se situe avant la partie des filtre et du catalogue */}
-          {/* la partie pour savoir ou on se situe */}
-              <nav className="breadcrumb">
-                <a href="/">Accueil</a> &gt; <a href="/Smartphones">Smartphones</a> &gt; <span>Tous les Samsung</span>
-              </nav>
+          <nav className="breadcrumb">
+                <a href="/">Accueil</a> &gt; <a href="/Smartphones">Smartphones</a> &gt; <span>Google Pixel</span>
+          </nav>
           <div className="container">
-              
+              {/* la partie pour savoir ou on se situe */}
               {/* le contenaire qui contient les services de notre application */}
               <div className="infoserviceContainer">
                   <div className="Info">
@@ -321,8 +421,8 @@ function Samsung() {
             <div className="intro">
               {/* une introduction avec un titre et un paragraphe */}
                 <div className="sometext">
-                  <h1>iPhone reconditionnés</h1>
-                  <p>Vous cherchez un Samsung reconditionné ? Bingo ! Nous sommes les maîtres des offres Samsung reconditionnés. Nos Samsung offrent le meilleur des deux mondes : prix et qualité. Samsung S24 Ultra, Samsung S22, Samsung A51, Samsung M30, nous les avons tous.</p>
+                  <h1>Google Pixel reconditionnés</h1>
+                  <p>Vous cherchez un Google Pixel reconditionné ? Bingo ! Nous sommes les maîtres des offres Google Pixel reconditionnés. Nos Google Pixel offrent le meilleur des deux mondes.</p>
                 </div>
                 {/* le filtre de trie par prix croissant ou décroissant */}
                 <div class="sort-container">
@@ -371,33 +471,83 @@ function Samsung() {
                           </label>
                               
                           <label>
-                            <input type="checkbox" name="serieS"  checked={checkeditem.serieS} onChange={handleCheckboxChange}/>
-                            Serie S
+                            <input type="checkbox" name="serie2"  checked={checkeditem.serie2} onChange={handleCheckboxChange}/>
+                            Serie 2
                           </label>
                               
                           <label>
-                            <input type="checkbox" name="serieA" checked={checkeditem.serieA}  onChange={handleCheckboxChange}/>
-                            Serie A
+                            <input type="checkbox" name="serie2XL" checked={checkeditem.serie2XL}  onChange={handleCheckboxChange}/>
+                            Serie 2XL
                           </label>
                               
                           <label>
-                            <input type="checkbox" name="serieZ"  checked={checkeditem.serieZ} onChange={handleCheckboxChange}/>
-                            Serie Z
+                            <input type="checkbox" name="serie3a"  checked={checkeditem.serie3a} onChange={handleCheckboxChange}/>
+                            Serie 3a
                           </label>
                               
                           <label>
-                            <input type="checkbox" name="serieM"  checked={checkeditem.serieM} onChange={handleCheckboxChange}/>
-                            Serie M
+                            <input type="checkbox" name="serie3XL"  checked={checkeditem.serie3XL} onChange={handleCheckboxChange}/>
+                            Serie 3XL
                           </label>
 
                           <label>
-                            <input type="checkbox" name="serieJ"  checked={checkeditem.serieJ} onChange={handleCheckboxChange}/>
-                            Serie J
+                            <input type="checkbox" name="serie4"  checked={checkeditem.serie4} onChange={handleCheckboxChange}/>
+                            Serie 4
                           </label>
 
                           <label>
-                            <input type="checkbox" name="serieNote"  checked={checkeditem.serieNote} onChange={handleCheckboxChange}/>
-                            Serie Note
+                            <input type="checkbox" name="serie4a"  checked={checkeditem.serie4a} onChange={handleCheckboxChange}/>
+                            Serie 4a
+                          </label>
+
+                          <label>
+                            <input type="checkbox" name="serie5"  checked={checkeditem.serie5} onChange={handleCheckboxChange}/>
+                            Serie 5
+                          </label>
+
+                          <label>
+                            <input type="checkbox" name="serie6"  checked={checkeditem.serie6} onChange={handleCheckboxChange}/>
+                            Serie 6
+                          </label>
+
+                          <label>
+                            <input type="checkbox" name="serie6pro"  checked={checkeditem.serie6pro} onChange={handleCheckboxChange}/>
+                            Serie 6 pro
+                          </label>
+
+                          <label>
+                            <input type="checkbox" name="serie7"  checked={checkeditem.serie7} onChange={handleCheckboxChange}/>
+                            Serie 7
+                          </label>
+
+                          <label>
+                            <input type="checkbox" name="serie8"  checked={checkeditem.serie8} onChange={handleCheckboxChange}/>
+                            Serie 8
+                          </label>
+
+                          <label>
+                            <input type="checkbox" name="serie8pro"  checked={checkeditem.serie8pro} onChange={handleCheckboxChange}/>
+                            Serie 8 pro
+                          </label>
+
+                          <label>
+                            <input type="checkbox" name="serie9"  checked={checkeditem.serie9} onChange={handleCheckboxChange}/>
+                            Serie 9
+                          </label>
+
+                          <label>
+                            <input type="checkbox" name="serie9pro"  checked={checkeditem.serie9pro} onChange={handleCheckboxChange}/>
+                            Serie 9 pro
+                          </label>
+
+                          <label>
+                            <input type="checkbox" name="serieFold"  checked={checkeditem.serieFold} onChange={handleCheckboxChange}/>
+                            Serie Fold
+                          </label>
+
+                          <label>
+                            <input type="checkbox" name="serie10"  checked={checkeditem.serie10} onChange={handleCheckboxChange}/>
+                            Serie 10
                           </label>
                     
                         </div>
@@ -589,4 +739,4 @@ function Samsung() {
     )
   }
 
-export default Samsung;
+export default GooglePixel;

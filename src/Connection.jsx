@@ -1,15 +1,12 @@
 import "./Connection.css";
-import React, { useState } from "react";
+import React, { useState,useEffect } from "react";
 import { useNavigate, Link } from "react-router-dom";
 
 function Connection({ handleLogin }) {
     const navigate = useNavigate(); // Initialisation de la navigation
-    const data = [
-        { mail: "hmizourais557@gmail.com", password: "hamzay989" },
-        { mail: "hamzaraisbussi@gmail.com", password: "Halamadrid2004" },
-        { mail: "h.rais@esisa.ac.ma", password: "hamzayxq" },
-        { mail: "hamzarais798@gmail.com", password: "iftahyasimsim" },
-    ];
+    const data = JSON.parse(localStorage.getItem("formData"))
+
+    console.log(data)
 
     const [passwordVisible, setPasswordVisible] = useState(false);
     const [email, setEmail] = useState("");
@@ -32,13 +29,15 @@ function Connection({ handleLogin }) {
     };
 
     const verifierconnexion = () => {
-        const userFound = data.some(
-            (item) => item.mail === email.trim() && item.password === password.trim()
+        const userFound = data.find(
+            (item) => item.email === email.trim() && item.password === password.trim()
         );
 
         if (userFound) {
             setMessage("Connexion réussie !");
             setMessageClass("succes");
+            localStorage.setItem("cart", JSON.stringify(userFound.cart || []));
+            localStorage.setItem("isLoggedEmail",userFound.email);
             localStorage.setItem("isLogged", "connecter");
             handleLogin(); // Appelle la fonction de connexion du parent
             setTimeout(() => {

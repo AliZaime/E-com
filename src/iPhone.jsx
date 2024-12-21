@@ -204,17 +204,23 @@ function IPhone() {
       }
       
       function addToCart(product) {
-        // Récupérer le panier depuis le localStorage ou initialiser une liste vide
-        const cart = JSON.parse(localStorage.getItem("cart")) || [];
-      
-        // Ajouter le produit au panier
-        cart.push(product);
-      
-        // Mettre à jour le localStorage
-        localStorage.setItem("cart", JSON.stringify(cart));
-      
-        // Optionnel : notifier l'utilisateur que le produit a été ajouté
-        alert(`${product.name} a été ajouté au panier.`);
+          // Récupérer les données utilisateurs depuis le localStorage
+        const formData = JSON.parse(localStorage.getItem("formData")) || [];
+        const loggedInEmail = localStorage.getItem("isLoggedEmail"); // Email de l'utilisateur connecté
+
+        // Trouver l'utilisateur connecté
+        const currentUserIndex = formData.findIndex(user => user.email === loggedInEmail);
+
+        if (currentUserIndex !== -1) {
+          // Ajouter le produit au panier de l'utilisateur connecté
+          const currentUser = formData[currentUserIndex];
+          currentUser.cart = currentUser.cart || []; // Initialiser le panier si inexistant
+          currentUser.cart.push(product);
+
+          // Mettre à jour les données dans formData
+          formData[currentUserIndex] = currentUser;
+          localStorage.setItem("formData", JSON.stringify(formData));
+        }
       }
       
 
