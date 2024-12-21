@@ -18,6 +18,7 @@ import ContactUs from './ContactUs';
 import LostPassword from './LostPassword';
 import Panier from './Panier';
 import PaymentForm from './Paymentform';
+import Samsung from './Samsung';
 
 
 function App() {
@@ -64,6 +65,7 @@ function App() {
             <Route path="/ContactUs" element={< ContactUs />} />
             <Route path="/panier" element={<Panier />} />
             <Route path="/Paiment" element={<PaymentForm />} />
+            <Route path="/smartphones/Samsung" element={<Samsung />} />
           </Routes>
         </main>
         {/*tst*/}
