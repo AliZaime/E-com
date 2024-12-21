@@ -20,6 +20,7 @@ import Panier from './Panier';
 import PaymentForm from './Paymentform';
 import Samsung from './Samsung';
 import GooglePixel from './GooglePixel';
+import ProductPage from './Product';
 
 
 function App() {
@@ -68,6 +69,7 @@ function App() {
             <Route path="/Paiment" element={<PaymentForm />} />
             <Route path="/smartphones/Samsung" element={<Samsung />} />
             <Route path="/smartphones/GooglePixel" element={<GooglePixel />} />
+            <Route path="/Prd" element={<ProductPage />} />
           </Routes>
         </main>
         {/*tst*/}
