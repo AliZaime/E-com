@@ -18,12 +18,16 @@ function Inscription() {
     const [errors, setErrors] = useState({});
     const [successMessage, setSuccessMessage] = useState('');
 
-    // Handle input changes for text fields
+    const isEmailExists = (email) => {
+        const storedData = JSON.parse(localStorage.getItem('formData')) || [];
+        return storedData.some((data) => data.email === email);
+    };
+
     const handleInputChange = (e) => {
         const { name, value } = e.target;
         setFormData({
             ...formData,
-            [name]: value,
+            [name]: value, // Removed `trim()` to allow spaces
         });
 
         setErrors((prevErrors) => ({
@@ -32,7 +36,6 @@ function Inscription() {
         }));
     };
 
-    // Handle PhoneInput change
     const handlePhoneChange = (value) => {
         setFormData({
             ...formData,
@@ -46,13 +49,12 @@ function Inscription() {
     };
 
     // Validation helpers
-    const validateName = (name) => /^[A-Za-z]+$/.test(name);
+    const validateName = (name) => /^[A-Za-z]+(\s[A-Za-z]+)*$/.test(name);
     const validateEmail = (email) => /^\S+@\S+\.\S+$/.test(email);
     const validatePassword = (password) => password.length >= 6;
     const validatePhone = (phone) => phone && phone.length >= 10; // Adjust for country-specific rules
     const validateAdresse = (adresse) => /^.{5,100}$/.test(adresse);
 
-    // Validate all inputs
     const validateInputs = () => {
         const newErrors = {};
 
@@ -82,7 +84,6 @@ function Inscription() {
         return Object.keys(newErrors).length === 0;
     };
 
-    // Handle form submission
     const handleSubmit = (e) => {
         e.preventDefault();
 
@@ -90,12 +91,15 @@ function Inscription() {
             return;
         }
 
-        // Save to localStorage
+        if (isEmailExists(formData.email)) {
+            setErrors({ email: 'Email already exists.' });
+            return;
+        }
+
         const existingData = JSON.parse(localStorage.getItem('formData')) || [];
         const updatedData = Array.isArray(existingData) ? [...existingData, formData] : [formData];
         localStorage.setItem('formData', JSON.stringify(updatedData));
 
-        // Reset form
         setFormData({
             firstname: '',
             lastname: '',
@@ -109,13 +113,11 @@ function Inscription() {
 
         setSuccessMessage("Registration successful!");
 
-        // Auto-hide success message
         setTimeout(() => {
             setSuccessMessage('');
         }, 3000);
     };
 
-    // UseEffect for success message cleanup
     useEffect(() => {
         if (successMessage) {
             const timer = setTimeout(() => setSuccessMessage(''), 3000);
