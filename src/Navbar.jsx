@@ -31,6 +31,8 @@ const Navbar = ({ isLoggedIn, handleLogout }) => {
     }, 2000); // Attente de 2 secondes
   };
 
+  const iscartempty = JSON.parse(localStorage.getItem("cart")).length ===0;
+
   return (
     <>
       {/* Overlay de chargement */}
@@ -63,23 +65,44 @@ const Navbar = ({ isLoggedIn, handleLogout }) => {
               🛒
               {activeDropdown === "cart" && (
                 <div className="dropdown-menu">
-                  {
-                    isLoggedIn ? 
-                    (
+                {isLoggedIn ? (
+                    iscartempty ? (
                       <>
-                        <p>Votre panier est vide</p>
-                        <Link to={"/panier"}>Voir le panier</Link>
+                          <p>Votre panier est vide</p>
+                          <Link
+                              to="/panier"
+                              style={{
+                                  pointerEvents: "none",
+                                  cursor: "not-allowed",
+                                  color: "gray",
+                                  textDecoration: "none",
+                                }}
+                            >
+                              Voir le panier
+                            </Link>
                       </>
+                    ) : (
+                        <>
+                            <p>Votre panier contient {JSON.parse(localStorage.getItem("cart")).length} article(s)</p>
+                            <Link
+                                to="/panier"
+                                style={{
+                                    pointerEvents: "auto",
+                                    cursor: "pointer",
+                                    textDecoration: "underline",
+                                }}
+                            >
+                                Voir le panier
+                            </Link>
+                        </>
                     )
-                    :
-                    (
-                      <>
+                ) : (
+                    <>
                         <a href="/connection">Log in</a>
-                      </>
-                    )
-                  }
-                  
-                </div>
+                    </>
+                )}
+            </div>
+            
               )}
             </div>
 
