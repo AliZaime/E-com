@@ -31,7 +31,15 @@ const Navbar = ({ isLoggedIn, handleLogout }) => {
     }, 2000); // Attente de 2 secondes
   };
 
-  const iscartempty = JSON.parse(localStorage.getItem("cart")).length ===0;
+const formData = JSON.parse(localStorage.getItem("formData")) || [];
+const loggedInEmail = localStorage.getItem("isLoggedEmail"); // Email de l'utilisateur connecté
+
+// Trouver l'utilisateur connecté
+const currentUser = formData.find(user => user.email === loggedInEmail);
+
+// Vérifier si le panier de l'utilisateur connecté est vide
+const iscartempty = currentUser ? (currentUser.cart || []).length === 0 : true;
+
 
   return (
     <>
@@ -83,7 +91,7 @@ const Navbar = ({ isLoggedIn, handleLogout }) => {
                       </>
                     ) : (
                         <>
-                            <p>Votre panier contient {JSON.parse(localStorage.getItem("cart")).length} article(s)</p>
+                            <p>Votre panier contient {currentUser.cart.length} article(s)</p>
                             <Link
                                 to="/panier"
                                 style={{
@@ -119,7 +127,7 @@ const Navbar = ({ isLoggedIn, handleLogout }) => {
                   ) : (
                     <>
                       <a href="/profile">Profil</a>
-                      <Link onClick={handleLogoutWithDelay} to="#">
+                      <Link onClick={handleLogoutWithDelay} to={"/"}>
                         Log out
                       </Link>
                     </>

@@ -3,16 +3,35 @@ import './Painer.css';
 import { Link } from "react-router-dom";
 
 const Panier = () => {
-    const [infoprod, setInfoprod] = useState(JSON.parse(localStorage.getItem("cart")));
+    const [infoprod, setInfoprod] = useState(() => {
+        const formData = JSON.parse(localStorage.getItem("formData")) || [];
+        const loggedInEmail = localStorage.getItem("isLoggedEmail"); // Supposez que l'email de l'utilisateur connecté est stocké ici
+        const currentUser = formData.find(user => user.email === loggedInEmail);
+    
+        // Si un utilisateur est trouvé, retourner son panier, sinon un tableau vide
+        return currentUser ? currentUser.cart || [] : [];
+    });
 
     const handleDelete = (index) => {
-        // Mise à jour de infoprod pour supprimer l'élément
-        setInfoprod((prev) => prev.filter((_, i) => i !== index));
-        
-        // Mise à jour du localStorage en supprimant l'élément concerné
-        const updatedCart = infoprod.filter((_, i) => i !== index);
-        localStorage.setItem("cart", JSON.stringify(updatedCart));
+        // Récupérer les données du localStorage
+        const formData = JSON.parse(localStorage.getItem("formData")) || [];
+        const loggedInEmail = localStorage.getItem("isLoggedEmail");
+    
+        // Trouver l'utilisateur connecté
+        const currentUser = formData.find(user => user.email === loggedInEmail);
+    
+        if (currentUser) {
+            // Mise à jour du panier de l'utilisateur connecté
+            currentUser.cart = currentUser.cart.filter((_, i) => i !== index);
+    
+            // Mettre à jour formData dans le localStorage
+            localStorage.setItem("formData", JSON.stringify(formData));
+    
+            // Mise à jour de infoprod uniquement avec le panier mis à jour de l'utilisateur connecté
+            setInfoprod(currentUser.cart);
+        }
     };
+    
 
     const calcultotalprice = () => {
         let total = 0;

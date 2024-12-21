@@ -41,6 +41,7 @@ function App() {
   const handleLogout = () => {
     setIsLoggedIn(false); // L'utilisateur se déconnecte
     localStorage.setItem("isLogged","deconnecter")
+    localStorage.setItem("isLoggedEmail","");
   };
 
   return (
