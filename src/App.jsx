@@ -20,6 +20,8 @@ import Panier from './Panier';
 import PaymentForm from './Paymentform';
 import Samsung from './Samsung';
 import GooglePixel from './GooglePixel';
+import Profil from './Profil'
+import ProductPage from './Product';
 
 
 
