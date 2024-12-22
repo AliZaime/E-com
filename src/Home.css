@@ -412,9 +412,11 @@ gap: 30px;
 
   /* Section principale */
   .home {
-    padding: 15px;
     background-color: #f9f9f9;
+    width: 100%; /* Assure que la largeur de la page est de 100% */
+    padding: 0;
   }
+
 
   /* Carrousel */
   .carousel img {
