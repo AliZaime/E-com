@@ -28,8 +28,9 @@
     background-color: white;
     border-radius: 5px;
     padding: 10px;
-
+    
 }
+
 .shopitem_image{
     display: flex;
     justify-content: center;
@@ -85,8 +86,11 @@
     gap: 5px;
     padding-top: 5%;
 }
-.intern select,.intern button{
-    height: 70%;
+.intern select{
+    height: auto;
+}
+.intern button{
+    height: 60%;
 }
 .quantite_delet select{
     padding: 5px;
@@ -266,4 +270,34 @@
 .desc p{
     font-size: .875rem;
     font-weight: 600;
+}
+@media(max-width:900px){
+    .maindiv{
+        flex-direction: column;
+        height: auto;
+    }
+    .detailpanier{
+        width: 100%;
+        height: auto;
+        overflow: visible;
+    }
+    .shopitem_info{
+        flex-direction: column;
+    }
+    .quantite_delet{
+        width: 100%;
+    }
+    .intern{
+        justify-content: space-between;
+        height: 30px;
+    }
+    .intern button{
+        height: 100%;
+    }
+    .quantite_delet p{
+        margin-left: 0;   
+    }
+    .recaptulatif{
+        width: 100%;
+    }
 }

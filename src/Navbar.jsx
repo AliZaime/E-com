@@ -126,7 +126,7 @@ const iscartempty = currentUser ? (currentUser.cart || []).length === 0 : true;
                     </>
                   ) : (
                     <>
-                      <a href="/profile">Profil</a>
+                      <Link to={"/profil"}>Profil</Link>
                       <Link onClick={handleLogoutWithDelay} to={"/"}>
                         Log out
                       </Link>

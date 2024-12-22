@@ -20,8 +20,10 @@ import Panier from './Panier';
 import PaymentForm from './Paymentform';
 import Samsung from './Samsung';
 import GooglePixel from './GooglePixel';
+import Profil from './Profil'
 import ProductPage from './Product';
 
+//pour vercel push1
 
 function App() {
   const [isLoggedIn, setIsLoggedIn] = useState(() => {
@@ -67,6 +69,7 @@ function App() {
             <Route path="/ReturnPolicy" element={< ReturnPolicy />} />
             <Route path="/ContactUs" element={< ContactUs />} />
             <Route path="/panier" element={<Panier />} />
+            <Route path="/Profil" element={<Profil />} />
             <Route path="/Paiment" element={<PaymentForm />} />
             <Route path="/smartphones/Samsung" element={<Samsung />} />
             <Route path="/smartphones/GooglePixel" element={<GooglePixel />} />

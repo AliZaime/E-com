@@ -1,5 +1,7 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import './Inscription_style.css';
+import PhoneInput from 'react-phone-number-input';
+import 'react-phone-number-input/style.css';
 
 function Inscription() {
     const [formData, setFormData] = useState({
@@ -8,100 +10,132 @@ function Inscription() {
         email: '',
         password: '',
         confirmpassword: '',
-        cart:[],
+        phone: '',
+        adresse: '',
+        cart: [],
+
     });
 
     const [errors, setErrors] = useState({});
     const [successMessage, setSuccessMessage] = useState('');
 
-    // Handle input changes
+    const isEmailExists = (email) => {
+        const storedData = JSON.parse(localStorage.getItem('formData')) || [];
+        return storedData.some((data) => data.email === email);
+    };
+
     const handleInputChange = (e) => {
         const { name, value } = e.target;
         setFormData({
             ...formData,
-            [name]: value,
+            [name]: value, // Removed `trim()` to allow spaces
         });
 
-        // Reset error for the specific field being updated
         setErrors((prevErrors) => ({
             ...prevErrors,
             [name]: '',
         }));
     };
 
-    // Validate the inputs
+    const handlePhoneChange = (value) => {
+        setFormData({
+            ...formData,
+            phone: value,
+        });
+
+        setErrors((prevErrors) => ({
+            ...prevErrors,
+            phone: '',
+        }));
+    };
+
+    // Validation helpers
+    const validateName = (name) => /^[A-Za-z]+(\s[A-Za-z]+)*$/.test(name);
+    const validateEmail = (email) => /^\S+@\S+\.\S+$/.test(email);
+    const validatePassword = (password) => password.length >= 6;
+    const validatePhone = (phone) => phone && phone.length >= 10; // Adjust for country-specific rules
+    const validateAdresse = (adresse) => /^.{5,100}$/.test(adresse);
+
     const validateInputs = () => {
         const newErrors = {};
 
-        // Check if firstname and lastname contain only letters
-        if (!/^[A-Za-z]+$/.test(formData.firstname)) {
+        if (!validateName(formData.firstname)) {
             newErrors.firstname = 'First name must contain only letters.';
         }
-        if (!/^[A-Za-z]+$/.test(formData.lastname)) {
+        if (!validateName(formData.lastname)) {
             newErrors.lastname = 'Last name must contain only letters.';
         }
-
-        // Validate email format
-        if (!/^\S+@\S+\.\S+$/.test(formData.email)) {
+        if (!validateEmail(formData.email)) {
             newErrors.email = 'Invalid email address.';
         }
-
-        // Validate passwords
         if (formData.password !== formData.confirmpassword) {
             newErrors.confirmpassword = 'Passwords do not match.';
         }
-        if (formData.password.length < 6) {
+        if (!validatePassword(formData.password)) {
             newErrors.password = 'Password must be at least 6 characters.';
+        }
+        if (!validatePhone(formData.phone)) {
+            newErrors.phone = 'Invalid phone number.';
+        }
+        if (!validateAdresse(formData.adresse)) {
+            newErrors.adresse = 'Address must be between 5 and 100 characters.';
         }
 
         setErrors(newErrors);
-        return Object.keys(newErrors).length === 0; // Return true if no errors
+        return Object.keys(newErrors).length === 0;
     };
 
-    // Handle form submission
     const handleSubmit = (e) => {
         e.preventDefault();
 
         if (!validateInputs()) {
-            return; // Stop submission if validation fails
+            return;
         }
 
-        // Safely parse the existing data or default to an empty array
+        if (isEmailExists(formData.email)) {
+            setErrors({ email: 'Email already exists.' });
+            return;
+        }
+
         const existingData = JSON.parse(localStorage.getItem('formData')) || [];
         const updatedData = Array.isArray(existingData) ? [...existingData, formData] : [formData];
-
-        // Save the updated array back to localStorage
         localStorage.setItem('formData', JSON.stringify(updatedData));
 
-        // Reset form fields
         setFormData({
             firstname: '',
             lastname: '',
             email: '',
             password: '',
             confirmpassword: '',
-            cart:[]
+            phone: '',
+            adresse: '',
+            cart: [],
         });
 
-        // Set success message
         setSuccessMessage("Registration successful!");
 
-        // Remove success message after 3 seconds
         setTimeout(() => {
             setSuccessMessage('');
         }, 3000);
     };
+/**test */
+    useEffect(() => {
+        if (successMessage) {
+            const timer = setTimeout(() => setSuccessMessage(''), 3000);
+            return () => clearTimeout(timer);
+        }
+    }, [successMessage]);
 
     return (
         <>
             {successMessage && (
-                <div className="message">{successMessage}</div>
+                <div className="message1">{successMessage}</div>
             )}
-            <div className="inscription-form">
-                <div className="form-container">
+            <div className="inscription-form1">
+                <div className="form-container1">
                     <h2>Join Us</h2>
                     <form onSubmit={handleSubmit}>
-                        <div className="form-group">
+                        <div className="form-group1">
                             <img src="/inscription_pic/logo_name.jpg" alt="img" />
                             <input
                                 type="text"
@@ -112,8 +146,8 @@ function Inscription() {
                                 placeholder="First Name"
                             />
                         </div>
-                        {errors.firstname && <p className="error">{errors.firstname}</p>}
-                        <div className="form-group">
+                        {errors.firstname && <p className="error1">{errors.firstname}</p>}
+                        <div className="form-group1">
                             <img src="/inscription_pic/logo_name.jpg" alt="img" />
                             <input
                                 type="text"
@@ -124,8 +158,8 @@ function Inscription() {
                                 placeholder="Last Name"
                             />
                         </div>
-                        {errors.lastname && <p className="error">{errors.lastname}</p>}
-                        <div className="form-group">
+                        {errors.lastname && <p className="error1">{errors.lastname}</p>}
+                        <div className="form-group1">
                             <img src="/inscription_pic/logo_email.png" alt="img" />
                             <input
                                 type="email"
@@ -136,8 +170,8 @@ function Inscription() {
                                 placeholder="Email"
                             />
                         </div>
-                        {errors.email && <p className="error">{errors.email}</p>}
-                        <div className="form-group">
+                        {errors.email && <p className="error1">{errors.email}</p>}
+                        <div className="form-group1">
                             <img src="/inscription_pic/logo_password.png" alt="img" />
                             <input
                                 type="password"
@@ -148,8 +182,8 @@ function Inscription() {
                                 placeholder="Password"
                             />
                         </div>
-                        {errors.password && <p className="error">{errors.password}</p>}
-                        <div className="form-group">
+                        {errors.password && <p className="error1">{errors.password}</p>}
+                        <div className="form-group1">
                             <img src="/inscription_pic/logo_confirm_password.png" alt="img" />
                             <input
                                 type="password"
@@ -160,7 +194,30 @@ function Inscription() {
                                 placeholder="Confirm Password"
                             />
                         </div>
-                        {errors.confirmpassword && <p className="error">{errors.confirmpassword}</p>}
+                        {errors.confirmpassword && <p className="error1">{errors.confirmpassword}</p>}
+                        <div className="form-group2 phone-input">
+                            <PhoneInput
+                                name="phone"
+                                international
+                                defaultCountry="MA"
+                                value={formData.phone}
+                                onChange={handlePhoneChange}
+                                placeholder="Enter phone number"
+                            />
+                        </div>
+                        {errors.phone && <p className="error1">{errors.phone}</p>}
+                        <div className="form-group1">
+                            <img src="/inscription_pic/adresse.png" alt="img" />
+                            <input
+                                type="text"
+                                id="adresse"
+                                name="adresse"
+                                value={formData.adresse}
+                                onChange={handleInputChange}
+                                placeholder="Address"
+                            />
+                        </div>
+                        {errors.adresse && <p className="error1">{errors.adresse}</p>}
                         <div className="cheking">
                             <input type="checkbox" required />
                             <label>Accept the privacy policy and terms of service.</label>

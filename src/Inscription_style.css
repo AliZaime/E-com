@@ -4,13 +4,13 @@ body {
     background-color: rgb(223, 223, 223);
 }
 
-.inscription-form {
+.inscription-form1 {
     display: flex;
     justify-content: center;
     margin-top: 50px;
 }
 
-.form-container {
+.form-container1 {
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -19,23 +19,32 @@ body {
     border-radius: 10px;
     box-shadow: 0px 6px 15px rgba(0, 0, 0, 0.1); /* Ombre douce */
     padding: 40px;
-    width: 40%;
+    width: 55%;
     text-align: center;
     margin-bottom: 50px; /* Margin bottom pour éloigner du footer */
     transition: transform 0.3s ease, box-shadow 0.3s ease; /* Animation */
 }
 
-.form-container:hover {
+.form-container1:hover {
     transform: scale(1.02);
     box-shadow: 0px 8px 20px rgba(0, 0, 0, 0.2); /* Ombre plus marquée au survol */
 }
 
-.form-group {
+.form-group1 {
     display: flex;
     gap: 10px;
 }
 
-.form-group input {
+.form-group1 input {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    font-size: 16px;
+    margin-bottom: 15px;
+}
+
+.form-group2 input {
     width: 100%;
     padding: 10px;
     border: 1px solid #ddd;
@@ -74,7 +83,7 @@ input:focus {
     margin-left: 15px;
 }
 
-.message {
+.message1 {
     background-color: green;
     color: white;
     width: max-content;
@@ -88,7 +97,7 @@ input:focus {
     padding: 5px 15px;
 }
 
-.error {
+.error1 {
     color: red;
     font-size: 14px;
     margin-top: 5px;
@@ -96,10 +105,82 @@ input:focus {
     justify-content: flex-start;
 }
 
-.form-group img {
+.form-group1 img {
     width: 50px;
     height: 50px;
     margin-top: -5px;
     border-radius: 50%;
     margin-left: -20px;
 }
+
+.form-group2 img {
+    width: 41.5px;
+    height: 40px;
+    margin-top: -15px;
+    border-radius: 50%;
+    margin-left: -13px;
+}
+
+/* Phone input container */
+.phone-input1 {
+    display: flex;
+    align-items: center;
+    position: relative;
+    margin-bottom: 20px;
+}
+
+/* Adjust the flag and input alignment */
+.phone-input .PhoneInputInput {
+    width: 100%;
+    padding: 10px;
+    font-size: 14px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    outline: none;
+}
+
+/* Adjust the flag dropdown */
+.phone-input .PhoneInput {
+    width: 100%;
+}
+
+@media (max-width: 900px){
+    .form-group1 {
+        justify-content: center;
+        margin-top: 0px;
+    }
+    .form-container1{
+        width: 75%;
+    }
+}
+
+@media (max-width: 500px){
+    .form-group1{
+        display: flex;
+        align-items: center;
+        flex-direction: column;
+        margin: 0px;
+    }
+    .form-container1{
+        width: 75%;
+        justify-content: center;
+    }
+    .form-group1 img {
+        width: 40px;
+        height: 40px;
+        border-radius: 50%;
+        display: flex;
+        justify-content: center;
+    }
+    .PhoneInput{
+        display: flex;
+        flex-direction: column;
+        margin-top: 15px;
+        gap: 15px;
+    }
+    .PhoneInputCountry{
+        display: flex;
+        justify-content: center;
+    }
+}
+
