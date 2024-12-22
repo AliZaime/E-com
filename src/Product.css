@@ -1,0 +1,64 @@
+.Product {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    font-family: 'Poppins', sans-serif;
+    background: linear-gradient(to right, black, red, orange);
+  }
+  
+  .carte {
+    display: flex;
+    width: 900px;
+    height: 600px;
+    background: #fff;
+    margin: 20px;
+  }
+  
+  .carte .imgBx {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 50%;
+    height: 100%;
+    background: #212121;
+  }
+  
+  .carte .imgBx img {
+    width: 450px;
+  }
+  
+  .carte .details {
+    width: 50%;
+    padding: 40px;
+  }
+  
+  .carte .details h2 {
+    font-size: 2.4em;
+  }
+  
+  .carte .details p {
+    color: #333;
+    font-size: 15px;
+  }
+  
+  .product-colors span {
+    width: 26px;
+    height: 26px;
+    margin-right: 12px;
+    border-radius: 50%;
+    display: inline-block;
+    cursor: pointer;
+  }
+  
+  .product-colors .active {
+    border: 2px solid #000;
+  }
+  
+  .add-to-cart {
+    background: #6f6565;
+    color: #fff;
+    padding: 15px 20px;
+    border-radius: 40px;
+  }
+  
