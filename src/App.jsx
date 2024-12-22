@@ -22,7 +22,7 @@ import Samsung from './Samsung';
 import GooglePixel from './GooglePixel';
 import Profil from './Profil'
 import ProductPage from './Product';
-
+import AllProducts from './AllProducts';
 //pour vercel push1
 
 function App() {
@@ -74,6 +74,7 @@ function App() {
             <Route path="/smartphones/Samsung" element={<Samsung />} />
             <Route path="/smartphones/GooglePixel" element={<GooglePixel />} />
             <Route path="/Prd" element={<ProductPage />} />
+            <Route path="/smartphones/AllProducts" element={<AllProducts />} />
           </Routes>
         </main>
         {/*tst*/}

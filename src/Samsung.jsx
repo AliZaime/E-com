@@ -418,25 +418,25 @@ function Samsung() {
                         <label>
                             <input type="checkbox" name="black" checked={checkeditemcolor.black} onChange={handleCheckboxColorChange} />
                             <div className="colorinput" style={{ backgroundColor: 'black', width: '20px', height: '20px', borderRadius: '50%', border: '1px solid black' }}></div>
-                            Noir
+                            Black
                         </label>
 
                         <label>
                             <input type="checkbox" name="lavender" checked={checkeditemcolor.lavender} onChange={handleCheckboxColorChange} />
                             <div className="colorinput" style={{ backgroundColor: 'lavender', width: '20px', height: '20px', borderRadius: '50%', border: '1px solid black' }}></div>
-                            Lavande
+                            Lavender
                         </label>
 
                         <label>
                             <input type="checkbox" name="green" checked={checkeditemcolor.green} onChange={handleCheckboxColorChange} />
                             <div className="colorinput" style={{ backgroundColor: 'green', width: '20px', height: '20px', borderRadius: '50%', border: '1px solid black' }}></div>
-                            Vert
+                            Green
                         </label>
 
                         <label>
                             <input type="checkbox" name="grey" checked={checkeditemcolor.grey} onChange={handleCheckboxColorChange} />
                             <div className="colorinput" style={{ backgroundColor: 'grey', width: '20px', height: '20px', borderRadius: '50%', border: '1px solid black' }}></div>
-                            Gris
+                            Grey
                         </label>
 
                         <label>
@@ -448,19 +448,19 @@ function Samsung() {
                         <label>
                             <input type="checkbox" name="gold" checked={checkeditemcolor.gold} onChange={handleCheckboxColorChange} />
                             <div className="colorinput" style={{ backgroundColor: 'gold', width: '20px', height: '20px', borderRadius: '50%', border: '1px solid black' }}></div>
-                            Or
+                            Gold
                         </label>
 
                         <label>
                             <input type="checkbox" name="blue" checked={checkeditemcolor.blue} onChange={handleCheckboxColorChange} />
                             <div className="colorinput" style={{ backgroundColor: 'blue', width: '20px', height: '20px', borderRadius: '50%', border: '1px solid black' }}></div>
-                            Bleu
+                            Blue
                         </label>
 
                         <label>
                             <input type="checkbox" name="white" checked={checkeditemcolor.white} onChange={handleCheckboxColorChange} />
                             <div className="colorinput" style={{ backgroundColor: 'white', width: '20px', height: '20px', borderRadius: '50%', border: '1px solid black' }}></div>
-                            Blanc
+                            White
                         </label>
 
                         <label>
@@ -478,7 +478,7 @@ function Samsung() {
                         <label>
                             <input type="checkbox" name="pink" checked={checkeditemcolor.pink} onChange={handleCheckboxColorChange} />
                             <div className="colorinput" style={{ backgroundColor: 'pink', width: '20px', height: '20px', borderRadius: '50%', border: '1px solid black' }}></div>
-                            Rose
+                            Pink
                         </label>
 
                         <label>
@@ -490,7 +490,7 @@ function Samsung() {
                         <label>
                             <input type="checkbox" name="silver" checked={checkeditemcolor.silver} onChange={handleCheckboxColorChange} />
                             <div className="colorinput" style={{ backgroundColor: '#C0C0C0', width: '20px', height: '20px', borderRadius: '50%', border: '1px solid black' }}></div>
-                            Argent
+                            Silver
                         </label>
 
                         <label>
@@ -498,6 +498,7 @@ function Samsung() {
                             <div className="colorinput" style={{ backgroundColor: 'beige', width: '20px', height: '20px', borderRadius: '50%', border: '1px solid black' }}></div>
                             Beige
                         </label>
+
                             {/* fermeture de la div des couleurs */}
                         </div>
                       {/* fermeture de la div du filtre des couleurs */}

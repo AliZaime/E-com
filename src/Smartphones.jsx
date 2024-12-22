@@ -7,7 +7,7 @@ const Smartphones = () => {
         { id: 1, name: 'iPhone', image: "/images/most-wanted--iphone-15--desktop.avif",lien:"/smartphones/iPhone"},
         { id: 2, name: 'Samsung Galaxy', image: '/images/most-wanted--galaxy-s23--desktop.avif',lien:"/smartphones/Samsung" },
         { id: 3, name: 'Google Pixel', image: '/images/most-wanted--google-pixel-8--desktop.avif',lien:"/smartphones/GooglePixel" },
-        { id: 4, name: 'Toutes les marques', image: '/images/most-wanted--all-brands--desktop.avif',lien:""}
+        { id: 4, name: 'Toutes les marques', image: '/images/most-wanted--all-brands--desktop.avif',lien:"AllProducts"}
       ];  
     const products = [
         { id: 1, name: 'iPhone 13', image: '/images/iphone13.avif', storage: '128 Go', color: 'Minuit', unlocked: 'Débloqué', rating: '4.4/5', reviews: 21245, currentPrice: 424.0, oldPrice: 749.0 },
