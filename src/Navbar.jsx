@@ -161,7 +161,7 @@ const iscartempty = currentUser ? (currentUser.cart || []).length === 0 : true;
             <li>
               <Link
                 className="link"
-                to={"/OrdinateursPortable"}
+                to={"/laptops"}
                 onClick={closeSidebar}
               >
                 Ordinateurs portables
