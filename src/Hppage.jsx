@@ -2,11 +2,48 @@ import React, {useState,useEffect} from "react";
 import './Hppage.css'
 
 function Hppage(){
-    const commentaire = [
-        {id:1,client:'Gilles M.',iconColor:'#f0c14b',dateAchat:'8 novembre 2024',dateCommentaire:'25 novembre 2024',PaysCommentaire:'France',rating:'5/5',commentaire:"Apple Iphone 12 64Go avec option batterie neuve acheté chez AxoreLe téléphone est effectivement comme neuf, pas de rayures sur l'écran, vitre arrière changée, pas originale mais neuve. Une marque sur la tranche en alu du smartphone entendable pour du reconditionné.A priori téléphone issu du marché américain.En termes de performances tout est ok, la batterie neuve en capacité 100% semble convenir à l'usage.Au final vendeur à recommander.",typeIphone:'iPhone 12 64Go',couleur:'Blanc',EtatIphone:'Débloqué'},
-        {id:2,client:'Florentin M.',iconColor:'#edeff3',dateAchat:'11 juin 2024',dateCommentaire:' 11 février 2024',PaysCommentaire:'France',rating:'4.6/5',commentaire:"L'iPhone est super, parfaitement fonctionnel. Il est en parfait état, la coque comme l'écran. La batterie a été remplacée et l'iPhone indique une capacité de batterie à 100%. Cependant, force est de constater que l'autonomie de ce smartphone avec batterie reconditionnée est assez faible. En effet, je suis obligé de le recharger 2 fois par jour pour un temps d'écran moyen de 1h45. Ma conjointe possède un iPhone 11 non reconditionné acheté chez Apple, aux caractéristiques identiques avec batterie d'origine (son iPhone indique une capacité de 80%) et pourtant son autonomie est bien plus importante pour un temps d'utilisation similaire.",typeIphone:'iPhone 11 64Go',couleur:'Noir',EtatIphone:'Débloqué'},      
-        {id:3,client:'Dylan F.',iconColor:'#94f5bc',dateAchat:'29 janvier 2024',dateCommentaire:'1 juillet 2024',PaysCommentaire:'France',rating:'4.6/5',commentaire:"Ma première fois sur Back Market et premier achat d'un smartphone reconditionnés. Je suis vraiment surpris de la qualité de mon iphone 11 pro Max 64Go - Vert Nuit acheter en état-correct, j'ai l'impression d'avoir un iphone neuf batterie à 100% quasi aucune rayure. Un grand merci à Back Market, il m'ont convaincu sur mon avis du reconditionnés, pour moi fini l'achat du neuf en plus je réalise un geste pour la planète. 🌍♻",typeIphone:'iPhone 11 Pro Max 64Go',couleur:'Vert Nuit',EtatIphone:'Débloqué'}
-      ]
+  const commentaire= [
+    {
+    id: 1,
+    client: 'Amélie L.',
+    iconColor: '#f0c14b',
+    dateAchat: '15 novembre 2024',
+    dateCommentaire: '22 novembre 2024',
+    PaysCommentaire: 'France',
+    rating: '5/5',
+    commentaire: "J'ai acheté un HP Spectre x360 13 reconditionné et je suis vraiment satisfaite ! Le PC est comme neuf, aucune rayure ni défaut. Les performances sont au rendez-vous et la batterie tient très bien la charge. Le service après-vente a également été très réactif lors d'une petite question que j'ai eu. Je recommande sans hésiter !",
+    typePc: 'HP Spectre x360 13',
+    couleur: '',
+    EtatPc: 'Reconditionné'
+    },
+    {
+    id: 2,
+    client: 'Julien M.',
+    iconColor: '#edeff3',
+    dateAchat: '3 octobre 2024',
+    dateCommentaire: '18 octobre 2024',
+    PaysCommentaire: 'France',
+    rating: '4.5/5',
+    commentaire: "Très bon achat d'un HP Pavilion 15 reconditionné. Le PC est en excellent état, la configuration est adaptée à mes besoins. Seul bémol, la batterie ne tient pas aussi longtemps que je l'aurais souhaité, mais cela reste acceptable. Le service après-vente a été très réactif lorsque j'ai eu une question. Je suis globalement satisfait de mon achat.",
+    typePc: 'HP Pavilion 15',
+    couleur: '',
+    EtatPc: 'Reconditionné'
+    },
+    {
+    id: 3,
+    client: 'Émilie C.',
+    iconColor: '#94f5bc',
+    dateAchat: '27 août 2024',
+    dateCommentaire: '5 septembre 2024',
+    PaysCommentaire: 'France',
+    rating: '4.2/5',
+    commentaire: "J'ai acheté un HP Envy x360 reconditionné et dans l'ensemble je suis satisfaite. Le PC est en bon état, les performances sont correctes. Cependant, j'ai remarqué quelques petites rayures sur le châssis, rien de grave mais qui m'a un peu déçue. Le service après-vente a été efficace lorsque j'ai eu une question. Je recommande ce produit, surtout pour le rapport qualité/prix.",
+    typePc: 'HP Envy x360',
+    couleur: '',
+    EtatPc: 'Reconditionné'
+    }
+    ]
+    
 
     const products = [
         { id: 1, name: 'HP EliteBook 850 G5 15',image: '/laptops_pic/hpelitbook850.png',color: ['white','aqua','darkblue','red'], rating: '4.6/5', reviews: 14, currentPrice: 425.01, oldPrice: 1900.00 ,quantite:1, condition: "Parfait état", vendu_avec: "Câble de chargement"},

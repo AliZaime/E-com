@@ -302,7 +302,7 @@ function Mac() {
             <div className="intro">
               {/* une introduction avec un titre et un paragraphe */}
                 <div className="sometext">
-                  <h1>iPhone reconditionnés</h1>
+                  <h1>Mac reconditionnés</h1>
                   <p>Vous cherchez un Mac reconditionné ? Bingo ! Nous sommes les maîtres des offres de Mac reconditionnés. Nos Mac offrent le meilleur des deux mondes : prix et qualité. Macbook Air, Macbook Pro, Imac, Mac Mini, nous les avons tous.</p>
                 </div>
                 {/* le filtre de trie par prix croissant ou décroissant */}

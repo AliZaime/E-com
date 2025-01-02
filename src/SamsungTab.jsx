@@ -292,7 +292,7 @@ function SamsungTab() {
                 <div className="intro">
                   {/* une introduction avec un titre et un paragraphe */}
                     <div className="sometext">
-                      <h1>Ipad reconditionnés</h1>
+                      <h1>Samsung Tab reconditionnés</h1>
                       <p>Découvrez notre sélection de Samsung Tabs reconditionnées, parfaites pour un usage personnel et professionnel</p>
                     </div>
                     {/* le filtre de trie par prix croissant ou décroissant */}

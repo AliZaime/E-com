@@ -336,7 +336,7 @@ function PS() {
         <div className="iphonepage">
           {/* la partie qui se situe avant la partie des filtre et du catalogue */}
           <nav className="breadcrumb">
-                <a href="/">Accueil</a> &gt; <a href="/laptops">Consoles</a> &gt; <span>PS</span>
+                <a href="/">Accueil</a> &gt; <a href="/Consoles">Consoles</a> &gt; <span>PS</span>
           </nav>
           <div className="container">
               {/* la partie pour savoir ou on se situe */}
@@ -365,7 +365,7 @@ function PS() {
             <div className="intro">
               {/* une introduction avec un titre et un paragraphe */}
                 <div className="sometext">
-                  <h1>Ipad reconditionnés</h1>
+                  <h1>Play Station reconditionnés</h1>
                   <p>Vous cherchez une PS reconditionné ? Bingo ! Nous sommes les maîtres des offres PS reconditionnés. Nos PS offrent le meilleur des deux mondes.</p>
                 </div>
                 {/* le filtre de trie par prix croissant ou décroissant */}

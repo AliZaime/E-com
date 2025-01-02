@@ -246,7 +246,7 @@ function LenovoTab() {
             <div className="iphonepage">
               {/* la partie qui se situe avant la partie des filtre et du catalogue */}
               <nav className="breadcrumb">
-                    <a href="/">Accueil</a> &gt; <a href="/Tablettes">Tablette</a> &gt; <span>Lenovo</span>
+                    <a href="/">Accueil</a> &gt; <a href="/Tablettes">Tablettes</a> &gt; <span>Lenovo</span>
               </nav>
               <div className="container">
                   {/* la partie pour savoir ou on se situe */}
@@ -275,8 +275,8 @@ function LenovoTab() {
                 <div className="intro">
                   {/* une introduction avec un titre et un paragraphe */}
                     <div className="sometext">
-                      <h1>Dell reconditionnés</h1>
-                      <p>Vous cherchez un Dell reconditionné ? Bingo ! Nous sommes les maîtres des offres Dell reconditionnés. Nos Dell offrent le meilleur des deux mondes.</p>
+                      <h1>Lenovo tablette reconditionnés</h1>
+                      <p>Vous cherchez une Tablette Lenovo reconditionné ? Bingo ! Nous sommes les maîtres des offres Lenovo reconditionnés. Nos Lenovo offrent le meilleur des deux mondes.</p>
                     </div>
                     {/* le filtre de trie par prix croissant ou décroissant */}
                     <div class="sort-container">
