@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from "react";
+import { useNavigate } from "react-router-dom";
 
 import "./Home.css";
 
@@ -80,16 +81,144 @@ function Home() {
 
   const visibleProducts = products.slice(startIndex, Math.min(startIndex + itemsPerPage, products.length));
   const productList = [
-    { id: 1, name: 'iPhone 160', category: 'iPhone', image: '/images/iphone13.avif', storage: '128 Go', color: 'Minuit', unlocked: 'Débloqué', rating: '4.4/5', reviews: 21245, currentPrice: 424.0, oldPrice: 749.0 ,quantite:1, condition: "Parfait état", vendu_avec: "Câble de chargement"},
-    { id: 2, name: 'Galaxy S21 5G', category: 'Smartphones Android', image: '/images/S21.avif', storage: '128 Go', color: 'Gris', unlocked: 'Débloqué', rating: '4.2/5', reviews: 5042, currentPrice: 255.19, oldPrice: 1059.0 ,quantite:1, condition: "Parfait état", vendu_avec: "Câble de chargement"},
-    { id: 3, name: 'Google Pixel 7', category: 'Smartphones Android', image: '/images/Googlepixel7.avif', storage: '128 Go', color: 'Vert', unlocked: 'Débloqué', rating: '4.4/5', reviews: 616, currentPrice: 289.68, oldPrice: 649.99 ,quantite:1, condition: "Parfait état", vendu_avec: "Câble de chargement"},
-    { id: 4, name: 'iPhone 8', category: 'iPhone', image: '/images/iphone8.avif', storage: '64 Go', color: 'Gris sidéral', unlocked: 'Débloqué', rating: '4.2/5', reviews: 2195, currentPrice: 109.74, oldPrice: 299.0 ,quantite:1, condition: "Parfait état", vendu_avec: "Câble de chargement"},
-    { id: 5, name: 'iPhone 14', category: 'iPhone', image: '/images/iphone14.jpg', storage: '256 Go', color: 'Blanc', unlocked: 'Débloqué', rating: '4.6/5', reviews: 5050, currentPrice: 1029.0, oldPrice: 1200.0 ,quantite:1, condition: "Parfait état", vendu_avec: "Câble de chargement"},
-    { id: 6, name: 'Galaxy Z Fold 4', category: 'Smartphones Android', image: '/images/fold4.jpg', storage: '512 Go', color: 'Noir', unlocked: 'Débloqué', rating: '4.8/5', reviews: 1200, currentPrice: 1500.0, oldPrice: 1800.0 ,quantite:1, condition: "Parfait état", vendu_avec: "Câble de chargement"},
-    { id: 7, name: 'iPhone 160', category: 'iPhone', image: '/images/iphone13.avif', storage: '128 Go', color: 'Minuit', unlocked: 'Débloqué', rating: '4.4/5', reviews: 21245, currentPrice: 424.0, oldPrice: 749.0 ,quantite:1, condition: "Parfait état", vendu_avec: "Câble de chargement"},
-    { id: 8, name: 'iPhone 160', category: 'iPhone', image: '/images/iphone13.avif', storage: '128 Go', color: 'Minuit', unlocked: 'Débloqué', rating: '4.4/5', reviews: 21245, currentPrice: 424.0, oldPrice: 749.0 ,quantite:1, condition: "Parfait état", vendu_avec: "Câble de chargement"},
-    // Add more products as needed
+    { 
+      id: 1, 
+      name: 'iPhone16', 
+      category: 'iPhone', 
+      image: '/images/iphone13.avif', 
+      storage: '128 Go', 
+      color: 'Minuit', 
+      unlocked: 'Débloqué', 
+      rating: '4.4/5', 
+      reviews: 21245, 
+      currentPrice: 424.0, 
+      oldPrice: 749.0, 
+      quantite: 1, 
+      condition: "Parfait état", 
+      vendu_avec: "Câble de chargement",
+      description: "Un smartphone élégant offrant de hautes performances avec une grande autonomie."
+    },
+    { 
+      id: 2, 
+      name: 'Galaxy S21 5G', 
+      category: 'Smartphones Android', 
+      image: '/images/S21.avif', 
+      storage: '128 Go', 
+      color: 'Gris', 
+      unlocked: 'Débloqué', 
+      rating: '4.2/5', 
+      reviews: 5042, 
+      currentPrice: 255.19, 
+      oldPrice: 1059.0, 
+      quantite: 1, 
+      condition: "Parfait état", 
+      vendu_avec: "Câble de chargement",
+      description: "Le Galaxy S21 5G combine une puissance exceptionnelle et un design moderne."
+    },
+    { 
+      id: 3, 
+      name: 'Google Pixel 7', 
+      category: 'Smartphones Android', 
+      image: '/images/Googlepixel7.avif', 
+      storage: '128 Go', 
+      color: 'Vert', 
+      unlocked: 'Débloqué', 
+      rating: '4.4/5', 
+      reviews: 616, 
+      currentPrice: 289.68, 
+      oldPrice: 649.99, 
+      quantite: 1, 
+      condition: "Parfait état", 
+      vendu_avec: "Câble de chargement",
+      description: "Découvrez l’intelligence de Google avec une expérience utilisateur fluide et optimisée."
+    },
+    { 
+      id: 4, 
+      name: 'IphoneXR', 
+      category: 'iPhone', 
+      image: '/images/iphone8.avif', 
+      storage: '64 Go', 
+      color: 'Gris sidéral', 
+      unlocked: 'Débloqué', 
+      rating: '4.2/5', 
+      reviews: 2195, 
+      currentPrice: 109.74, 
+      oldPrice: 299.0, 
+      quantite: 1, 
+      condition: "Parfait état", 
+      vendu_avec: "Câble de chargement",
+      description: "Compact et performant, l’iPhone 8 est parfait pour un usage quotidien."
+    },
+    { 
+      id: 5, 
+      name: 'iPhone 14', 
+      category: 'iPhone', 
+      image: '/images/iphone14.jpg', 
+      storage: '256 Go', 
+      color: 'Blanc', 
+      unlocked: 'Débloqué', 
+      rating: '4.6/5', 
+      reviews: 5050, 
+      currentPrice: 1029.0, 
+      oldPrice: 1200.0, 
+      quantite: 1, 
+      condition: "Parfait état", 
+      vendu_avec: "Câble de chargement",
+      description: "Le dernier modèle d’Apple avec des fonctionnalités avancées et un design épuré."
+    },
+    { 
+      id: 6, 
+      name: 'Galaxy Z Fold 4', 
+      category: 'Smartphones Android', 
+      image: '/images/fold4.jpg', 
+      storage: '512 Go', 
+      color: 'Noir', 
+      unlocked: 'Débloqué', 
+      rating: '4.8/5', 
+      reviews: 1200, 
+      currentPrice: 1500.0, 
+      oldPrice: 1800.0, 
+      quantite: 1, 
+      condition: "Parfait état", 
+      vendu_avec: "Câble de chargement",
+      description: "Un smartphone pliable révolutionnaire offrant un écran massif et des performances haut de gamme."
+    },
+    { 
+      id: 7, 
+      name: 'iPhone 160', 
+      category: 'iPhone', 
+      image: '/images/iphone13.avif', 
+      storage: '128 Go', 
+      color: 'Minuit', 
+      unlocked: 'Débloqué', 
+      rating: '4.4/5', 
+      reviews: 21245, 
+      currentPrice: 424.0, 
+      oldPrice: 749.0, 
+      quantite: 1, 
+      condition: "Parfait état", 
+      vendu_avec: "Câble de chargement",
+      description: "Un smartphone élégant offrant de hautes performances avec une grande autonomie."
+    },
+    { 
+      id: 8, 
+      name: 'iPhone 160', 
+      category: 'iPhone', 
+      image: '/images/iphone13.avif', 
+      storage: '128 Go', 
+      color: 'Minuit', 
+      unlocked: 'Débloqué', 
+      rating: '4.4/5', 
+      reviews: 21245, 
+      currentPrice: 424.0, 
+      oldPrice: 749.0, 
+      quantite: 1, 
+      condition: "Parfait état", 
+      vendu_avec: "Câble de chargement",
+      description: "Un smartphone élégant offrant de hautes performances avec une grande autonomie."
+    }
   ];
+  
 
   const [currentStartIndex, setCurrentStartIndex] = useState(0);
   const productsPerPage = 3;
@@ -129,6 +258,10 @@ function Home() {
 
   const currentVisibleProducts = selectedProduct.slice(currentStartIndex, Math.min(currentStartIndex + productsPerPage, selectedProduct.length));
   
+  const navigate = useNavigate();
+  const handleViewDetails = (product) => {
+    navigate(`/prd/product/${product.name}`, { state: { product } });
+  };
   
   return (
     <div className="home">
@@ -188,7 +321,7 @@ function Home() {
         <h1>Vus récemment</h1>
         <div className="product-container">
           {visibleProducts.map((product) => (
-            <div key={product.id} className="product-card">
+            <div key={product.id} className="product-card" style={{ width: "180px" }}>
               <img src={product.image} alt={product.name} />
               <h3>{product.name}</h3>
               <p>{product.storage} - {product.color}</p>
@@ -282,7 +415,7 @@ function Home() {
               </p>
               <div className="overlay">
                 <button className="overlay-btn" onClick={() => addToCart(product)}>Ajouter au panier</button>
-                <button className="overlay-btn">Voir le détail</button>
+                <button className="overlay-btn" onClick={() => handleViewDetails(product)}>Voir le détail</button>
               </div>
             </div>
           ))}
