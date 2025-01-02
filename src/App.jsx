@@ -24,6 +24,8 @@ import Profil from './Profil'
 import ProductPage from './Product';
 import AllProducts from './AllProducts';
 import Laptops from './laptops';
+import Dell from './Dell';
+
 //pour vercel push1
 //pour vercel push2
 
@@ -78,6 +80,7 @@ function App() {
             <Route path="/Prd" element={<ProductPage />} />
             <Route path="/smartphones/AllProducts" element={<AllProducts />} />
             <Route path="/laptops" element={<Laptops />} />
+            <Route path="/laptops/Dell" element={<Dell />} />
           </Routes>
         </main>
         {/*tst*/}

@@ -17,11 +17,10 @@
   margin-top: 20px;
   margin-bottom: 20px;
 }
-.part2{
-  padding-right: 25px; 
-}
+
 
 .part2 ul{
+  margin-left: 60px;
   display: flex;
   justify-content: space-between;
   align-items: center;
