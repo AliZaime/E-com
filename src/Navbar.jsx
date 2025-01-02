@@ -188,18 +188,6 @@ const iscartempty = currentUser ? (currentUser.cart || []).length === 0 : true;
               </Link>
             </li>
             <li>
-              <Link
-                className="link"
-                to={"/Electromenagers"}
-                onClick={closeSidebar}
-              >
-                Appareils électroménagers
-              </Link>
-            </li>
-            <li>
-              <Link className="link" to={"/Autres"} onClick={closeSidebar}>
-                Autres
-              </Link>
             </li>
           </ul>
         </div>
