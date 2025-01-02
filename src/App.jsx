@@ -24,6 +24,7 @@ import Profil from './Profil'
 import ProductPage from './Product';
 import AllProducts from './AllProducts';
 import Laptops from './laptops';
+import Hppage from './Hppage';
 import Mac from './Mac';
 import Dell from './Dell';
 import Tablettes from './Tablettes';
@@ -82,6 +83,7 @@ function App() {
             <Route path="/prd/product/:name" element={<ProductPage />} />
             <Route path="/smartphones/AllProducts" element={<AllProducts />} />
             <Route path="/laptops" element={<Laptops />} />
+            <Route path="/laptops/Hppage" element={<Hppage />} />
             <Route path="/laptops/Mac" element={<Mac />} />
             <Route path="/laptops/Dell" element={<Dell />} />
             <Route path="/Tablettes" element={<Tablettes />} />
