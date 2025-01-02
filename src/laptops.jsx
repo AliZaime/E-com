@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import './Smartphones.css';
+import './Mac'
 import { Link } from 'react-router-dom';
 
 const Laptops = () => {
@@ -7,6 +8,9 @@ const Laptops = () => {
         { id: 1, name: 'Mac', image: '/laptops_pic/mac1.png', lien: '/laptops/MacBookPro' },
         { id: 2, name: 'Dell', image: '/laptops_pic/dell1.png', lien: '/laptops/DellXPS' },
         { id: 3, name: 'HP', image: '/laptops_pic/hp.png', lien: '/laptops/Hppage' },
+        { id: 1, name: 'Mac', image: '/laptops_pic/mac1.png', lien: '/laptops/Mac' },
+        { id: 2, name: 'Dell', image: '/laptops_pic/dell1.png', lien: '/laptops/Dell' },
+        { id: 3, name: 'HP', image: '/laptops_pic/hp.png', lien: '/laptops/HPSpectre' },
         { id: 4, name: 'Toutes les marques', image: '/laptops_pic/autre.png', lien: '/laptops/AllProducts' }
     ];
     
