@@ -1,0 +1,361 @@
+import React, {useState,useEffect} from "react";
+import './Hppage.css'
+
+function Hppage(){
+    const commentaire = [
+        {id:1,client:'Gilles M.',iconColor:'#f0c14b',dateAchat:'8 novembre 2024',dateCommentaire:'25 novembre 2024',PaysCommentaire:'France',rating:'5/5',commentaire:"Apple Iphone 12 64Go avec option batterie neuve acheté chez AxoreLe téléphone est effectivement comme neuf, pas de rayures sur l'écran, vitre arrière changée, pas originale mais neuve. Une marque sur la tranche en alu du smartphone entendable pour du reconditionné.A priori téléphone issu du marché américain.En termes de performances tout est ok, la batterie neuve en capacité 100% semble convenir à l'usage.Au final vendeur à recommander.",typeIphone:'iPhone 12 64Go',couleur:'Blanc',EtatIphone:'Débloqué'},
+        {id:2,client:'Florentin M.',iconColor:'#edeff3',dateAchat:'11 juin 2024',dateCommentaire:' 11 février 2024',PaysCommentaire:'France',rating:'4.6/5',commentaire:"L'iPhone est super, parfaitement fonctionnel. Il est en parfait état, la coque comme l'écran. La batterie a été remplacée et l'iPhone indique une capacité de batterie à 100%. Cependant, force est de constater que l'autonomie de ce smartphone avec batterie reconditionnée est assez faible. En effet, je suis obligé de le recharger 2 fois par jour pour un temps d'écran moyen de 1h45. Ma conjointe possède un iPhone 11 non reconditionné acheté chez Apple, aux caractéristiques identiques avec batterie d'origine (son iPhone indique une capacité de 80%) et pourtant son autonomie est bien plus importante pour un temps d'utilisation similaire.",typeIphone:'iPhone 11 64Go',couleur:'Noir',EtatIphone:'Débloqué'},      
+        {id:3,client:'Dylan F.',iconColor:'#94f5bc',dateAchat:'29 janvier 2024',dateCommentaire:'1 juillet 2024',PaysCommentaire:'France',rating:'4.6/5',commentaire:"Ma première fois sur Back Market et premier achat d'un smartphone reconditionnés. Je suis vraiment surpris de la qualité de mon iphone 11 pro Max 64Go - Vert Nuit acheter en état-correct, j'ai l'impression d'avoir un iphone neuf batterie à 100% quasi aucune rayure. Un grand merci à Back Market, il m'ont convaincu sur mon avis du reconditionnés, pour moi fini l'achat du neuf en plus je réalise un geste pour la planète. 🌍♻",typeIphone:'iPhone 11 Pro Max 64Go',couleur:'Vert Nuit',EtatIphone:'Débloqué'}
+      ]
+
+    const products = [
+        { id: 1, name: 'HP EliteBook 850 G5 15',image: '/laptops_pic/hpelitbook850.png', rating: '4.6/5', reviews: 14, currentPrice: 425.01, oldPrice: 1900.00 ,quantite:1, condition: "Parfait état", vendu_avec: "Câble de chargement"},
+        { id: 2, name: 'HP EliteBook 840 G3 14', image: '/laptops_pic/hpelitebook840.png', rating: '4.3/5', reviews: 45, currentPrice: 211.46, oldPrice: 826.00 ,quantite:1, condition: "Parfait état", vendu_avec: "Câble de chargement"},
+        { id: 3, name: 'HP EliteBook 840 G5 14', image: '/laptops_pic/hpelitebook840G5.png', rating: '3.7/5', reviews: 12, currentPrice: 263.42, oldPrice: 1251.00 ,quantite:1, condition: "Parfait état", vendu_avec: "Câble de chargement"},
+        { id: 4, name: 'HP EliteBook 830 G7 13', image: '/laptops_pic/hpelitbook830.png', rating: '5/5', reviews: 10, currentPrice: 389.00, oldPrice: 1899.99 ,quantite:1, condition: "Parfait état", vendu_avec: "Câble de chargement"},
+        { id: 5, name: 'HP 255 G9 15 Ryzen 3', image: '/laptops_pic/hp255G9.png', rating: '4.8/5', reviews: 23, currentPrice: 400.19, oldPrice: 700.00 ,quantite:1, condition: "Parfait état", vendu_avec: "Câble de chargement"},
+        { id: 6, name: 'HP ZBook 15 G3 15', image: '/laptops_pic/hpzbook15.png', rating: '4.1/5', reviews: 14, currentPrice: 495.95, oldPrice: 3499.00 ,quantite:1, condition: "Parfait état", vendu_avec: "Câble de chargement"},
+        { id: 7, name: 'HP ZBook 17 G3 17', image: '/laptops_pic/hpzbook17.png', rating: '4/5', reviews: 21, currentPrice: 639.00, oldPrice: 1494.00 ,quantite:1, condition: "Parfait état", vendu_avec: "Câble de chargement"},
+    ];
+    const [checkeditem, setCheckedItem] = useState({
+            peuimport:false,
+            HP_EliteBook_850_G5:false,
+            HP_EliteBook_840_G3:false,
+            HP_EliteBook_840_G5:false,
+            HP_EliteBook_830_G7:false,
+            HP_255_G9_15:false,
+            HP_ZBook_15_G3:false,
+            HP_ZBook_17_G3:false
+          });
+    
+          /*la fonction qui est charger du check unique des input de modele*/
+          function handleCheckboxChange(event){
+            const {name,checked}=event.target
+            console.log(`${name} is ${checked}`);
+            if(checked){
+              setCheckedItem({
+                peuimport:name === "peuimport",
+                HP_EliteBook_850_G5:name === "HP_EliteBook_850_G5",
+                HP_EliteBook_840_G3:name === "HP_EliteBook_840_G3",
+                HP_EliteBook_840_G5:name === "HP_EliteBook_840_G5",
+                HP_EliteBook_830_G7:name === "HP_EliteBook_830_G7",
+                HP_255_G9_15:name === "HP_255_G9_15",
+                HP_ZBook_15_G3:name === "HP_ZBook_15_G3",
+                HP_ZBook_17_G3:name === "HP_ZBook_17_G3",
+                });
+              }
+              else{
+                setCheckedItem((prevState) => ({
+                  ...prevState,
+                  [name]: false,
+                }));
+              }
+              }
+    
+          /*la useState avec la fonction pour capturer les modification des input de prix */
+          const [minprice, setMinPrice] = useState(0);
+          const [maxprice, setMaxPrice] = useState(2000);
+    
+          function handleMinPriceChange(event) {
+            setMinPrice(event.target.value)
+            console.log(`le prix minimum : ${minprice}`)
+          }
+    
+          function handMaxPriceChange(event){
+            setMaxPrice(event.target.value)
+            console.log(`le prix maximum : ${maxprice}`)
+          }
+          /* un useState et une fonction pour controler le changement du filtre de trie par prix */
+          const [pricesortstate,setPricesortstate] = useState("");
+          function handlepricesortstate(event) {
+             // Récupère la valeur sélectionnée
+            setPricesortstate(event.target.value);
+            console.log(`selected option : ${pricesortstate}`); // Affiche la valeur sélectionnée
+          }
+    
+          //calculer la moyenne des prix des produits présent est l'afficher une foit le DOM se charge
+          const [moyenneprix,setMoyennePrix] = useState(0);
+          useEffect(() => {
+            setMoyennePrix(() => {
+              let sum = 0;
+              products.forEach((product) => {
+                sum += product.currentPrice;
+              });
+              return sum / products.length; // Calcule la moyenne et met à jour l'état
+            });
+          }, [products]); // La moyenne est recalculée si `products` change
+    
+          /*recuperer la valeur ecrit par l'utilisateur dans l'input du filtre de modele*/
+          const [modelinputvalue,setModelInputValue] = useState("");
+          function handleModelInputValue(event) {
+            setModelInputValue(event.target.value);
+            console.log(`Modele = ${modelinputvalue}`);
+          }
+    
+    
+          /* la fonction qui retourne selon les filtres les produits qui correspondent */
+          function filterProducts() {
+            // Vérifier si un filtre est activé
+            const isAnyModelChecked = Object.values(checkeditem).some((value) => value); 
+            const isTextInputUsed = modelinputvalue.trim() !== "";
+            const isPriceSortUsed = pricesortstate !== "";
+            const isPriceRangeUsed = (minprice !== 0 || maxprice !== 2000);
+    
+            // Si aucun filtre n'est activé, retourner tous les produits
+            if (!isAnyModelChecked  && !isTextInputUsed && !isPriceSortUsed && !isPriceRangeUsed) {
+              return products;
+            }
+          
+            // Filtrer les produits
+            let filtredproducts =  products.filter((product) => {
+              // Filtrage par modèle
+              const isModelMatched = 
+                  isTextInputUsed 
+                  ? product.name.toLowerCase().includes(modelinputvalue.toLowerCase()) 
+                  : isAnyModelChecked 
+                    ? Object.keys(checkeditem).some(
+                        (key) => {
+                            return checkeditem[key] && product.name.toLowerCase().includes(key.replace(/_/g, ' ').toLowerCase());
+                        }
+                      )
+                    : true;
+    // Aucun modèle sélectionné
+          
+                const isPriceMatched =
+                  (minprice === 0 || product.currentPrice >= minprice) && 
+                  (maxprice === 2000 || product.currentPrice <= maxprice);
+    
+                return isModelMatched  && isPriceMatched; // Doit respecter les deux filtres
+                });
+    
+            if(pricesortstate === "ascending"){
+              filtredproducts.sort((a, b) => a.currentPrice - b.currentPrice);
+            }
+            else if(pricesortstate === "descending"){
+              filtredproducts.sort((a, b) => b.currentPrice - a.currentPrice);
+            }
+            console.log(`la liste filtrer : ${filtredproducts.map((product)=>`${product.name} - ${product.currentPrice}`)}`)
+            return filtredproducts;
+          }
+          
+          function addToCart(product) {
+              // Récupérer les données utilisateurs depuis le localStorage
+            const formData = JSON.parse(localStorage.getItem("formData")) || [];
+            const loggedInEmail = localStorage.getItem("isLoggedEmail"); // Email de l'utilisateur connecté
+    
+            // Trouver l'utilisateur connecté
+            const currentUserIndex = formData.findIndex(user => user.email === loggedInEmail);
+    
+            if (currentUserIndex !== -1) {
+              // Ajouter le produit au panier de l'utilisateur connecté
+              const currentUser = formData[currentUserIndex];
+              currentUser.cart = currentUser.cart || []; // Initialiser le panier si inexistant
+              currentUser.cart.push(product);
+    
+              // Mettre à jour les données dans formData
+              formData[currentUserIndex] = currentUser;
+              localStorage.setItem("formData", JSON.stringify(formData));
+            }
+          }
+          
+    
+        return (
+            <>
+            <div className="iphonepage">
+              {/* la partie qui se situe avant la partie des filtre et du catalogue */}
+              {/* la partie pour savoir ou on se situe */}
+                  <nav className="breadcrumb">
+                    <a href="/">Accueil</a> &gt; <a href="/Smartphones">Smartphones</a> &gt; <span>Tous les iPhones</span>
+                  </nav>
+              <div className="container">
+                  
+                  {/* le contenaire qui contient les services de notre application */}
+                  <div className="infoserviceContainer">
+                      <div className="Info">
+                          <i class="fa-solid fa-shield-halved"></i>
+                          <p>Garantie commerciale de 12 mois</p>
+                      </div>
+                      <div className="Info">
+                        <i class="fa-solid fa-truck"></i>
+                          <p>Frais de livraison standards offerts</p>
+                      </div>
+                      <div className="Info">
+                          <i class="fa-solid fa-circle-dollar-to-slot"></i>
+                          <p>Retour gratuit jusqu'au 31 janvier</p>
+                      </div>
+                      <div className="Info">
+                          <i class="fa-solid fa-headset"></i>
+                          <p>Service client aux petits oignons</p>
+                      </div>
+                  </div>
+                </div>
+    
+                {/* la partie qui contient le titre de la page avec une petit description */}
+                <div className="intro">
+                  {/* une introduction avec un titre et un paragraphe */}
+                    <div className="sometext">
+                      <h1>iPhone reconditionnés</h1>
+                      <p>Vous cherchez un iPhone reconditionné ? Bingo ! Nous sommes les maîtres des offres d'iPhone reconditionnés. Nos iPhone offrent le meilleur des deux mondes : prix et qualité. iPhone 12, iPhone 11, iPhone XR, iPhone XS Max, nous les avons tous.</p>
+                    </div>
+                    {/* le filtre de trie par prix croissant ou décroissant */}
+                    <div class="sort-container">
+                      <label for="sort-select">Trier</label>
+                      <select id="sort-select" class="sort-dropdown" value={pricesortstate} onChange={handlepricesortstate}> 
+                        <option value="">Aucun choix</option>
+                        <option value="ascending" >Prix croissants</option>
+                        <option value="descending" >Prix décroissants</option>
+                      </select>
+                    </div>
+                </div>
+    
+                {/* la partie qui contient les filtres et le catalogue */}
+                <div className="aside_catalogue"> 
+                  {/* la partie qui contient les filtres : prix(Min-Max);couleur;modele */}
+                  <div className="asidediv">
+                    {/* ajouter le filtre de prix */}
+                      <div className="rangepricefilter">
+                          <h3>Prix</h3>
+                          <div className="sortrangeinput">
+                            <div class="price-value">
+                              <label for="min-price">Min (EUR)</label>
+                              <input type="number" id="min-price-input" defaultValue={minprice} onChange={handleMinPriceChange}/>
+                            </div>
+                            <div class="price-value">
+                              <label for="max-price">Max (EUR)</label>
+                              <input type="number" id="max-price-input"  defaultValue={maxprice} onChange={handMaxPriceChange}/>
+                            </div>
+                          </div>
+                          <p>Le prix moyen est de : {moyenneprix.toFixed(2)} €</p>
+                      </div>
+                      {/* ajouter le filtre du modèle du téléphone */}
+                      <div className="Modele">
+                          {/* le titre de la section avec une bar de recherche*/}
+                          <h3>Modèle</h3>
+                          <div className="Modelinputcontainer"> 
+                            <input type="text" placeholder="Modèle" className="inputmodel" id="inputmodele" onChange={handleModelInputValue}/>
+                            <i class="fa-solid fa-magnifying-glass"></i>
+                          </div>
+    
+                          {/* la partie qui contient les modèles du téléphone */}
+                            <div className="ckeck-list">
+                              <label>
+                                <input type="checkbox" name='peuimport'  checked={checkeditem.peuimport}  onChange={handleCheckboxChange}/>
+                                Peu import
+                              </label>
+                                  
+                              <label>
+                                <input type="checkbox" name="HP_EliteBook_850_G5"  checked={checkeditem.HP_EliteBook_850_G5} onChange={handleCheckboxChange}/>
+                                HP EliteBook 850 G5
+                              </label>
+                                  
+                              <label>
+                                <input type="checkbox" name="HP_EliteBook_840_G3" checked={checkeditem.HP_EliteBook_840_G3}  onChange={handleCheckboxChange}/>
+                                HP EliteBook 840 G3
+                              </label>
+                                  
+                              <label>
+                                <input type="checkbox" name="HP_EliteBook_840_G5"  checked={checkeditem.HP_EliteBook_840_G5} onChange={handleCheckboxChange}/>
+                                HP EliteBook 840 G5
+                              </label>
+                                  
+                              <label>
+                                <input type="checkbox" name="HP_EliteBook_830_G7"  checked={checkeditem.HP_EliteBook_830_G7} onChange={handleCheckboxChange}/>
+                                HP EliteBook 830 G7
+                              </label>
+                                  
+                              <label>
+                                <input type="checkbox" name="HP_255_G9_15" checked={checkeditem.HP_255_G9_15} onChange={handleCheckboxChange}/>
+                                HP 255 G9 15
+                              </label>
+                                  
+                              <label>
+                                <input type="checkbox" name="HP_ZBook_15_G3"  checked={checkeditem.HP_ZBook_15_G3} onChange={handleCheckboxChange}/>
+                                HP ZBook 15 G3 
+                              </label>
+                                  
+                              <label>
+                                <input type="checkbox" name="HP_ZBook_17_G3"  checked={checkeditem.HP_ZBook_17_G3} onChange={handleCheckboxChange}/>
+                                HP ZBook 17 G3
+                              </label>
+                            </div>
+                          {/*fermeture de la div des modeles  */}
+                      </div>
+    
+    
+                  </div>
+                  {/* la partie qui contient le catalogue des iPhones */}
+                  <div className="cataloguediv">
+                      {
+                        filterProducts().map((item,index)=>{
+                          return(
+                            <div className="phonecard" key={index}>
+                                <div className="phoneinfoarea">
+                                  <div className="imageandcolors">
+                                    <img src={item.image} alt="" className="phoneimage"/>
+                                  </div>
+                                  <div className="phoneinfo">
+                                    <h2 className="phoneName">{item.name}</h2>
+                                    <p className="ratingreviews">⭐ {item.rating} ({item.reviews})</p>
+                                    <p className="apartirde">à partir de </p>
+                                    <h4 className="courantprice">{item.currentPrice} €</h4>
+                                    <h4 className="oldprice">{item.oldPrice} € neuf</h4>
+                                  </div>
+                                </div>
+                                <div className="overlay">
+                                  <button className="overlay-btn" onClick={() => addToCart(item)}>Ajouter au panier</button>
+                                  <button className="overlay-btn">Voir le détail</button>
+                                </div>
+                            </div>)
+                        })
+                      }
+                  </div>
+                </div>
+    
+                {/* la partie des commentaire */}
+                <div className="commentaire">
+    
+                      {
+                        commentaire.map((item,index)=>{
+                          
+                          return(
+                            /* la div qui représente la carte du contenu du commentaire */
+                            <div className="commentaire_Card" key={index}>
+                              {/* la div qui contient  le profile du client son nom et la date d'Achat*/}
+                              <div className="Name_icon_dateAchat">
+                                <p className="Comment_Icon" style={{backgroundColor:item.iconColor}}>{item.client.charAt(0)}</p>
+                                <div className="Name_dateAchat">
+                                  <p>{item.client}</p>
+                                  <p>Acheté le {item.dateAchat}</p>
+                                </div>
+                              </div>
+                              {/* la div du rating */}
+                              <div className="Rating">
+                                <p>⭐ {item.rating}</p>
+                              </div>
+                              {/* la div qui contient le corp du commentaire */}
+                              <div className="message_commentaire">
+                                <p>{item.commentaire}</p>
+                              </div>
+                              {/* la div qui contient la pays d'où le commentaire est écris et la date */}
+                              <div className="pays_dateCommentaire">
+                                <p>Commenté dans ce pays : {item.PaysCommentaire}, le {item.dateCommentaire} </p>
+                              </div>
+                              {/* la div qui contient le type du iPhone acheter , sa couleur et son état */}
+                              <div className="type_couleur_etat">
+                                <p>{item.typeIphone} - {item.couleur} - {item.EtatIphone}</p>
+                              </div>
+                            </div>
+                          )
+    
+                        })
+                      }
+                      
+                </div>
+                  
+    
+              </div>
+            </>
+        )
+}
+
+export default Hppage
