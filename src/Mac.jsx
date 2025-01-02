@@ -273,7 +273,7 @@ function Mac() {
           {/* la partie qui se situe avant la partie des filtre et du catalogue */}
           {/* la partie pour savoir ou on se situe */}
               <nav className="breadcrumb">
-                <a href="/">Accueil</a> &gt; <a href="/Smartphones">Smartphones</a> &gt; <span>Tous les Mac</span>
+                <a href="/">Accueil</a> &gt; <a href="/Laptops">Laptops</a> &gt; <span>Tous les Mac</span>
               </nav>
           <div className="container">
               

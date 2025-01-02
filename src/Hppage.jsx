@@ -165,7 +165,7 @@ function Hppage(){
               {/* la partie qui se situe avant la partie des filtre et du catalogue */}
               {/* la partie pour savoir ou on se situe */}
                   <nav className="breadcrumb">
-                    <a href="/">Accueil</a> &gt; <a href="/Smartphones">Smartphones</a> &gt; <span>Tous les iPhones</span>
+                    <a href="/">Accueil</a> &gt; <a href="/Laptops">Laptops</a> &gt; <span>Tous les HP</span>
                   </nav>
               <div className="container">
                   
@@ -195,7 +195,7 @@ function Hppage(){
                   {/* une introduction avec un titre et un paragraphe */}
                     <div className="sometext">
                       <h1>iPhone reconditionnés</h1>
-                      <p>Vous cherchez un iPhone reconditionné ? Bingo ! Nous sommes les maîtres des offres d'iPhone reconditionnés. Nos iPhone offrent le meilleur des deux mondes : prix et qualité. iPhone 12, iPhone 11, iPhone XR, iPhone XS Max, nous les avons tous.</p>
+                      <p>Vous cherchez un HP reconditionné ? Bingo ! Nous sommes les maîtres des offres de HP reconditionnés. Nos HP offrent le meilleur des deux mondes : prix et qualité. HP Pavillon, HP EliteBook, HP ZBook, nous les avons tous.</p>
                     </div>
                     {/* le filtre de trie par prix croissant ou décroissant */}
                     <div class="sort-container">
