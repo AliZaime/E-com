@@ -329,7 +329,7 @@ function Ipad() {
         <div className="iphonepage">
           {/* la partie qui se situe avant la partie des filtre et du catalogue */}
           <nav className="breadcrumb">
-                <a href="/">Accueil</a> &gt; <a href="/laptops">Laptops</a> &gt; <span>Dell</span>
+                <a href="/">Accueil</a> &gt; <a href="/Tablettes">Tablettes</a> &gt; <span>Ipad</span>
           </nav>
           <div className="container">
               {/* la partie pour savoir ou on se situe */}

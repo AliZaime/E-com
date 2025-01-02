@@ -29,6 +29,7 @@ import Mac from './Mac';
 import Dell from './Dell';
 import Tablettes from './Tablettes';
 import Ipad from './Ipad';
+import SamsungTab from './SamsungTab';
 //pour vercel push1
 //pour vercel push2
 
@@ -88,6 +89,7 @@ function App() {
             <Route path="/laptops/Dell" element={<Dell />} />
             <Route path="/Tablettes" element={<Tablettes />} />
             <Route path="/Tablettes/Ipad" element={<Ipad />} />
+            <Route path="/Tablettes/SamsungTab" element={<SamsungTab />} />
           </Routes>
         </main>
         {/*tst*/}
