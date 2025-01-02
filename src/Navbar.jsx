@@ -182,15 +182,9 @@ const iscartempty = currentUser ? (currentUser.cart || []).length === 0 : true;
                 Montres connectées
               </Link>
             </li>
-            <li>
-              <Link className="link" to={"/Audio"} onClick={closeSidebar}>
-                Audio
-              </Link>
-            </li>
-            <li>
-            </li>
           </ul>
         </div>
+
       </nav>
     </>
   );

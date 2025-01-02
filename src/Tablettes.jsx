@@ -4,10 +4,10 @@ import { Link } from 'react-router-dom';
 
 const Tablettes = () => {
     const Tablettes = [
-        { id: 1, name: 'Ipad', image: '/tablets_pic/ipad.jpg', lien: '/Tablettes/Ipad' },
-        { id: 2, name: 'Samsung Tab', image: '/tablets_pic/samsungtab.jpg', lien: '/Tablettes/SamsungTab' },
-        { id: 3, name: 'Lenovo', image: '/tablets_pic/lenovotab.jpg', lien: '/Tablettes/Lenovo' },
-        { id: 4, name: 'Toutes les marques', image: '/tablets_pic/tous.jpg', lien: '/Tablettes/AllProducts' }
+        { id: 1, name: 'Ipad', image: '/laptops_pic/mac1.png', lien: '/Tablettes/Ipad' },
+        { id: 2, name: 'Samsung Tab', image: '/tablets_pic/samsung1.png', lien: '/Tablettes/SamsungTab' },
+        { id: 3, name: 'Lenovo', image: '/tablets_pic/lenovo2.png', lien: '/Tablettes/Lenovo' },
+        { id: 4, name: 'Toutes les marques', image: '/tablets_pic/ipad1.png', lien: '/Tablettes/AllProducts' }
     ];
     
     const tablets = [
