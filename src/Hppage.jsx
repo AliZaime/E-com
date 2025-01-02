@@ -9,13 +9,13 @@ function Hppage(){
       ]
 
     const products = [
-        { id: 1, name: 'HP EliteBook 850 G5 15',image: '/laptops_pic/hpelitbook850.png', rating: '4.6/5', reviews: 14, currentPrice: 425.01, oldPrice: 1900.00 ,quantite:1, condition: "Parfait état", vendu_avec: "Câble de chargement"},
-        { id: 2, name: 'HP EliteBook 840 G3 14', image: '/laptops_pic/hpelitebook840.png', rating: '4.3/5', reviews: 45, currentPrice: 211.46, oldPrice: 826.00 ,quantite:1, condition: "Parfait état", vendu_avec: "Câble de chargement"},
-        { id: 3, name: 'HP EliteBook 840 G5 14', image: '/laptops_pic/hpelitebook840G5.png', rating: '3.7/5', reviews: 12, currentPrice: 263.42, oldPrice: 1251.00 ,quantite:1, condition: "Parfait état", vendu_avec: "Câble de chargement"},
-        { id: 4, name: 'HP EliteBook 830 G7 13', image: '/laptops_pic/hpelitbook830.png', rating: '5/5', reviews: 10, currentPrice: 389.00, oldPrice: 1899.99 ,quantite:1, condition: "Parfait état", vendu_avec: "Câble de chargement"},
-        { id: 5, name: 'HP 255 G9 15 Ryzen 3', image: '/laptops_pic/hp255G9.png', rating: '4.8/5', reviews: 23, currentPrice: 400.19, oldPrice: 700.00 ,quantite:1, condition: "Parfait état", vendu_avec: "Câble de chargement"},
-        { id: 6, name: 'HP ZBook 15 G3 15', image: '/laptops_pic/hpzbook15.png', rating: '4.1/5', reviews: 14, currentPrice: 495.95, oldPrice: 3499.00 ,quantite:1, condition: "Parfait état", vendu_avec: "Câble de chargement"},
-        { id: 7, name: 'HP ZBook 17 G3 17', image: '/laptops_pic/hpzbook17.png', rating: '4/5', reviews: 21, currentPrice: 639.00, oldPrice: 1494.00 ,quantite:1, condition: "Parfait état", vendu_avec: "Câble de chargement"},
+        { id: 1, name: 'HP EliteBook 850 G5 15',image: '/laptops_pic/hpelitbook850.png',color: ['white','aqua','darkblue','red'], rating: '4.6/5', reviews: 14, currentPrice: 425.01, oldPrice: 1900.00 ,quantite:1, condition: "Parfait état", vendu_avec: "Câble de chargement"},
+        { id: 2, name: 'HP EliteBook 840 G3 14', image: '/laptops_pic/hpelitebook840.png',color: ['white','aqua','darkblue','red'], rating: '4.3/5', reviews: 45, currentPrice: 211.46, oldPrice: 826.00 ,quantite:1, condition: "Parfait état", vendu_avec: "Câble de chargement"},
+        { id: 3, name: 'HP EliteBook 840 G5 14', image: '/laptops_pic/hpelitebook840G5.png',color: ['white','aqua','darkblue','red'], rating: '3.7/5', reviews: 12, currentPrice: 263.42, oldPrice: 1251.00 ,quantite:1, condition: "Parfait état", vendu_avec: "Câble de chargement"},
+        { id: 4, name: 'HP EliteBook 830 G7 13', image: '/laptops_pic/hpelitbook830.png',color: ['white','aqua','darkblue','red'], rating: '5/5', reviews: 10, currentPrice: 389.00, oldPrice: 1899.99 ,quantite:1, condition: "Parfait état", vendu_avec: "Câble de chargement"},
+        { id: 5, name: 'HP 255 G9 15 Ryzen 3', image: '/laptops_pic/hp255G9.png',color: ['white','aqua','darkblue','red'], rating: '4.8/5', reviews: 23, currentPrice: 400.19, oldPrice: 700.00 ,quantite:1, condition: "Parfait état", vendu_avec: "Câble de chargement"},
+        { id: 6, name: 'HP ZBook 15 G3 15', image: '/laptops_pic/hpzbook15.png',color: ['white','aqua','darkblue','red'], rating: '4.1/5', reviews: 14, currentPrice: 495.95, oldPrice: 3499.00 ,quantite:1, condition: "Parfait état", vendu_avec: "Câble de chargement"},
+        { id: 7, name: 'HP ZBook 17 G3 17', image: '/laptops_pic/hpzbook17.png',color: ['white','aqua','darkblue','red'], rating: '4/5', reviews: 21, currentPrice: 639.00, oldPrice: 1494.00 ,quantite:1, condition: "Parfait état", vendu_avec: "Câble de chargement"},
     ];
     const [checkeditem, setCheckedItem] = useState({
             peuimport:false,
@@ -91,18 +91,59 @@ function Hppage(){
             setModelInputValue(event.target.value);
             console.log(`Modele = ${modelinputvalue}`);
           }
-    
+          
+          const [colorinputvalue,setColorInputValue] = useState("");
+                function handleColorInputValue(event) {
+                  setColorInputValue(event.target.value);
+                }
+          
+          /* le usestate pour capturer les modification des input de couleur */
+                const [checkeditemcolor, setCheckedItemcolor] = useState({
+                      white:false,
+                      lightblue:false,
+                      darkblue:false,
+                      red:false,
+                      yellow:false,
+                      grey:false,
+                      aqua:false,
+                      black:false
+                });
+                /* la function qui est charger du check unique des input de couleur */
+                function handleCheckboxColorChange(event){
+                  const {name,checked}=event.target
+                  console.log(`${name} is ${checked}`);
+                  if(checked){
+                    setCheckedItemcolor({
+                      white:name === "white",
+                      lightblue:name === "lightblue",
+                      darkblue:name === "darkblue",
+                      red:name === "red",
+                      yellow:name === "yellow",
+                      grey:name === "grey",
+                      aqua:name === "aqua",
+                      black:name === "black"
+                    });
+                  }
+                  else{
+                    setCheckedItemcolor((prevState) => ({
+                      ...prevState,
+                      [name]: false,
+                    }));
+                  }
+                }
     
           /* la fonction qui retourne selon les filtres les produits qui correspondent */
           function filterProducts() {
             // Vérifier si un filtre est activé
             const isAnyModelChecked = Object.values(checkeditem).some((value) => value); 
+            const isAnyColorChecked = Object.values(checkeditemcolor).some((value) => value);
             const isTextInputUsed = modelinputvalue.trim() !== "";
+            const isTextInputColorUsed = colorinputvalue.trim() !== "";
             const isPriceSortUsed = pricesortstate !== "";
             const isPriceRangeUsed = (minprice !== 0 || maxprice !== 2000);
     
             // Si aucun filtre n'est activé, retourner tous les produits
-            if (!isAnyModelChecked  && !isTextInputUsed && !isPriceSortUsed && !isPriceRangeUsed) {
+            if (!isAnyModelChecked && !isAnyColorChecked && !isTextInputUsed && !isTextInputColorUsed && !isPriceSortUsed && !isPriceRangeUsed) {
               return products;
             }
           
@@ -115,18 +156,27 @@ function Hppage(){
                   : isAnyModelChecked 
                     ? Object.keys(checkeditem).some(
                         (key) => {
-                            return checkeditem[key] && product.name.toLowerCase().includes(key.replace(/_/g, ' ').toLowerCase());
-                        }
+                          return checkeditem[key] && product.name.toLowerCase().includes(key.replace(/_/g, ' ').toLowerCase());                        }
                       )
                     : true;
     // Aucun modèle sélectionné
+          
+              // Filtrage par couleur
+              const isColorMatched =
+                isTextInputColorUsed
+                ? product.color.filter(c => c.toLowerCase().includes(colorinputvalue.toLowerCase())).length > 0
+                : isAnyColorChecked
+                ? product.color.some(
+                  (color) => checkeditemcolor[color.toLowerCase()] === true
+                )
+                : true; // Aucune couleur sélectionnée
           
                 const isPriceMatched =
                   (minprice === 0 || product.currentPrice >= minprice) && 
                   (maxprice === 2000 || product.currentPrice <= maxprice);
     
-                return isModelMatched  && isPriceMatched; // Doit respecter les deux filtres
-                });
+              return isModelMatched && isColorMatched && isPriceMatched; // Doit respecter les deux filtres
+            });
     
             if(pricesortstate === "ascending"){
               filtredproducts.sort((a, b) => a.currentPrice - b.currentPrice);
@@ -280,7 +330,68 @@ function Hppage(){
                             </div>
                           {/*fermeture de la div des modeles  */}
                       </div>
-    
+                  {/* le filtre des couleur */}
+                  <div className="Couleur">
+                        {/* le titre de la section avec une bar de recherche*/}
+                        <h3>Couleur</h3>
+                        <div className="Couleurinputcontainer"> 
+                          <input type="text" placeholder="Couleur" className="inputCouleur" id="inputCouleur" onChange={handleColorInputValue}/>
+                          <i class="fa-solid fa-magnifying-glass"></i>
+                        </div>
+
+                        {/* la partie qui contient les couleur du téléphone */}
+                        <div className="ckeck-list">
+                          <label>
+                            <input type="checkbox" name='white'  checked={checkeditemcolor.white}  onChange={handleCheckboxColorChange}/>
+                            <div className="colorinput" style={{backgroundColor: 'white',width:'20px',height:'20px',borderRadius:'50%',border:'1px solid black'}}></div>
+                            Blanc
+                          </label>
+                              
+                          <label>
+                            <input type="checkbox" name="lightblue"  checked={checkeditemcolor.lightblue} onChange={handleCheckboxColorChange}/>
+                            <div className="colorinput" style={{backgroundColor: 'lightblue',width:'20px',height:'20px',borderRadius:'50%',border:'1px solid black'}}></div>
+                            Bleu Clair
+                          </label>
+                              
+                          <label>
+                            <input type="checkbox" name="darkblue" checked={checkeditemcolor.darkblue}  onChange={handleCheckboxColorChange}/>
+                            <div className="colorinput" style={{backgroundColor: 'darkblue',width:'20px',height:'20px',borderRadius:'50%',border:'1px solid black'}}></div>
+                            Bleu Nuit
+                          </label>
+                              
+                          <label>
+                            <input type="checkbox" name="red"  checked={checkeditemcolor.red} onChange={handleCheckboxColorChange}/>
+                            <div className="colorinput" style={{backgroundColor: 'red',width:'20px',height:'20px',borderRadius:'50%',border:'1px solid black'}}></div>
+                            Rouge
+                          </label>
+                              
+                          <label>
+                            <input type="checkbox" name="yellow"  checked={checkeditemcolor.yellow} onChange={handleCheckboxColorChange}/>
+                            <div className="colorinput" style={{backgroundColor: 'yellow',width:'20px',height:'20px',borderRadius:'50%',border:'1px solid black'}}></div>
+                            Jaune
+                          </label>
+                              
+                          <label>
+                            <input type="checkbox" name="grey" checked={checkeditemcolor.grey} onChange={handleCheckboxColorChange}/>
+                            <div className="colorinput" style={{backgroundColor: 'grey',width:'20px',height:'20px',borderRadius:'50%',border:'1px solid black'}}></div>
+                            Gris
+                          </label>
+                              
+                          <label>
+                            <input type="checkbox" name="aqua"  checked={checkeditemcolor.aqua} onChange={handleCheckboxColorChange}/>
+                            <div className="colorinput" style={{backgroundColor: 'aqua',width:'20px',height:'20px',borderRadius:'50%',border:'1px solid black'}}></div>
+                            Bleu Marine 
+                          </label>
+                              
+                          <label>
+                            <input type="checkbox" name="black"  checked={checkeditemcolor.black} onChange={handleCheckboxColorChange}/>
+                            <div className="colorinput" style={{backgroundColor: 'black',width:'20px',height:'20px',borderRadius:'50%',border:'1px solid black'}}></div>
+                            Black
+                          </label>
+                        {/* fermeture de la div des input des couleurs */}
+                        </div>
+                      {/* fermeture de la div du filtre des couleurs */}
+                  </div>
     
                   </div>
                   {/* la partie qui contient le catalogue des iPhones */}
