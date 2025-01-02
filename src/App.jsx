@@ -77,7 +77,7 @@ function App() {
             <Route path="/Paiment" element={<PaymentForm />} />
             <Route path="/smartphones/Samsung" element={<Samsung />} />
             <Route path="/smartphones/GooglePixel" element={<GooglePixel />} />
-            <Route path="/Prd" element={<ProductPage />} />
+            <Route path="/prd/product/:name" element={<ProductPage />} />
             <Route path="/smartphones/AllProducts" element={<AllProducts />} />
             <Route path="/laptops" element={<Laptops />} />
             <Route path="/laptops/Dell" element={<Dell />} />

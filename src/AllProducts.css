@@ -1,4 +1,4 @@
-.smartphones-page {
+.ALLPRODUCTS {
     padding: 20px;
     text-align: center;
     margin-bottom: 30px;
@@ -211,6 +211,11 @@
   transform: none; /* Pas d'agrandissement lors du survol */
 }
 
+.intro
+{
+  margin-right: 90px;
+  justify-content: end;
+}
 /* Pour rendre l'alignement plus esthétique sur mobile */
 @media (max-width: 768px) {
   .pagination-controls button {
@@ -219,6 +224,20 @@
     font-size: 14px; /* Taille du texte plus petite */
     padding: 8px 16px;
   }
+  .infoserviceContainer{
+   width: 100%;
+   margin: 0; 
+  }
+
+}
+@media screen and (max-width: 440px) {
+  
+  .infoserviceContainer p{
+    display: none;
+   }
+   .container{
+    width: 80%;
+   }
 }
 .googlebtn{
   display: flex;

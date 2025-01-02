@@ -122,7 +122,6 @@ i {
 
 /* Design de base pour la carte de produit */
 .product-card {
-  width: 250px;
   margin: 15px;
   padding: 20px;
   border-radius: 10px; /* Bordure arrondie */
@@ -422,7 +421,6 @@ gap: 30px;
   .home {
     background-color: #f9f9f9;
     width: 100%; /* Assure que la largeur de la page est de 100% */
-    padding: 0;
   }
 
 
@@ -480,8 +478,7 @@ gap: 30px;
   }
 
   .product-card {
-    width: 20%;
-    padding: 15px;
+  width: auto;
   }
 
   .product-card img {
@@ -505,7 +502,6 @@ gap: 30px;
     align-items: center;
     gap: 10px;
     display: flex;
-    margin: 0px 148px 0px 194px;
 }
 
   .category-button {
@@ -543,13 +539,15 @@ gap: 30px;
   .hero-text {
     display: flex;
     text-align: center;
+    width: 700px;
   }
 
   .hero-text h1 {
     font-size: 1.8rem;
   }
   .product-containermo{
-    margin-left: 140px;
+    margin-left: 30px;
+    width: 100%;
   }
   .product-cardmo img{
     width: 100%;
@@ -559,5 +557,46 @@ gap: 30px;
   }
   .pagination-controlsmo {
     margin-right: 170px;
+  }
+}
+
+@media screen and (max-width: 426px) {
+  .home {
+    background-color: #f9f9f9;
+    width: 100%; /* Assure que la largeur de la page est de 100% */
+  }
+  .carousel img {
+    width: 100%;
+    border-radius: 8px;
+    height: 150px;
+  }
+  .items{
+    flex-direction: column;
+  
+  }
+  .product-containermo {
+    margin-left: 0;
+    width: 100%;
+  }
+  .category-navigation {
+    width: 100%;
+  }
+  .hero-text h1 {
+    width: 100%;
+  }
+  .hero-text {
+    width: 100%;
+  }
+  .product-containermo{
+    width: 100%;
+    flex-direction: column;
+    align-items: center;
+  }
+  .product-cardmo{
+    width: 55%;
+  }
+  .benefits {
+    width: 100%;
+    margin: 0;
   }
 }
