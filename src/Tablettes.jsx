@@ -6,7 +6,7 @@ const Tablettes = () => {
     const Tablettes = [
         { id: 1, name: 'Ipad', image: '/laptops_pic/mac1.png', lien: '/Tablettes/Ipad' },
         { id: 2, name: 'Samsung Tab', image: '/tablets_pic/samsung1.png', lien: '/Tablettes/SamsungTab' },
-        { id: 3, name: 'Lenovo', image: '/tablets_pic/lenovo2.png', lien: '/Tablettes/Lenovo' },
+        { id: 3, name: 'Lenovo', image: '/tablets_pic/lenovo2.png', lien: '/Tablettes/LenovoTab' },
         { id: 4, name: 'Toutes les marques', image: '/tablets_pic/ipad1.png', lien: '/Tablettes/AllProducts' }
     ];
     
