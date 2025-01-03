@@ -3,71 +3,11 @@ import './Hppage.css'
 
 function Nintendo(){
     const commentaire = [
-        {
-        id: 1,
-        client: 'Lucas T.',
-        iconColor: '#94c2f5',
-        dateAchat: '12 octobre 2024',
-        dateCommentaire: '25 octobre 2024',
-        PaysCommentaire: 'France',
-        rating: '5/5',
-        commentaire: "La Nintendo Switch que j'ai achetée fonctionne parfaitement. La qualité de construction est excellente et les jeux Nintendo sont un vrai plaisir à jouer. La console est très polyvalente et je peux la jouer aussi bien sur mon téléviseur que dans mes déplacements.",
-        typeNintendo: 'Nintendo Switch',
-        couleur: 'Bleu/Rouge',
-        EtatNintendo: 'Neuf'
-        },
-        {
-        id: 2,
-        client: 'Marc G.',
-        iconColor: '#f5d94c',
-        dateAchat: '5 septembre 2024',
-        dateCommentaire: '15 septembre 2024',
-        PaysCommentaire: 'France',
-        rating: '4.7/5',
-        commentaire: "Je suis très satisfait de ma Nintendo 3DS XL. Les jeux sont super et l'écran 3D fonctionne parfaitement. La console est solide et agréable à utiliser au quotidien.",
-        typeNintendo: 'Nintendo 3DS XL',
-        couleur: 'Noir',
-        EtatNintendo: 'Reconditionné'
-        },
-        {
-        id: 3,
-        client: 'Carla P.',
-        iconColor: '#e5e5e5',
-        dateAchat: '22 janvier 2024',
-        dateCommentaire: '10 février 2024',
-        PaysCommentaire: 'France',
-        rating: '4.5/5',
-        commentaire: "La Nintendo Switch OLED est une excellente console. L'écran OLED offre des couleurs éclatantes et un contraste saisissant. Les jeux Nintendo sont toujours aussi beaux et fun à jouer.",
-        typeNintendo: 'Nintendo Switch OLED',
-        couleur: 'Blanc',
-        EtatNintendo: 'Neuf'
-        },
-        {
-        id: 4,
-        client: 'Isabelle B.',
-        iconColor: '#a5f594',
-        dateAchat: '10 mars 2024',
-        dateCommentaire: '22 mars 2024',
-        PaysCommentaire: 'France',
-        rating: '4.8/5',
-        commentaire: "La Nintendo 2DS XL est une très bonne console portable. Elle est compacte, solide et les jeux Nintendo sont toujours aussi géniaux. C'est un excellent choix pour les joueurs à petit budget.",
-        typeNintendo: 'Nintendo 2DS XL',
-        couleur: 'Noir',
-        EtatNintendo: 'Reconditionné'
-        },
-        {
-        id: 5,
-        client: 'Eliott N.',
-        iconColor: '#f5949c',
-        dateAchat: '30 août 2024',
-        dateCommentaire: '12 septembre 2024',
-        PaysCommentaire: 'France',
-        rating: '5/5',
-        commentaire: "Je suis très satisfait de ma Nintendo Switch OLED. L'écran est magnifique, les jeux sont superbes et la console est très agréable à utiliser. C'est une excellente console pour profiter des meilleurs jeux Nintendo.",
-        typeNintendo: 'Nintendo Switch OLED',
-        couleur: 'Blanc',
-        EtatNintendo: 'Neuf'
-        }
+        {id: 1,client: 'Lucas T.',iconColor: '#94c2f5',dateAchat: '12 octobre 2024',dateCommentaire: '25 octobre 2024',PaysCommentaire: 'France',rating: '5/5',commentaire: "La Nintendo Switch que j'ai achetée fonctionne parfaitement. La qualité de construction est excellente et les jeux Nintendo sont un vrai plaisir à jouer. La console est très polyvalente et je peux la jouer aussi bien sur mon téléviseur que dans mes déplacements.",typeNintendo: 'Nintendo Switch',couleur: 'Bleu/Rouge',EtatNintendo: 'Neuf'},
+        {id: 2,client: 'Marc G.',iconColor: '#f5d94c',dateAchat: '5 septembre 2024',dateCommentaire: '15 septembre 2024',PaysCommentaire: 'France',rating: '4.7/5',commentaire: "Je suis très satisfait de ma Nintendo 3DS XL. Les jeux sont super et l'écran 3D fonctionne parfaitement. La console est solide et agréable à utiliser au quotidien.",typeNintendo: 'Nintendo 3DS XL',couleur: 'Noir',EtatNintendo: 'Reconditionné'},
+        {id: 3,client: 'Carla P.',iconColor: '#e5e5e5',dateAchat: '22 janvier 2024',dateCommentaire: '10 février 2024',PaysCommentaire: 'France',rating: '4.5/5',commentaire: "La Nintendo Switch OLED est une excellente console. L'écran OLED offre des couleurs éclatantes et un contraste saisissant. Les jeux Nintendo sont toujours aussi beaux et fun à jouer.",typeNintendo: 'Nintendo Switch OLED',couleur: 'Blanc',EtatNintendo: 'Neuf'},
+        {id: 4,client: 'Isabelle B.',iconColor: '#a5f594',dateAchat: '10 mars 2024',dateCommentaire: '22 mars 2024',PaysCommentaire: 'France',rating: '4.8/5',commentaire: "La Nintendo 2DS XL est une très bonne console portable. Elle est compacte, solide et les jeux Nintendo sont toujours aussi géniaux. C'est un excellent choix pour les joueurs à petit budget.",typeNintendo: 'Nintendo 2DS XL',couleur: 'Noir',EtatNintendo: 'Reconditionné'},
+        {id: 5,client: 'Eliott N.',iconColor: '#f5949c',dateAchat: '30 août 2024',dateCommentaire: '12 septembre 2024',PaysCommentaire: 'France',rating: '5/5',commentaire: "Je suis très satisfait de ma Nintendo Switch OLED. L'écran est magnifique, les jeux sont superbes et la console est très agréable à utiliser. C'est une excellente console pour profiter des meilleurs jeux Nintendo.",typeNintendo: 'Nintendo Switch OLED',couleur: 'Blanc',EtatNintendo: 'Neuf'}
         ];
         
         const products = [
@@ -640,7 +580,7 @@ function Nintendo(){
                               </div>
                               {/* la div qui contient le type du iPhone acheter , sa couleur et son état */}
                               <div className="type_couleur_etat">
-                                <p>{item.typeIphone} - {item.couleur} - {item.EtatIphone}</p>
+                                <p>{item.typeNintendo} - {item.couleur} - {item.EtatNintendo}</p>
                               </div>
                             </div>
                           )

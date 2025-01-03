@@ -269,7 +269,7 @@
     border-radius: 5px;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
     position: relative;
-    overflow: hidden;
+    
   }
   @media (max-width:900px) {
     .phonecard{
@@ -286,8 +286,7 @@
   }
   .phonecard:hover{
     transform: scale(1.05);
-  }
-  .phoneinfo h2, 
+  } 
   .phoneinfo p, 
   .phoneinfo h4, 
   .phoneinfo h6 {
@@ -326,19 +325,20 @@
     
   }
   .phoneName{
-    width: 95%;
-    height: auto;
+    width: 70%;
+    height: 50px;
     text-align: center;
   }
   .phoneinfo{
     display: flex;
     flex-direction: column;
+    justify-content: center;
+    align-items: center;
     height: 45%;
     margin: 0;
     padding: 0;
     width: 100%;
     width: 300px;
-    text-align: center;
   }
   .oldprice{
     text-decoration: line-through;
