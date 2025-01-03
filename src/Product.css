@@ -64,3 +64,25 @@
     border-radius: 40px;
   }
   
+
+  @media screen and (max-width: 768px) {
+  .carte .imgBx img {
+    width: 100%;
+  }
+}
+
+@media screen and (max-width: 450px) {
+  .carte {
+    flex-direction: column;
+    height: auto;
+  }
+  .carte .imgBx  {
+    width: 100%;
+  }
+  .carte  {
+    align-items: center;
+  }
+  .carte .details h2{
+    margin-left: -25px;
+  }
+}
