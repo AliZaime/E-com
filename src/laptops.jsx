@@ -8,7 +8,7 @@ const Laptops = () => {
         { id: 3, name: 'HP', image: '/laptops_pic/hp.png', lien: '/laptops/Hppage' },
         { id: 1, name: 'Mac', image: '/laptops_pic/mac1.png', lien: '/laptops/Mac' },
         { id: 2, name: 'Dell', image: '/laptops_pic/dell1.png', lien: '/laptops/Dell' },
-        { id: 4, name: 'Toutes les marques', image: '/laptops_pic/autre.png', lien: '/laptops/AllProducts' }
+        { id: 4, name: 'Toutes les marques', image: '/laptops_pic/autre.png', lien: '/laptops/AllLaptops' }
     ];
     
     const products = [

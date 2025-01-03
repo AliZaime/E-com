@@ -36,6 +36,8 @@ import PS from './PS';
 import Montres from './Montres';
 import Xbox from './Xbox';
 import AppleWatch from './AppleWatch';
+import AllLaptops from './AllLaptops';
+import AllTablettes from './AllTablettes';
 //pour vercel push1
 //pour vercel push2
 
@@ -102,6 +104,8 @@ function App() {
             <Route path="/Montres" element={<Montres />} />
             <Route path="/Consoles/Xbox" element={<Xbox />} />
             <Route path="/Montres/AppleWatch" element={<AppleWatch />} />
+            <Route path="/laptops/AllLaptops" element={<AllLaptops/>} />
+            <Route path="/Tablettes/AllTablettes" element={<AllTablettes/>} />
           </Routes>
         </main>
         {/*tst*/}
