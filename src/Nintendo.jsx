@@ -267,9 +267,8 @@ function Nintendo(){
           
               // Filtrage spécifique à la série "SerieS"
               const isMarioMatched = 
-                checkeditem["EditionMario"] && 
-                product.name.toLowerCase().trim() === 'nintendo switch mario edition'.trim();
- 
+                checkeditem["EditionMario"]&& 
+                product.name.toLowerCase() === 'Nintendo Switch Mario Edition'; 
           
               // Filtrage spécifique à la série "SerieS"
               const issplattonMatched = 
