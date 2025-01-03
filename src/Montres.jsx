@@ -11,11 +11,11 @@ const Watches = () => {
 
     const products = [
         { id: 1, name: 'Apple Watch Series 8', image: '/watches_pic/Apple-Watch-Serie-8.webp', storage: 'GPS + Cellular', color: 'Minuit', unlocked: 'Débloqué', rating: '4.7/5', reviews: 4532, currentPrice: 479.99, oldPrice: 529.0 },
-        { id: 2, name: 'Samsung Galaxy Watch 6', image: '/watches_pic/n-africa-galaxy-watch6-classic-r955-sm-r950nzkamea-thumb-537411343.png", storage: Bluetooth + LTE', color: 'Graphite', unlocked: 'Débloqué', rating: '4.5/5', reviews: 3421, currentPrice: 399.99, oldPrice: 429.0 },
+        { id: 2, name: 'Samsung Galaxy Watch 6', image: 'watches_pic/us-galaxy-watch4-classic-sm-r890nzkaxaa-505850631.webp', storage: 'Bluetooth + LTE', color: 'Graphite', unlocked: 'Débloqué', rating: '4.5/5', reviews: 3421, currentPrice: 399.99, oldPrice: 429.0 },
         { id: 4, name: 'Apple Watch Ultra', image: '/watches_pic/applewatchultra.png', storage: 'GPS + Cellular', color: 'Titanium', unlocked: 'Débloqué', rating: '4.9/5', reviews: 5231, currentPrice: 899.99, oldPrice: 999.0 },
         { id: 5, name: 'Samsung Galaxy Watch 5 Pro', image: '/watches_pic/1YenWrUTNx6zakeuMYwz7eJ66qkFG3LiX1iDWkIK.png', storage: 'Bluetooth + LTE', color: 'Noir', unlocked: 'Débloqué', rating: '4.6/5', reviews: 3121, currentPrice: 429.99, oldPrice: 459.99 },
-        { id: 7, name: 'Apple Watch SE (2nd Gen)', image: '/watches_pic/Apple-Watch-Serie-8.webp', storage: 'GPS', color: 'Blanc', unlocked: 'Débloqué', rating: '4.6/5', reviews: 2412, currentPrice: 279.99, oldPrice: 299.99 },
-        { id: 8, name: 'Samsung Galaxy Watch 4 Classic', image: '/watches_pic/Apple-Watch-Serie-8.webp', storage: 'Bluetooth', color: 'Argent', unlocked: 'Débloqué', rating: '4.5/5', reviews: 4103, currentPrice: 329.99, oldPrice: 349.99 },
+        { id: 7, name: 'Apple Watch SE (2nd Gen)', image: '/watches_pic/midnight-aluminum-midnight-sport-m-l-6.webp', storage: 'GPS', color: 'Blanc', unlocked: 'Débloqué', rating: '4.6/5', reviews: 2412, currentPrice: 279.99, oldPrice: 299.99 },
+        { id: 8, name: 'Samsung Galaxy Watch 4 Classic', image: '/watches_pic/GT runner.webp', storage: 'Bluetooth', color: 'Argent', unlocked: 'Débloqué', rating: '4.5/5', reviews: 4103, currentPrice: 329.99, oldPrice: 349.99 },
         { id: 10, name: 'Apple Watch Series 7', image: '/watches_pic/Apple-Watch-Serie-8.webp', storage: 'GPS + Cellular', color: 'Vert', unlocked: 'Débloqué', rating: '4.7/5', reviews: 5320, currentPrice: 379.99, oldPrice: 429.99 },
     ];
     
@@ -41,6 +41,7 @@ const Watches = () => {
     );
 
     return (
+
         <><div className="watches-page">
             <nav className="breadcrumb">
                 <a href="/">Accueil</a> &gt; <span>Montres connectées</span>

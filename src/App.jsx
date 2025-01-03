@@ -99,7 +99,6 @@ function App() {
             <Route path="/Consoles" element={<Consoles />} />
             <Route path="/Consoles/PS" element={<PS />} />
             <Route path="/Montres" element={<Montres />} />
-=======
             <Route path="/Consoles/Xbox" element={<Xbox />} />
           </Routes>
         </main>

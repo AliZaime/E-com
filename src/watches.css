@@ -1,7 +1,7 @@
 .watches-page {
     padding: 20px;
     text-align: center;
-    margin-bottom: 30px;
+    margin-bottom: 40px;
     background-color:rgb(219, 219, 219) /* Couleur de fond */
   }
   
@@ -158,3 +158,6 @@
     }
   }
   
+  .mostbuyed-watches{
+    margin-bottom: 70px;
+  }
