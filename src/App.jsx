@@ -41,6 +41,7 @@ import AllLaptops from './AllLaptops';
 import AllTablettes from './AllTablettes';
 import Samsung_Watch from './Samsung_Watch';
 import AllConsoles from './AllConsoles';
+import ALLMontresConnectees from './ALLMontresConnectées';
 //pour vercel push1
 //pour vercel push2
 //pour vercel push3
@@ -113,6 +114,7 @@ function App() {
             <Route path="/laptops/AllLaptops" element={<AllLaptops/>} />
             <Route path="/Tablettes/AllTablettes" element={<AllTablettes/>} />
             <Route path="/Consoles/AllConsoles" element={<AllConsoles/>} />
+            <Route path='/Montres/ALLMontresConnectées' element={<ALLMontresConnectees/>}/>
           </Routes>
         </main>
         {/*tst*/}
