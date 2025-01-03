@@ -3,7 +3,7 @@ import './Hppage.css'
 
 function Samsung_Watch(){
     const products = [
-        {id: 1,name: 'Samsung Galaxy Watch 4 (44mm)',message: "Top ventes",image: '/watches_pic/watch4.avif',color: ['black'],rating: '4.2/5',reviews: 510,currentPrice: 192.00,oldPrice: 400.00,quantite: 1,condition: "Neuf",vendu_avec: "Boîte d'origine, câble de chargement"},
+        {id: 1,name: 'Samsung Galaxy Watch 4 (44mm)',message: "",image: '/watches_pic/watch4.avif',color: ['black'],rating: '4.2/5',reviews: 510,currentPrice: 192.00,oldPrice: 400.00,quantite: 1,condition: "Neuf",vendu_avec: "Boîte d'origine, câble de chargement"},
         {id: 2,name: 'Samsung Galaxy Watch 6 (44mm)',message: "",image: '/watches_pic/watch6.png',color: ['grey'],rating: '4.4/5',reviews: 7,currentPrice: 185.00,oldPrice: 328.00,quantite: 1,condition: "Neuf",vendu_avec: "Boîte d'origine, câble de chargement"},
         {id: 3,name: 'Samsung Galaxy Watch Ultra',message: "",image: '/watches_pic/watchultra.avif',color: ['black'],rating: '4.3/5',reviews: 24,currentPrice: 199.00,oldPrice: 329.00,quantite: 1,condition: "Neuf",vendu_avec: "Boîte d'origine, câble de chargement"},
         {id: 4,name: 'Samsung Galaxy Watch 4 Classic (46mm)',message: "",image: '/watches_pic/watch4classic.avif',color: ['black'],rating: '4.3/5',reviews: 24,currentPrice: 83.06,oldPrice: 300.00,quantite: 1,condition: "Neuf",vendu_avec: "Boîte d'origine, câble de chargement"},
@@ -284,7 +284,7 @@ function Samsung_Watch(){
                 <div className="iphonepage">
                   {/* la partie qui se situe avant la partie des filtre et du catalogue */}
                   <nav className="breadcrumb">
-                        <a href="/">Accueil</a> &gt; <a href="/Montres">Consoles</a> &gt; <span>Samsung SmartWaches</span>
+                        <a href="/">Accueil</a> &gt; <a href="/Montres">Watches</a> &gt; <span>Samsung SmartWaches</span>
                   </nav>
                   <div className="container">
                       {/* la partie pour savoir ou on se situe */}
