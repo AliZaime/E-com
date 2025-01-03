@@ -5,7 +5,7 @@ import { Link } from 'react-router-dom';
 const Consoles = () => {
     const Consoles = [
         { id: 1, name: 'Play Station', image: '/Consoles_pic/ps.png', lien: '/Consoles/PS' },
-        { id: 2, name: 'Xbox', image: '/Consoles_pic/xbox.png', lien: '/Consoles/XBOX' },
+        { id: 2, name: 'Xbox', image: '/Consoles_pic/xbox.png', lien: '/Consoles/Xbox' },
         { id: 3, name: 'Nintendo', image: '/Consoles_pic/nintendo.png', lien: '/Consoles/Nintendo' },
         { id: 4, name: 'Toutes les marques', image: '/Consoles_pic/ps5.png', lien: '/Consoles/AllProducts' }
     ];
