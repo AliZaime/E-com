@@ -505,7 +505,7 @@ function AllProducts() {
         <>
         <div className="ALLPRODUCTS">
           {/* la partie qui se situe avant la partie des filtre et du catalogue */}
-          <nav className="breadcrumb">
+          <nav className="breadcrumbb">
                 <a href="/">Accueil</a> &gt; <a href="/Smartphones">Smartphones</a> &gt; <span>Toutes les marques</span>
           </nav>
           <div className="container">
@@ -885,7 +885,7 @@ function AllProducts() {
                           </div>
                           {/* la div qui contient le corp du commentaire */}
                           <div className="message_commentaire">
-                            <p>{item.commentaire}</p>
+                            <p className="a12">{item.commentaire}</p>
                           </div>
                           {/* la div qui contient la pays d'où le commentaire est écris et la date */}
                           <div className="pays_dateCommentaire">

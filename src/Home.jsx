@@ -295,8 +295,8 @@ function Home() {
         </div>
       </div>
       <div className="title">
-        <h2>La circularité recommence ici.</h2>
-        <p>Achetez et revendez vos appareils à des pros du reconditionné.</p>
+        <h2 className="a12">La circularité recommence ici.</h2>
+        <p className="a12">Achetez et revendez vos appareils à des pros du reconditionné.</p>
       </div>
       <div className="benefits">
         <div className="benefit">
@@ -318,7 +318,7 @@ function Home() {
       </div>
 
       <div className="Vus_recemment">
-        <h1>Vus récemment</h1>
+        <h1 className="a12">Vus récemment</h1>
         <div className="product-container">
           {visibleProducts.map((product) => (
             <div key={product.id} className="product-card" style={{ width: "180px" }}>
@@ -348,11 +348,11 @@ function Home() {
       </div>
 
       <div className="recherches-black-friday">
-        <h1>Les plus recherchés à Black Friday</h1>
+        <h1 className="a12">Les plus recherchés à Black Friday</h1>
         <div className="items">
           <div className="item">
             <img src="/A7/Phone_HP_Category_Smartphone_desktop.avif" alt="iPhone" />
-            <h3>iPhone</h3>
+            <h3 className="a12">iPhone</h3>
           </div>
           <div className="item">
             <img src="/A7/Phone_HP_Category_Smartphone_desktop.avif" alt="MacBook" />

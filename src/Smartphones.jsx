@@ -4,10 +4,10 @@ import { Link } from 'react-router-dom';
 
 const Smartphones = () => {
     const smartphones = [
-        { id: 1, name: 'iPhone', image: "/images/most-wanted--iphone-15--desktop.avif",lien:"/smartphones/iPhone"},
-        { id: 2, name: 'Samsung Galaxy', image: '/images/most-wanted--galaxy-s23--desktop.avif',lien:"/smartphones/Samsung" },
-        { id: 3, name: 'Google Pixel', image: '/images/most-wanted--google-pixel-8--desktop.avif',lien:"/smartphones/GooglePixel" },
-        { id: 4, name: 'Toutes les marques', image: '/images/most-wanted--all-brands--desktop.avif',lien:"AllProducts"}
+        { id: 1, name: 'iPhone', image: "/images/apple.png",lien:"/smartphones/iPhone"},
+        { id: 2, name: 'Samsung Galaxy', image: '/tablets_pic/samsung1.png',lien:"/smartphones/Samsung" },
+        { id: 3, name: 'Google Pixel', image: '/images/google.png',lien:"/smartphones/GooglePixel" },
+        { id: 4, name: 'Toutes les marques', image: '/images/org.png',lien:"AllProducts"}
       ];  
     const products = [
         { id: 1, name: 'iPhone 13', image: '/images/iphone13.avif', storage: '128 Go', color: 'Minuit', unlocked: 'Débloqué', rating: '4.4/5', reviews: 21245, currentPrice: 424.0, oldPrice: 749.0 },
@@ -45,11 +45,11 @@ const Smartphones = () => {
 
   return (
     <><div className="smartphones-page">
-          <nav className="breadcrumb">
+          <nav className="breadcrumbb">
               <a href="/">Accueil</a> &gt; <span>Smartphones</span>
           </nav>
-          <h1>Smartphones</h1>
-          <p className="subtitle">Achetez des smartphones et plus encore</p>
+          <h1 className='a12'>Smartphones</h1>
+          <p className="subtitlee">Achetez des smartphones et plus encore</p>
           <div className="smartphones-grid">
               {smartphones.map((phone) => (
                   phone.lien ? (
@@ -67,7 +67,7 @@ const Smartphones = () => {
           </div>
       </div>
       <div className="mostbuyed-smartphones">
-            <h1>Découvrez nos meilleures ventes</h1>
+            <h1 className='a12'>Découvrez nos meilleures ventes</h1>
             <div className="product-container">
                 {visibleProducts.map((product) => (
                     <div key={product.id} className="product-card">

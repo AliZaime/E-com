@@ -133,7 +133,7 @@ function Inscription() {
             )}
             <div className="inscription-form1">
                 <div className="form-container1">
-                    <h2>Join Us</h2>
+                    <h2 className="a12">Join Us</h2>
                     <form onSubmit={handleSubmit}>
                         <div className="form-group1">
                             <img src="/inscription_pic/logo_name.jpg" alt="img" />
@@ -220,7 +220,7 @@ function Inscription() {
                         {errors.adresse && <p className="error1">{errors.adresse}</p>}
                         <div className="cheking">
                             <input type="checkbox" required />
-                            <label>Accept the privacy policy and terms of service.</label>
+                            <label className="a12">Accept the privacy policy and terms of service.</label>
                         </div>
                         <button type="submit">Register</button>
                     </form>

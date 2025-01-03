@@ -46,11 +46,11 @@ const Laptops = () => {
 
   return (
     <><div className="smartphones-page">
-          <nav className="breadcrumb">
+          <nav className="breadcrumbb">
               <a href="/">Accueil</a> &gt; <span>Ordinateurs Portables</span>
           </nav>
-          <h1>Ordinateurs Portables</h1>
-          <p className="subtitle">Achetez des Ordinateurs Portables et plus encore</p>
+          <h1 className='a12'>Ordinateurs Portables</h1>
+          <p className="subtitlee">Achetez des Ordinateurs Portables et plus encore</p>
           <div className="smartphones-grid">
               {laptops.map((laptop) => (
                   laptop.lien ? (
@@ -68,7 +68,7 @@ const Laptops = () => {
           </div>
       </div>
       <div className="mostbuyed-smartphones">
-            <h1>Découvrez nos meilleures ventes</h1>
+            <h1 className='a12'>Découvrez nos meilleures ventes</h1>
             <div className="product-container">
                 {visibleProducts.map((product) => (
                     <div key={product.id} className="product-card">

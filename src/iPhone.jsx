@@ -229,7 +229,7 @@ function IPhone() {
         <div className="iphonepage">
           {/* la partie qui se situe avant la partie des filtre et du catalogue */}
           {/* la partie pour savoir ou on se situe */}
-              <nav className="breadcrumb">
+              <nav className="breadcrumbb">
                 <a href="/">Accueil</a> &gt; <a href="/Smartphones">Smartphones</a> &gt; <span>Tous les iPhones</span>
               </nav>
           <div className="container">
@@ -258,13 +258,13 @@ function IPhone() {
             {/* la partie qui contient le titre de la page avec une petit description */}
             <div className="intro">
               {/* une introduction avec un titre et un paragraphe */}
-                <div className="sometext">
+                <div className="sometextt">
                   <h1>iPhone reconditionnés</h1>
                   <p>Vous cherchez un iPhone reconditionné ? Bingo ! Nous sommes les maîtres des offres d'iPhone reconditionnés. Nos iPhone offrent le meilleur des deux mondes : prix et qualité. iPhone 12, iPhone 11, iPhone XR, iPhone XS Max, nous les avons tous.</p>
                 </div>
                 {/* le filtre de trie par prix croissant ou décroissant */}
                 <div class="sort-container">
-                  <label for="sort-select">Trier</label>
+                  <label for="sort-select" className="a12">Trier</label>
                   <select id="sort-select" class="sort-dropdown" value={pricesortstate} onChange={handlepricesortstate}> 
                     <option value="">Aucun choix</option>
                     <option value="ascending" >Prix croissants</option>
@@ -471,7 +471,7 @@ function IPhone() {
                           <div className="Name_icon_dateAchat">
                             <p className="Comment_Icon" style={{backgroundColor:item.iconColor}}>{item.client.charAt(0)}</p>
                             <div className="Name_dateAchat">
-                              <p>{item.client}</p>
+                              <p >{item.client}</p>
                               <p>Acheté le {item.dateAchat}</p>
                             </div>
                           </div>
@@ -481,7 +481,7 @@ function IPhone() {
                           </div>
                           {/* la div qui contient le corp du commentaire */}
                           <div className="message_commentaire">
-                            <p>{item.commentaire}</p>
+                            <p className="a12">{item.commentaire}</p>
                           </div>
                           {/* la div qui contient la pays d'où le commentaire est écris et la date */}
                           <div className="pays_dateCommentaire">

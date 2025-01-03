@@ -58,7 +58,6 @@ function Mac() {
         console.log(`${name} is ${checked}`);
         if(checked){
           setCheckedItem({
-            peuimport: name === "peuimport",
             macAir: name === "macAir",
             macPro: name === "macPro",
             imac: name === "imac",
@@ -272,7 +271,7 @@ function Mac() {
         <div className="iphonepage">
           {/* la partie qui se situe avant la partie des filtre et du catalogue */}
           {/* la partie pour savoir ou on se situe */}
-              <nav className="breadcrumb">
+              <nav className="breadcrumbb">
                 <a href="/">Accueil</a> &gt; <a href="/Laptops">Laptops</a> &gt; <span>Tous les Mac</span>
               </nav>
           <div className="container">
@@ -301,7 +300,7 @@ function Mac() {
             {/* la partie qui contient le titre de la page avec une petit description */}
             <div className="intro">
               {/* une introduction avec un titre et un paragraphe */}
-                <div className="sometext">
+                <div className="sometextt">
                   <h1>Mac reconditionnés</h1>
                   <p>Vous cherchez un Mac reconditionné ? Bingo ! Nous sommes les maîtres des offres de Mac reconditionnés. Nos Mac offrent le meilleur des deux mondes : prix et qualité. Macbook Air, Macbook Pro, Imac, Mac Mini, nous les avons tous.</p>
                 </div>
@@ -346,11 +345,6 @@ function Mac() {
 
                       {/* la partie qui contient les modèles du téléphone */}
                         <div className="ckeck-list">
-                          <label>
-                            <input type="checkbox" name='peuimport'  checked={checkeditem.peuimport}  onChange={handleCheckboxChange}/>
-                            Peu import
-                          </label>
-                              
                           <label>
                             <input type="checkbox" name="macAir"  checked={checkeditem.macAir} onChange={handleCheckboxChange}/>
                             Macbook Air
@@ -502,7 +496,7 @@ function Mac() {
                           </div>
                           {/* la div qui contient le corp du commentaire */}
                           <div className="message_commentaire">
-                            <p>{item.commentaire}</p>
+                            <p className="a12">{item.commentaire}</p>
                           </div>
                           {/* la div qui contient la pays d'où le commentaire est écris et la date */}
                           <div className="pays_dateCommentaire">

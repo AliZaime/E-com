@@ -1,8 +1,11 @@
+body{
+  background: transparent url("/public/backiee2.jpg") no-repeat;
+  background-size: 100% 100%;
+}
 .watches-page {
     padding: 20px;
     text-align: center;
     margin-bottom: 40px;
-    background-color:rgb(219, 219, 219) /* Couleur de fond */
   }
   
   /* Breadcrumb */

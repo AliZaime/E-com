@@ -46,11 +46,11 @@ const Tablettes = () => {
 
   return (
     <><div className="smartphones-page">
-          <nav className="breadcrumb">
+          <nav className="breadcrumbb">
               <a href="/">Accueil</a> &gt; <span>Tablettes</span>
           </nav>
-          <h1>Tablettes</h1>
-          <p className="subtitle">Achetez des Tablettes et plus encore</p>
+          <h1 className='a12'>Tablettes</h1>
+          <p className="subtitlee">Achetez des Tablettes et plus encore</p>
           <div className="smartphones-grid">
               {Tablettes.map((laptop) => (
                   laptop.lien ? (

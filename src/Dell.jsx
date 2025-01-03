@@ -333,7 +333,7 @@ function Dell() {
         <>
         <div className="iphonepage">
           {/* la partie qui se situe avant la partie des filtre et du catalogue */}
-          <nav className="breadcrumb">
+          <nav className="breadcrumbb">
                 <a href="/">Accueil</a> &gt; <a href="/laptops">Laptops</a> &gt; <span>Dell</span>
           </nav>
           <div className="container">
@@ -362,7 +362,7 @@ function Dell() {
             {/* la partie qui contient le titre de la page avec une petit description */}
             <div className="intro">
               {/* une introduction avec un titre et un paragraphe */}
-                <div className="sometext">
+                <div className="sometextt">
                   <h1>Dell reconditionnés</h1>
                   <p>Vous cherchez un Dell reconditionné ? Bingo ! Nous sommes les maîtres des offres Dell reconditionnés. Nos Dell offrent le meilleur des deux mondes.</p>
                 </div>
@@ -597,7 +597,7 @@ function Dell() {
                           </div>
                           {/* la div qui contient le corp du commentaire */}
                           <div className="message_commentaire">
-                            <p>{item.commentaire}</p>
+                            <p className="a12">{item.commentaire}</p>
                           </div>
                           {/* la div qui contient la pays d'où le commentaire est écris et la date */}
                           <div className="pays_dateCommentaire">

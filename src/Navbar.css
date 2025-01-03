@@ -7,6 +7,8 @@
   position: relative;
   z-index: 9999; /* Assurez-vous que la navbar est au-dessus de tout */
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  background: linear-gradient(to bottom, black, transparent);
+  color:white;
 }
 
 .part1 {
@@ -39,7 +41,7 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  box-shadow: 0 4px 8px rgba(255, 255, 255, 0.2);
 }
 
 .icons svg:hover{
@@ -56,6 +58,7 @@
   justify-content: center;
   align-items: center;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  background-color: rgb(46, 46, 46);
 }
 
 
@@ -101,7 +104,7 @@
 
 /* Liens principaux de la navbar */
 .nav-links li {
-  color: #010101;
+  color: #b4b4b4;
   list-style: none;
   margin: 0;
   padding: 0;
@@ -109,7 +112,7 @@
 
 
 .link {
-  color: #000000;
+  color: #bcbcbc;
   text-decoration: none;
   font-size: 1em;
   font-weight: 500;
@@ -139,7 +142,7 @@
   top: 50px;
   right: 0;
   background-color: #d2d3d3;
-  color: #333;
+  color: #fffefe;
   border-radius: 12px;
   box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
   padding: 15px;

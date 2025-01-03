@@ -391,7 +391,7 @@ function GooglePixel() {
         <>
         <div className="iphonepage">
           {/* la partie qui se situe avant la partie des filtre et du catalogue */}
-          <nav className="breadcrumb">
+          <nav className="breadcrumbb">
                 <a href="/">Accueil</a> &gt; <a href="/Smartphones">Smartphones</a> &gt; <span>Google Pixel</span>
           </nav>
           <div className="container">
@@ -420,7 +420,7 @@ function GooglePixel() {
             {/* la partie qui contient le titre de la page avec une petit description */}
             <div className="intro">
               {/* une introduction avec un titre et un paragraphe */}
-                <div className="sometext">
+                <div className="sometextt">
                   <h1>Google Pixel reconditionnés</h1>
                   <p>Vous cherchez un Google Pixel reconditionné ? Bingo ! Nous sommes les maîtres des offres Google Pixel reconditionnés. Nos Google Pixel offrent le meilleur des deux mondes.</p>
                 </div>
@@ -715,7 +715,7 @@ function GooglePixel() {
                           </div>
                           {/* la div qui contient le corp du commentaire */}
                           <div className="message_commentaire">
-                            <p>{item.commentaire}</p>
+                            <p className="a12">{item.commentaire}</p>
                           </div>
                           {/* la div qui contient la pays d'où le commentaire est écris et la date */}
                           <div className="pays_dateCommentaire">

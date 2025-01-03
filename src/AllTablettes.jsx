@@ -462,8 +462,8 @@ function AllTablettes() {
             <>
             <div className="iphonepage">
               {/* la partie qui se situe avant la partie des filtre et du catalogue */}
-              <nav className="breadcrumb">
-                    <a href="/">Accueil</a> &gt; <a href="/Tablettes">Tablettes</a> &gt; <span>ALLTab</span>
+              <nav className="breadcrumbb">
+                    <a href="/">Accueil</a> &gt; <a href="/Tablettes">Tablettes</a> &gt; <span>Samsung Tab</span>
               </nav>
               <div className="container">
                   {/* la partie pour savoir ou on se situe */}
@@ -491,8 +491,9 @@ function AllTablettes() {
                 {/* la partie qui contient le titre de la page avec une petit description */}
                 <div className="intro">
                   {/* une introduction avec un titre et un paragraphe */}
-                    <div className="sometext">
-                      <h1>Tablettes reconditionnés</h1>
+                    <div className="sometextt">
+                      <h1>Ipad reconditionnés</h1>
+                      <p>Découvrez notre sélection de Samsung Tabs reconditionnées, parfaites pour un usage personnel et professionnel</p>
                     </div>
                     {/* le filtre de trie par prix croissant ou décroissant */}
                     <div class="sort-container">
@@ -801,7 +802,7 @@ function AllTablettes() {
                               </div>
                               {/* la div qui contient le corp du commentaire */}
                               <div className="message_commentaire">
-                                <p>{item.commentaire}</p>
+                                <p className="a12">{item.commentaire}</p>
                               </div>
                               {/* la div qui contient la pays d'où le commentaire est écris et la date */}
                               <div className="pays_dateCommentaire">

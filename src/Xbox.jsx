@@ -106,7 +106,6 @@ function Xbox() {
         console.log(`${name} is ${checked}`);
         if(checked){
           setCheckedItem({
-            peuimport: name === "peuimport",
             xboxSeriesS: name === "xboxSeriesS",
             xboxSeriesX: name === "xboxSeriesX",
             xboxOne: name === "xboxOne",
@@ -317,7 +316,7 @@ function Xbox() {
         <>
         <div className="iphonepage">
           {/* la partie qui se situe avant la partie des filtre et du catalogue */}
-          <nav className="breadcrumb">
+          <nav className="breadcrumbb">
                 <a href="/">Accueil</a> &gt; <a href="/Consoles">Consoles</a> &gt; <span>Xbox</span>
           </nav>
           <div className="container">
@@ -346,7 +345,7 @@ function Xbox() {
             {/* la partie qui contient le titre de la page avec une petit description */}
             <div className="intro">
               {/* une introduction avec un titre et un paragraphe */}
-                <div className="sometext">
+                <div className="sometextt">
                   <h1>Xbox reconditionnés</h1>
                   <p>Vous cherchez un Xbox reconditionné ? Bingo ! Nous sommes les maîtres des offres Xbox reconditionnés. Nos Xbox offrent le meilleur des deux mondes.</p>
                 </div>
@@ -391,11 +390,6 @@ function Xbox() {
 
                       {/* la partie qui contient les modèles du téléphone */}
                         <div className="ckeck-list">
-                          <label>
-                            <input type="checkbox" name='peuimport'  checked={checkeditem.peuimport}  onChange={handleCheckboxChange}/>
-                            Peu import
-                          </label>
-                              
                           <label>
                             <input type="checkbox" name="xboxSeriesS"  checked={checkeditem.xboxSeriesS} onChange={handleCheckboxChange}/>
                             Xbox Series S
@@ -540,7 +534,7 @@ function Xbox() {
                           </div>
                           {/* la div qui contient le corp du commentaire */}
                           <div className="message_commentaire">
-                            <p>{item.commentaire}</p>
+                            <p className="a12">{item.commentaire}</p>
                           </div>
                           {/* la div qui contient la pays d'où le commentaire est écris et la date */}
                           <div className="pays_dateCommentaire">
