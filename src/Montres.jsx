@@ -5,8 +5,8 @@ import { Link } from 'react-router-dom';
 const Watches = () => {
     const watches = [
         { id: 1, name: 'Apple Watch', image: "/laptops_pic/mac1.png", lien: "/Montres/AppleWatch" },
-        { id: 2, name: 'Samsung Galaxy Watch', image: '/tablets_pic/samsung1.png', lien: "/watches/SamsungWatch" },
-        { id: 4, name: 'Toutes les marques', image: "/watches_pic/Apple-Watch-Serie-8.webp", lien: "/AllWatches" }
+        { id: 2, name: 'Samsung Galaxy Watch', image: '/tablets_pic/samsung1.png', lien: "/Montres/Samsung_Watch" },
+        { id: 4, name: 'Toutes les marques', image: "/watches_pic/Apple-Watch-Serie-8.webp", lien: "/Montres/AllWatches" }
     ];
 
     const products = [
