@@ -251,7 +251,7 @@ function Hppage(){
             <div className="iphonepage">
               {/* la partie qui se situe avant la partie des filtre et du catalogue */}
               {/* la partie pour savoir ou on se situe */}
-                  <nav className="breadcrumb">
+                  <nav className="breadcrumbb">
                     <a href="/">Accueil</a> &gt; <a href="/Laptops">Laptops</a> &gt; <span>Tous les HP</span>
                   </nav>
               <div className="container">
@@ -280,7 +280,7 @@ function Hppage(){
                 {/* la partie qui contient le titre de la page avec une petit description */}
                 <div className="intro">
                   {/* une introduction avec un titre et un paragraphe */}
-                    <div className="sometext">
+                    <div className="sometextt">
                       <h1>iPhone reconditionnés</h1>
                       <p>Vous cherchez un HP reconditionné ? Bingo ! Nous sommes les maîtres des offres de HP reconditionnés. Nos HP offrent le meilleur des deux mondes : prix et qualité. HP Pavillon, HP EliteBook, HP ZBook, nous les avons tous.</p>
                     </div>
@@ -482,7 +482,7 @@ function Hppage(){
                               </div>
                               {/* la div qui contient le corp du commentaire */}
                               <div className="message_commentaire">
-                                <p>{item.commentaire}</p>
+                                <p className="a12">{item.commentaire}</p>
                               </div>
                               {/* la div qui contient la pays d'où le commentaire est écris et la date */}
                               <div className="pays_dateCommentaire">

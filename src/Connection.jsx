@@ -78,7 +78,7 @@ function Connection({ handleLogin }) {
                 </p>
             )}
             <div className="connform">
-                <h4>Qui va là ?</h4>
+                <h4 className="a12">Qui va là ?</h4>
                 <form>
                     {/* Email input */}
                     <div className="inputdiv" id="emailinput">

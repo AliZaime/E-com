@@ -375,7 +375,7 @@ function AllLaptops() {
         <div className="iphonepage">
           {/* la partie qui se situe avant la partie des filtre et du catalogue */}
           {/* la partie pour savoir ou on se situe */}
-              <nav className="breadcrumb">
+              <nav className="breadcrumbb">
                 <a href="/">Accueil</a> &gt; <a href="/Laptops">Laptops</a> &gt; <span>Tous les Laptops</span>
               </nav>
           <div className="container">
@@ -404,7 +404,7 @@ function AllLaptops() {
             {/* la partie qui contient le titre de la page avec une petit description */}
             <div className="intro">
               {/* une introduction avec un titre et un paragraphe */}
-                <div className="sometext">
+                <div className="sometextt">
                   <h1>Laptops reconditionnés</h1>
                 </div>
                 {/* le filtre de trie par prix croissant ou décroissant */}
@@ -717,7 +717,7 @@ function AllLaptops() {
                           </div>
                           {/* la div qui contient le corp du commentaire */}
                           <div className="message_commentaire">
-                            <p>{item.commentaire}</p>
+                            <p className="a12">{item.commentaire}</p>
                           </div>
                           {/* la div qui contient la pays d'où le commentaire est écris et la date */}
                           <div className="pays_dateCommentaire">

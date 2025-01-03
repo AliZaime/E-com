@@ -74,7 +74,6 @@ function SamsungTab() {
             const {name, checked} = event.target;
             if (checked) {
                 setCheckedItem({
-                    peuimport: name === "peuimport",
                     tabA: name === "tabA",
                     tabS: name === "tabS",
                     tabE: name === "tabE",
@@ -262,7 +261,7 @@ function SamsungTab() {
             <>
             <div className="iphonepage">
               {/* la partie qui se situe avant la partie des filtre et du catalogue */}
-              <nav className="breadcrumb">
+              <nav className="breadcrumbb">
                     <a href="/">Accueil</a> &gt; <a href="/Tablettes">Tablettes</a> &gt; <span>Samsung Tab</span>
               </nav>
               <div className="container">
@@ -291,7 +290,7 @@ function SamsungTab() {
                 {/* la partie qui contient le titre de la page avec une petit description */}
                 <div className="intro">
                   {/* une introduction avec un titre et un paragraphe */}
-                    <div className="sometext">
+                    <div className="sometextt">
                       <h1>Samsung Tab reconditionnés</h1>
                       <p>Découvrez notre sélection de Samsung Tabs reconditionnées, parfaites pour un usage personnel et professionnel</p>
                     </div>
@@ -336,11 +335,6 @@ function SamsungTab() {
     
                           {/* la partie qui contient les modèles du téléphone */}
                             <div className="ckeck-list">
-                              <label>
-                                <input type="checkbox" name='peuimport'  checked={checkeditem.peuimport}  onChange={handleCheckboxChange}/>
-                                Peu import
-                              </label>
-                                  
                               <label>
                                 <input type="checkbox" name="tabA"  checked={checkeditem.tabA} onChange={handleCheckboxChange}/>
                                 Samsung Galaxy Tab A
@@ -477,7 +471,7 @@ function SamsungTab() {
                               </div>
                               {/* la div qui contient le corp du commentaire */}
                               <div className="message_commentaire">
-                                <p>{item.commentaire}</p>
+                                <p className="a12">{item.commentaire}</p>
                               </div>
                               {/* la div qui contient la pays d'où le commentaire est écris et la date */}
                               <div className="pays_dateCommentaire">

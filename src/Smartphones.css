@@ -1,37 +1,41 @@
+body{
+  background: transparent url("/public/backiee2.jpg") no-repeat;
+  background-size: 100% 100%;
+}
 .smartphones-page {
     padding: 20px;
     text-align: center;
     margin-bottom: 30px;
-    
+    color:white;
   }
   
-  .breadcrumb {
+  .breadcrumbb {
     text-align: left;
     margin-bottom: 20px;
     font-size: 14px;
-    color: #888;
+    color: #fffefe;
   }
   
-  .breadcrumb a {
-    color: #333;
+  .breadcrumbb a {
+    color: #ffffff;
     text-decoration: none;
     display: inline-block;
   }
 
-  .breadcrumb a:hover{
+  .breadcrumbb a:hover{
     transform: scale(1.1);
   }
   
   
   h1 {
     font-size: 28px;
-    color: #333;
+    color: #ffffff;
     margin-bottom: 10px;
   }
   
-  .subtitle {
+  .subtitlee {
     font-size: 16px;
-    color: #555;
+    color: #ffffff;
     margin-bottom: 30px;
   }
   
@@ -66,7 +70,7 @@
   
   h3 {
     font-size: 18px;
-    color: #333;
+    color: #d8d8d8;
   }
 
 
@@ -81,7 +85,7 @@
     font-size: 24px;
     font-weight: bold;
     margin-bottom: 20px; /* Espacement sous le titre */
-    color: #333333; /* Couleur sombre pour le titre */
+    color: #fefefe; /* Couleur sombre pour le titre */
   }
   
   /* Conteneur des produits */
@@ -129,7 +133,7 @@
   .product-card h3 {
     font-size: 16px;
     font-weight: bold;
-    color: #333333; /* Couleur sombre */
+    color: #d6d3d3; /* Couleur sombre */
     text-align: center;
     margin-bottom: 10px;
   }
@@ -137,9 +141,13 @@
   /* Informations complémentaires (stockage, couleur, etc.) */
   .product-card p {
     font-size: 14px;
-    color: #666666; /* Gris clair */
+    color: #d5d5d5; /* Gris clair */
     margin-bottom: 5px;
     text-align: center;
+  }
+
+  .a12, .subtitle{
+    color: rgb(216, 216, 216);
   }
   
   /* Note et avis */

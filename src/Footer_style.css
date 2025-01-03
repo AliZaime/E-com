@@ -1,9 +1,10 @@
 /* Footer Container */
 .footer {
     background-color: #d2d3d3;
-    color: #010101;
+    color: #ffffff;
     padding: 40px 20px;
     font-family: Sour Gummy, sans-serif;
+    background: linear-gradient(to bottom, black,transparent);
   }
   
   .footer-container {
@@ -23,7 +24,7 @@
   
   .footer-column h4 {
     margin-bottom: 20px;
-    color: #3c3b3b;
+    color: #ffffff;
   }
   
   .footer-column ul {
@@ -36,7 +37,7 @@
   }
   
   .footer-column a {
-    color: #3d4245;
+    color: #fdfdfd;
     text-decoration: none;
     transition: color 0.3s;
   }

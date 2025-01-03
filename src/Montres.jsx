@@ -43,11 +43,11 @@ const Watches = () => {
     return (
 
         <><div className="watches-page">
-            <nav className="breadcrumb">
+            <nav className="breadcrumbb">
                 <a href="/">Accueil</a> &gt; <span>Montres connectées</span>
             </nav>
-            <h1>Montres connectées</h1>
-            <p className="subtitle">Découvrez notre sélection de montres connectées</p>
+            <h1 className='a12'>Montres connectées</h1>
+            <p className="subtitlee">Découvrez notre sélection de montres connectées</p>
             <div className="watches-grid">
                 {watches.map((watch) => (
                     watch.lien ? (
@@ -65,7 +65,7 @@ const Watches = () => {
             </div>
         </div>
             <div className="mostbuyed-watches">
-                <h1>Découvrez nos meilleures ventes</h1>
+                <h1 className='a12'>Découvrez nos meilleures ventes</h1>
                 <div className="product-container">
                     {visibleProducts.map((product) => (
                         <div key={product.id} className="product-card">

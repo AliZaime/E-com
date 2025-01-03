@@ -49,21 +49,21 @@ function AppleWatch() {
     
     
     const products = [
-        { id: 1, name: 'Apple Watch Series 9', message: "nouveau modèle", image: '/AppleWatch_pic/Series9.png', color: ['argent', 'noir', 'or'], rating: '5/5', reviews: 1500, currentPrice: 429.99, oldPrice: 529.99, quantite: 1, condition: "Neuve", vendu_avec: "Chargeur magnétique" },
-        { id: 2, name: 'Apple Watch Series 8', message: "excellent rapport qualité-prix", image: '/AppleWatch_pic/Series8.png', color: ['argent', 'noir', 'rouge'], rating: '4.7/5', reviews: 1250, currentPrice: 379.99, oldPrice: 479.99, quantite: 1, condition: "Reconditionnée", vendu_avec: "Chargeur magnétique" },
-        { id: 3, name: 'Apple Watch Ultra', message: "robuste et puissante", image: '/AppleWatch_pic/Ultra.png', color: ['argent', 'noir'], rating: '4.9/5', reviews: 950, currentPrice: 799.99, oldPrice: 899.99, quantite: 1, condition: "Neuve", vendu_avec: "Chargeur magnétique et bracelet sport" },
-        { id: 4, name: 'Apple Watch SE (2e gén)', message: "meilleur choix économique", image: '/AppleWatch_pic/SE2.png', color: ['argent', 'or', 'noir'], rating: '4.5/5', reviews: 1050, currentPrice: 279.99, oldPrice: 329.99, quantite: 1, condition: "Neuve", vendu_avec: "Chargeur magnétique" },
-        { id: 5, name: 'Apple Watch Series 7', message: "ancien modèle toujours efficace", image: '/AppleWatch_pic/Series7.png', color: ['argent', 'noir', 'vert'], rating: '4.6/5', reviews: 1100, currentPrice: 329.99, oldPrice: 429.99, quantite: 1, condition: "Reconditionnée", vendu_avec: "Chargeur magnétique" },
-        { id: 6, name: 'Apple Watch Series 6', message: "fonctionnalités complètes", image: '/AppleWatch_pic/Series6.png', color: ['argent', 'rouge', 'bleu'], rating: '4.5/5', reviews: 950, currentPrice: 279.99, oldPrice: 379.99, quantite: 1, condition: "Reconditionnée", vendu_avec: "Chargeur magnétique" },
-        { id: 7, name: 'Apple Watch Nike Series 8', message: "édition spéciale Nike", image: '/AppleWatch_pic/NikeSeries8.png', color: ['noir', 'argent'], rating: '4.8/5', reviews: 1150, currentPrice: 399.99, oldPrice: 499.99, quantite: 1, condition: "Neuve", vendu_avec: "Chargeur magnétique et bracelet Nike" },
-        { id: 8, name: 'Apple Watch SE (1e gén)', message: "alternative économique", image: '/AppleWatch_pic/SE1.png', color: ['argent', 'or'], rating: '4.4/5', reviews: 850, currentPrice: 229.99, oldPrice: 329.99, quantite: 1, condition: "Reconditionnée", vendu_avec: "Chargeur magnétique" },
-        { id: 9, name: 'Apple Watch Series 5', message: "performances solides", image: '/AppleWatch_pic/Series5.png', color: ['argent', 'noir'], rating: '4.3/5', reviews: 800, currentPrice: 229.99, oldPrice: 329.99, quantite: 1, condition: "Reconditionnée", vendu_avec: "Chargeur magnétique" },
-        { id: 10, name: 'Apple Watch Hermès Edition', message: "édition premium", image: '/AppleWatch_pic/Hermes.png', color: ['noir', 'or'], rating: '4.9/5', reviews: 600, currentPrice: 1249.99, oldPrice: 1499.99, quantite: 1, condition: "Neuve", vendu_avec: "Chargeur magnétique et bracelet Hermès" },
-        { id: 11, name: 'Apple Watch Series 9 GPS + Cellular', message: "connectivité complète", image: '/AppleWatch_pic/Series9Cellular.png', color: ['or', 'noir'], rating: '5/5', reviews: 1200, currentPrice: 479.99, oldPrice: 579.99, quantite: 1, condition: "Neuve", vendu_avec: "Chargeur magnétique" },
-        { id: 12, name: 'Apple Watch Series 4', message: "ancien modèle fiable", image: '/AppleWatch_pic/Series4.png', color: ['argent', 'noir'], rating: '4.2/5', reviews: 700, currentPrice: 199.99, oldPrice: 299.99, quantite: 1, condition: "Reconditionnée", vendu_avec: "Chargeur magnétique" },
-        { id: 13, name: 'Apple Watch Edition Series 8', message: "design en titane", image: '/AppleWatch_pic/Edition8.png', color: ['argent', 'or'], rating: '4.8/5', reviews: 950, currentPrice: 849.99, oldPrice: 999.99, quantite: 1, condition: "Neuve", vendu_avec: "Chargeur magnétique" },
-        { id: 14, name: 'Apple Watch Series 3', message: "entrée de gamme", image: '/AppleWatch_pic/Series3.png', color: ['argent', 'noir'], rating: '4.0/5', reviews: 550, currentPrice: 149.99, oldPrice: 249.99, quantite: 1, condition: "Reconditionnée", vendu_avec: "Chargeur magnétique" },
-        { id: 15, name: 'Apple Watch Ultra Alpine', message: "pour les aventuriers", image: '/AppleWatch_pic/UltraAlpine.png', color: ['orange', 'vert'], rating: '4.9/5', reviews: 700, currentPrice: 849.99, oldPrice: 999.99, quantite: 1, condition: "Neuve", vendu_avec: "Chargeur magnétique et bracelet Alpine" }
+        { id: 1, name: 'Apple Watch Series 9', message: "nouveau modèle", image: '/watches_pic/appleS9.png', color: ['grey', 'black', 'gold'], rating: '5/5', reviews: 1500, currentPrice: 429.99, oldPrice: 529.99, quantite: 1, condition: "Neuve", vendu_avec: "Chargeur magnétique" },
+        { id: 2, name: 'Apple Watch Series 8', message: "excellent rapport qualité-prix", image: '/watches_pic/appleS8.png', color: ['grey', 'black', 'red'], rating: '4.7/5', reviews: 1250, currentPrice: 379.99, oldPrice: 479.99, quantite: 1, condition: "Reconditionnée", vendu_avec: "Chargeur magnétique" },
+        { id: 3, name: 'Apple Watch Ultra', message: "robuste et puissante", image: '/watches_pic/appleUltra.png', color: ['grey', 'black'], rating: '4.9/5', reviews: 950, currentPrice: 799.99, oldPrice: 899.99, quantite: 1, condition: "Neuve", vendu_avec: "Chargeur magnétique et bracelet sport" },
+        { id: 4, name: 'Apple Watch SE (2e gén)', message: "meilleur choix économique", image: '/watches_pic/appleSE2.png', color: ['grey', 'gold', 'black'], rating: '4.5/5', reviews: 1050, currentPrice: 279.99, oldPrice: 329.99, quantite: 1, condition: "Neuve", vendu_avec: "Chargeur magnétique" },
+        { id: 5, name: 'Apple Watch Series 7', message: "ancien modèle toujours efficace", image: '/watches_pic/appleS7.png', color: ['grey', 'black', 'green'], rating: '4.6/5', reviews: 1100, currentPrice: 329.99, oldPrice: 429.99, quantite: 1, condition: "Reconditionnée", vendu_avec: "Chargeur magnétique" },
+        { id: 6, name: 'Apple Watch Series 6', message: "fonctionnalités complètes", image: '/watches_pic/appleS6.png', color: ['grey', 'red', 'blue'], rating: '4.5/5', reviews: 950, currentPrice: 279.99, oldPrice: 379.99, quantite: 1, condition: "Reconditionnée", vendu_avec: "Chargeur magnétique" },
+        { id: 7, name: 'Apple Watch Nike Series 8', message: "édition spéciale Nike", image: '/watches_pic/appleNike.png', color: ['black', 'grey'], rating: '4.8/5', reviews: 1150, currentPrice: 399.99, oldPrice: 499.99, quantite: 1, condition: "Neuve", vendu_avec: "Chargeur magnétique et bracelet Nike" },
+        { id: 8, name: 'Apple Watch SE (1e gén)', message: "alternative économique", image: '/watches_pic/appleSE1.png', color: ['grey', 'gold'], rating: '4.4/5', reviews: 850, currentPrice: 229.99, oldPrice: 329.99, quantite: 1, condition: "Reconditionnée", vendu_avec: "Chargeur magnétique" },
+        { id: 9, name: 'Apple Watch Series 5', message: "performances solides", image: '/watches_pic/appleS5.png', color: ['grey', 'black'], rating: '4.3/5', reviews: 800, currentPrice: 229.99, oldPrice: 329.99, quantite: 1, condition: "Reconditionnée", vendu_avec: "Chargeur magnétique" },
+        { id: 10, name: 'Apple Watch Hermès Edition', message: "édition premium", image: '/watches_pic/appleHermes.png', color: ['black', 'gold'], rating: '4.9/5', reviews: 600, currentPrice: 1249.99, oldPrice: 1499.99, quantite: 1, condition: "Neuve", vendu_avec: "Chargeur magnétique et bracelet Hermès" },
+        { id: 11, name: 'Apple Watch Series 9 GPS', message: "connectivité complète", image: '/watches_pic/appleS9GPS.png', color: ['gold', 'black'], rating: '5/5', reviews: 1200, currentPrice: 479.99, oldPrice: 579.99, quantite: 1, condition: "Neuve", vendu_avec: "Chargeur magnétique" },
+        { id: 12, name: 'Apple Watch Series 4', message: "ancien modèle fiable", image: '/watches_pic/appleS4.webp', color: ['grey', 'black'], rating: '4.2/5', reviews: 700, currentPrice: 199.99, oldPrice: 299.99, quantite: 1, condition: "Reconditionnée", vendu_avec: "Chargeur magnétique" },
+        { id: 13, name: 'Apple Watch Edition Series 8', message: "design en titane", image: '/watches_pic/appleEd8.webp', color: ['grey', 'gold'], rating: '4.8/5', reviews: 950, currentPrice: 849.99, oldPrice: 999.99, quantite: 1, condition: "Neuve", vendu_avec: "Chargeur magnétique" },
+        { id: 14, name: 'Apple Watch Series 3', message: "entrée de gamme", image: '/watches_pic/appleS3.webp', color: ['grey', 'black'], rating: '4.0/5', reviews: 550, currentPrice: 149.99, oldPrice: 249.99, quantite: 1, condition: "Reconditionnée", vendu_avec: "Chargeur magnétique" },
+        { id: 15, name: 'Apple Watch Ultra Alpine', message: "pour les aventuriers", image: '/watches_pic/appleUA.webp', color: ['orange', 'green'], rating: '4.9/5', reviews: 700, currentPrice: 849.99, oldPrice: 999.99, quantite: 1, condition: "Neuve", vendu_avec: "Chargeur magnétique et bracelet Alpine" }
     ];
     
     
@@ -83,7 +83,6 @@ function AppleWatch() {
         console.log(`${name} is ${checked}`);
         if(checked){
           setCheckedItem({
-            peuimport: name === "peuimport",
             appleWatchS: name === "appleWatchS",
             appleWatchU: name === "appleWatchU",
             appleWatchN: name === "appleWatchN",
@@ -300,7 +299,7 @@ function AppleWatch() {
         <>
         <div className="iphonepage">
           {/* la partie qui se situe avant la partie des filtre et du catalogue */}
-          <nav className="breadcrumb">
+          <nav className="breadcrumbb">
                 <a href="/">Accueil</a> &gt; <a href="/Montres">Montres Connectées</a> &gt; <span>Apple Watch</span>
           </nav>
           <div className="container">
@@ -329,7 +328,7 @@ function AppleWatch() {
             {/* la partie qui contient le titre de la page avec une petit description */}
             <div className="intro">
               {/* une introduction avec un titre et un paragraphe */}
-                <div className="sometext">
+                <div className="sometextt">
                   <h1>Apple Watch reconditionnés</h1>
                   <p>Vous cherchez un Apple Watch reconditionné ? Bingo ! Nous sommes les maîtres des offres Apple Watch reconditionnés. Nos Apple Watch offrent le meilleur des deux mondes.</p>
                 </div>
@@ -374,11 +373,6 @@ function AppleWatch() {
 
                       {/* la partie qui contient les modèles du téléphone */}
                         <div className="ckeck-list">
-                          <label>
-                            <input type="checkbox" name='peuimport'  checked={checkeditem.peuimport}  onChange={handleCheckboxChange}/>
-                            Peu import
-                          </label>
-                              
                           <label>
                             <input type="checkbox" name="appleWatchS"  checked={checkeditem.appleWatchS} onChange={handleCheckboxChange}/>
                             Apple Watch S
@@ -528,7 +522,7 @@ function AppleWatch() {
                           </div>
                           {/* la div qui contient le corp du commentaire */}
                           <div className="message_commentaire">
-                            <p>{item.commentaire}</p>
+                            <p className="a12">{item.commentaire}</p>
                           </div>
                           {/* la div qui contient la pays d'où le commentaire est écris et la date */}
                           <div className="pays_dateCommentaire">

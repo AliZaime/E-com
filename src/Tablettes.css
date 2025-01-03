@@ -13,7 +13,7 @@
   }
   
   .breadcrumb a {
-    color: #333;
+    color: #dedede;
     text-decoration: none;
     display: inline-block;
   }
@@ -25,13 +25,13 @@
   
   h1 {
     font-size: 28px;
-    color: #333;
+    color: #dedede;
     margin-bottom: 10px;
   }
   
   .subtitle {
     font-size: 16px;
-    color: #555;
+    color: #dfdfdf;
     margin-bottom: 30px;
   }
   
@@ -92,7 +92,7 @@
   
   h3 {
     font-size: 18px;
-    color: #333;
+    color: #343434;
   }
 
 
@@ -107,7 +107,7 @@
     font-size: 24px;
     font-weight: bold;
     margin-bottom: 20px; /* Espacement sous le titre */
-    color: #333333; /* Couleur sombre pour le titre */
+    color: #e4e4e4; /* Couleur sombre pour le titre */
   }
   
   /* Conteneur des produits */

@@ -1,7 +1,10 @@
 .home{
   margin: 0px;
   background-color:rgb(219, 219, 219) ;
+  background: transparent url("/public/backiee2.jpg") no-repeat;
+  background-size: 100% 100%;
 }
+
 .overlay {
   position: absolute;
   bottom: -100%; /* Commence en bas, hors de la vue */
@@ -88,6 +91,7 @@
   text-align: center;
   margin-top:60px ;
   margin-bottom:60px ;
+  color:white;
 
 }
 .Title p{
@@ -117,7 +121,7 @@ i {
 }
 
 .benefits p {
-  border-bottom: 2px solid black; /* Ligne sous le texte */
+  border-bottom: 2px solid rgb(198, 198, 198); /* Ligne sous le texte */
 }
 
 /* Design de base pour la carte de produit */
@@ -157,7 +161,7 @@ i {
   font-size: 1.2rem;
   margin: 10px 0;
   font-weight: bold;
-  color: #333;
+  color: #e1dede;
 }
 
 /* Détails du produit */
@@ -193,6 +197,7 @@ i {
 .items h3{
 font-size: 28px;
 margin-left: 15px;
+color:rgb(255, 255, 255);
 }
 .items {
 display: flex;
@@ -264,7 +269,7 @@ gap: 30px;
 .hero-text h1 {
   font-size: 2rem;
   font-weight: bold;
-  color: #333;
+  color: #000000;
 }
 
 /* Category Navigation */
