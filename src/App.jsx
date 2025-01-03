@@ -33,6 +33,7 @@ import LenovoTab from './LenovoTab';
 import SamsungTab from './SamsungTab';
 import Consoles from './Consoles';
 import PS from './PS';
+import Nintendo from './Nintendo'
 //pour vercel push1
 //pour vercel push2
 
@@ -96,6 +97,7 @@ function App() {
             <Route path="/Tablettes/SamsungTab" element={<SamsungTab />} />
             <Route path="/Consoles" element={<Consoles />} />
             <Route path="/Consoles/PS" element={<PS />} />
+            <Route path="/Consoles/Nintendo" element={<Nintendo />} />
           </Routes>
         </main>
         {/*tst*/}
