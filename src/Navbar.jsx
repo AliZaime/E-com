@@ -135,18 +135,7 @@ const iscartempty = currentUser ? (currentUser.cart || []).length === 0 : true;
                 </div>
               )}
             </div>
-
-            {/* Sidebar */}
-            <svg
-              onClick={toggleSidebar}
-              xmlns="http://www.w3.org/2000/svg"
-              height="24px"
-              viewBox="0 -960 960 960"
-              width="24px"
-              fill="#000000"
-            >
-              <path d="M120-240v-80h720v80H120Zm0-200v-80h720v80H120Zm0-200v-80h720v80H120Z" />
-            </svg>
+            <svg onClick={toggleSidebar} xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#FFFFFF"><path d="M120-240v-80h720v80H120Zm0-200v-80h720v80H120Zm0-200v-80h720v80H120Z"/></svg>
           </div>
         </div>
 

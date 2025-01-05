@@ -141,7 +141,8 @@
   position: absolute;
   top: 50px;
   right: 0;
-  background-color: #d2d3d3;
+  background: transparent;
+  background-color: rgba(255, 255, 255, 0.2);
   color: #fffefe;
   border-radius: 12px;
   box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
@@ -240,20 +241,27 @@
     left: 0;
     height: 100%;
     width: 250px;
-    background-color: #d2d3d3;
+    box-shadow: 0 4px 6px rgba(255, 255, 255, 0.7);
+    background: linear-gradient(to bottom, black, transparent);
     padding-top: 50px;
     transform: translateX(-100%);
     transition: transform 0.3s ease;
+
   }
 
   .nav-links.sidebar-open {
     display: flex;
     transform: translateX(0);
+    box-shadow: 0 4px 6px rgba(255, 255, 255, 0.7);
+    background: linear-gradient(to bottom, black, transparent);
+
   }
 
   .nav-links li {
     margin: 15px 0;
     text-align: center;
+    color: white;
+
   }
 }
 
