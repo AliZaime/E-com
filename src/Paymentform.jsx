@@ -22,12 +22,12 @@ const PaymentForm = () => {
 
     return (
         <div className="payment-container">
-            <h2>Paiement en ligne</h2>
+            <h2 style={{color:"white"}}>Paiement en ligne</h2>
             <form onSubmit={handleSubmit}>
                 
                 <div className="form-row">
                     <div className="form-group">
-                        <label htmlFor="reference">Référence du paiement</label>
+                        <label htmlFor="reference" style={{color:"white"}}>Référence du paiement</label>
                         <input 
                             type="text" 
                             id="reference" 
@@ -37,7 +37,7 @@ const PaymentForm = () => {
                         />
                     </div>
                     <div className="form-group">
-                        <label htmlFor="montant">Montant du paiement</label>
+                        <label htmlFor="montant" style={{color:"white"}}>Montant du paiement</label>
                         <input 
                             type="number" 
                             id="montant" 
@@ -50,7 +50,7 @@ const PaymentForm = () => {
 
                 <div className="form-row">
                     <div className="form-group">
-                        <label htmlFor="nom">Nom</label>
+                        <label htmlFor="nom" style={{color:"white"}}>Nom</label>
                         <input 
                             type="text" 
                             id="nom" 
@@ -60,7 +60,7 @@ const PaymentForm = () => {
                         />
                     </div>
                     <div className="form-group">
-                        <label htmlFor="prenom">Prénom</label>
+                        <label htmlFor="prenom" style={{color:"white"}}>Prénom</label>
                         <input 
                             type="text" 
                             id="prenom" 
@@ -73,7 +73,7 @@ const PaymentForm = () => {
 
                 <div className="form-row">
                     <div className="form-group">
-                        <label htmlFor="email">E-mail</label>
+                        <label htmlFor="email" style={{color:"white"}}>E-mail</label>
                         <input 
                             type="email" 
                             id="email" 
@@ -83,7 +83,7 @@ const PaymentForm = () => {
                         />
                     </div>
                     <div className="form-group">
-                        <label htmlFor="telephone">Téléphone</label>
+                        <label htmlFor="telephone" style={{color:"white"}}>Téléphone</label>
                         <input 
                             type="tel" 
                             id="telephone" 
@@ -95,7 +95,7 @@ const PaymentForm = () => {
                 </div>
 
                 <div className="form-group">
-                    <label htmlFor="infos">Informations complémentaires</label>
+                    <label htmlFor="infos" style={{color:"white"}}>Informations complémentaires</label>
                     <textarea 
                         id="infos" 
                         rows="3" 
@@ -112,12 +112,12 @@ const PaymentForm = () => {
                         checked={provision} 
                         onChange={() => setProvision(!provision)} 
                     />
-                    <label htmlFor="provision">Besoin de verser une <strong>provision</strong> ?</label>
-                    <p>Vous pouvez le faire en ligne de façon <strong>sécurisée, simple et rapide</strong>.</p>
+                    <label htmlFor="provision" style={{color:"white"}}>Besoin de verser une <strong>provision</strong> ?</label>
+                    <p style={{color:"white"}}>Vous pouvez le faire en ligne de façon <strong>sécurisée, simple et rapide</strong>.</p>
                 </div>
 
                 <div className="payment-section">
-                    <label htmlFor="card">Carte de paiement</label>
+                    <label htmlFor="card" style={{color:"white"}}>Carte de paiement</label>
                     <div className="card-input">
                         <input 
                             type="text" 

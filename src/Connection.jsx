@@ -119,10 +119,10 @@ function Connection({ handleLogin }) {
                             style={{ cursor: "pointer" }}
                         ></i>
                     </div>
-                    <Link style={{ textDecoration: "none" }} to={"/Inscription"}>
+                    <Link  to={"/Inscription"} className="signandreset">
                         Sign in
                     </Link>
-                    <Link style={{ textDecoration: "none" }} to={"/LostPassword"}>
+                    <Link  to={"/LostPassword"} className="signandreset">
                         Reset Password
                     </Link>
 

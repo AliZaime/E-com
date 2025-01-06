@@ -88,11 +88,15 @@
   .sometext{
     width: 85%;
     text-align: start;
+
+  }
+  .sometext h1{
+    color: white;
   }
   .sometext p{
       font-size: 18px;
       width: 95%;
-      color: #333; /* Couleur du texte */
+      color: white; /* Couleur du texte */
       font-weight: bold; /* Légèrement en gras */
   }
   /* Conteneur principal */
@@ -117,7 +121,7 @@
   .sort-container label {
     display: block;
     margin-bottom: 5px;
-    color: #333;
+    color: white;
     font-weight: bold;
   }
   
@@ -327,6 +331,7 @@
   .phoneName{
     width: 70%;
     height: 50px;
+    color: #000;
     text-align: center;
   }
   .phoneinfo{
@@ -434,6 +439,7 @@
   }
   .ckeck-list label{
     display: flex;
+    color: #000;
     flex-direction: row;
     gap: 10px;
   }
