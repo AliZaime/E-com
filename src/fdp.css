@@ -17,7 +17,7 @@ body .payment-container{
 h2 {
     text-align: center;
     margin-bottom: 20px;
-    color: #333;
+    color: white;
 }
 
 form {
@@ -40,7 +40,7 @@ form {
 label {
     font-weight: bold;
     margin-bottom: 5px;
-    color: #555;
+    color: white;
 }
 
 input, textarea {
@@ -60,6 +60,10 @@ textarea {
 
 .checkbox {
     margin: 15px 0;
+}
+
+.checkbox p {
+    color: white;
 }
 
 .checkbox input {
@@ -103,3 +107,72 @@ textarea {
 .btn-valider:hover {
     background-color: #e6951e;
 }
+
+/* Responsive pour les écrans de moins de 768px */
+@media (max-width: 768px) {
+    .payment-container {
+        padding: 20px;
+        box-shadow: none; /* Réduit l'ombre pour un design plus simple */
+        border-radius: 5px;
+    }
+
+    h2 {
+        font-size: 1.5rem;
+    }
+
+    .form-row {
+        flex-direction: column; /* Les champs passent en colonne */
+    }
+
+    .form-group {
+        width: 100%; /* Occupe toute la largeur */
+        margin-bottom: 10px; /* Réduit l'espacement entre les champs */
+    }
+
+    .card-input input {
+        width: 100%; /* Champs de carte sur toute la largeur */
+        margin-bottom: 10px; /* Ajoute un espace entre les champs */
+    }
+
+    .card-logos {
+        justify-content: center;
+        gap: 10px; /* Ajoute un espace entre les logos */
+    }
+
+    .card-logos img {
+        height: 25px; /* Réduit la taille des logos */
+    }
+
+    .btn-valider {
+        width: 100%; /* Bouton sur toute la largeur */
+    }
+}
+
+/* Responsive pour les écrans de moins de 480px */
+@media (max-width: 550px) {
+    .payment-container {
+        padding: 15px;
+    }
+
+    h2 {
+        font-size: 1.2rem;
+    }
+
+    label {
+        font-size: 0.9rem;
+    }
+
+    input, textarea {
+        font-size: 0.9rem;
+    }
+
+    .btn-valider {
+        font-size: 0.9rem;
+        padding: 8px;
+    }
+
+    .card-logos img {
+        height: 20px; /* Encore plus petit pour les très petits écrans */
+    }
+}
+

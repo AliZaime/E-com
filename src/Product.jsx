@@ -8,6 +8,8 @@ const generateImagePath = (productName, color) => {
   return `/Products/${productName}_${sanitizedColor}.png`;
 };
 
+
+
 // Color options
 const colorOptions = [
   { color: 'Black', colorPrimary: '#000', colorSec: '#212121', pic: '' },

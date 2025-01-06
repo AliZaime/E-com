@@ -373,27 +373,27 @@ function AppleWatch() {
 
                       {/* la partie qui contient les modèles du téléphone */}
                         <div className="ckeck-list">
-                          <label>
+                          <label className="check">
                             <input type="checkbox" name="appleWatchS"  checked={checkeditem.appleWatchS} onChange={handleCheckboxChange}/>
                             Apple Watch S
                           </label>
                               
-                          <label>
+                          <label className="check">
                             <input type="checkbox" name="appleWatchU" checked={checkeditem.appleWatchU}  onChange={handleCheckboxChange}/>
                             Apple Watch U
                           </label>
                               
-                          <label>
+                          <label className="check">
                             <input type="checkbox" name="appleWatchN"  checked={checkeditem.appleWatchN} onChange={handleCheckboxChange}/>
                             Apple Watch N
                           </label>
 
-                          <label>
+                          <label className="check">
                             <input type="checkbox" name="appleWatchH"  checked={checkeditem.appleWatchH} onChange={handleCheckboxChange}/>
                             Apple Watch H
                           </label>
 
-                          <label>
+                          <label className="check">
                             <input type="checkbox" name="appleWatchE"  checked={checkeditem.appleWatchE} onChange={handleCheckboxChange}/>
                             Apple Watch E
                           </label>
@@ -413,43 +413,43 @@ function AppleWatch() {
 
                         {/* la partie qui contient les couleur du téléphone */}
                         <div className="ckeck-list">
-                        <label>
+                        <label className="check">
                             <input type="checkbox" name="black" checked={checkeditemcolor.black} onChange={handleCheckboxColorChange} />
                             <div className="colorinput" style={{ backgroundColor: 'black', width: '20px', height: '20px', borderRadius: '50%', border: '1px solid black' }}></div>
                             Noir
                         </label>
 
-                        <label>
+                        <label className="check">
                             <input type="checkbox" name="green" checked={checkeditemcolor.green} onChange={handleCheckboxColorChange} />
                             <div className="colorinput" style={{ backgroundColor: 'green', width: '20px', height: '20px', borderRadius: '50%', border: '1px solid black' }}></div>
                             Vert
                         </label>
 
-                        <label>
+                        <label className="check">
                             <input type="checkbox" name="grey" checked={checkeditemcolor.grey} onChange={handleCheckboxColorChange} />
                             <div className="colorinput" style={{ backgroundColor: 'grey', width: '20px', height: '20px', borderRadius: '50%', border: '1px solid black' }}></div>
                             Gris
                         </label>
 
-                        <label>
+                        <label className="check">
                             <input type="checkbox" name="blue" checked={checkeditemcolor.blue} onChange={handleCheckboxColorChange} />
                             <div className="colorinput" style={{ backgroundColor: 'blue', width: '20px', height: '20px', borderRadius: '50%', border: '1px solid black' }}></div>
                             Bleu
                         </label>
 
-                        <label>
+                        <label className="check">
                             <input type="checkbox" name="white" checked={checkeditemcolor.white} onChange={handleCheckboxColorChange} />
                             <div className="colorinput" style={{ backgroundColor: 'white', width: '20px', height: '20px', borderRadius: '50%', border: '1px solid black' }}></div>
                             Blanc
                         </label>
 
-                        <label>
+                        <label className="check">
                             <input type="checkbox" name="silver" checked={checkeditemcolor.silver} onChange={handleCheckboxColorChange} />
                             <div className="colorinput" style={{ backgroundColor: 'silver', width: '20px', height: '20px', borderRadius: '50%', border: '1px solid black' }}></div>
                             Argenté
                         </label>
 
-                        <label>
+                        <label className="check">
                             <input type="checkbox" name="red" checked={checkeditemcolor.red} onChange={handleCheckboxColorChange} />
                             <div className="colorinput" style={{ backgroundColor: 'red', width: '20px', height: '20px', borderRadius: '50%', border: '1px solid black' }}></div>
                             Rouge

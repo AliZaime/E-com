@@ -402,22 +402,22 @@ function Ipad() {
 
                       {/* la partie qui contient les modèles du téléphone */}
                         <div className="ckeck-list">
-                          <label>
+                          <label className="check">
                             <input type="checkbox" name='peuimport'  checked={checkeditem.peuimport}  onChange={handleCheckboxChange}/>
                             Peu import
                           </label>
                               
-                          <label>
+                          <label className="check">
                             <input type="checkbox" name="ipad air"  checked={checkeditem.ipadair} onChange={handleCheckboxChange}/>
                             ipad air
                           </label>
                               
-                          <label>
+                          <label className="check">
                             <input type="checkbox" name="ipad mini" checked={checkeditem.ipadmini}  onChange={handleCheckboxChange}/>
                             ipad mini
                           </label>
                               
-                          <label>
+                          <label className="check">
                             <input type="checkbox" name="ipad pro"  checked={checkeditem.ipadpro} onChange={handleCheckboxChange}/>
                             ipad pro
                           </label>
@@ -437,85 +437,85 @@ function Ipad() {
 
                         {/* la partie qui contient les couleur du téléphone */}
                         <div className="ckeck-list">
-                        <label>
+                        <label className="check">
                             <input type="checkbox" name="black" checked={checkeditemcolor.black} onChange={handleCheckboxColorChange} />
                             <div className="colorinput" style={{ backgroundColor: 'black', width: '20px', height: '20px', borderRadius: '50%', border: '1px solid black' }}></div>
                             Noir
                         </label>
 
-                        <label>
+                        <label className="check">
                             <input type="checkbox" name="lavender" checked={checkeditemcolor.lavender} onChange={handleCheckboxColorChange} />
                             <div className="colorinput" style={{ backgroundColor: 'lavender', width: '20px', height: '20px', borderRadius: '50%', border: '1px solid black' }}></div>
                             Lavande
                         </label>
 
-                        <label>
+                        <label className="check">
                             <input type="checkbox" name="green" checked={checkeditemcolor.green} onChange={handleCheckboxColorChange} />
                             <div className="colorinput" style={{ backgroundColor: 'green', width: '20px', height: '20px', borderRadius: '50%', border: '1px solid black' }}></div>
                             Vert
                         </label>
 
-                        <label>
+                        <label className="check">
                             <input type="checkbox" name="grey" checked={checkeditemcolor.grey} onChange={handleCheckboxColorChange} />
                             <div className="colorinput" style={{ backgroundColor: 'grey', width: '20px', height: '20px', borderRadius: '50%', border: '1px solid black' }}></div>
                             Gris
                         </label>
 
-                        <label>
+                        <label className="check">
                             <input type="checkbox" name="violet" checked={checkeditemcolor.violet} onChange={handleCheckboxColorChange} />
                             <div className="colorinput" style={{ backgroundColor: 'violet', width: '20px', height: '20px', borderRadius: '50%', border: '1px solid black' }}></div>
                             Violet
                         </label>
 
-                        <label>
+                        <label className="check">
                             <input type="checkbox" name="gold" checked={checkeditemcolor.gold} onChange={handleCheckboxColorChange} />
                             <div className="colorinput" style={{ backgroundColor: 'gold', width: '20px', height: '20px', borderRadius: '50%', border: '1px solid black' }}></div>
                             Or
                         </label>
 
-                        <label>
+                        <label className="check">
                             <input type="checkbox" name="blue" checked={checkeditemcolor.blue} onChange={handleCheckboxColorChange} />
                             <div className="colorinput" style={{ backgroundColor: 'blue', width: '20px', height: '20px', borderRadius: '50%', border: '1px solid black' }}></div>
                             Bleu
                         </label>
 
-                        <label>
+                        <label className="check">
                             <input type="checkbox" name="white" checked={checkeditemcolor.white} onChange={handleCheckboxColorChange} />
                             <div className="colorinput" style={{ backgroundColor: 'white', width: '20px', height: '20px', borderRadius: '50%', border: '1px solid black' }}></div>
                             Blanc
                         </label>
 
-                        <label>
+                        <label className="check">
                             <input type="checkbox" name="lime" checked={checkeditemcolor.lime} onChange={handleCheckboxColorChange} />
                             <div className="colorinput" style={{ backgroundColor: 'lime', width: '20px', height: '20px', borderRadius: '50%', border: '1px solid black' }}></div>
                             Lime
                         </label>
 
-                        <label>
+                        <label className="check">
                             <input type="checkbox" name="olive" checked={checkeditemcolor.olive} onChange={handleCheckboxColorChange} />
                             <div className="colorinput" style={{ backgroundColor: 'olive', width: '20px', height: '20px', borderRadius: '50%', border: '1px solid black' }}></div>
                             Olive
                         </label>
 
-                        <label>
+                        <label className="check">
                             <input type="checkbox" name="pink" checked={checkeditemcolor.pink} onChange={handleCheckboxColorChange} />
                             <div className="colorinput" style={{ backgroundColor: 'pink', width: '20px', height: '20px', borderRadius: '50%', border: '1px solid black' }}></div>
                             Rose
                         </label>
 
-                        <label>
+                        <label className="check">
                             <input type="checkbox" name="orange" checked={checkeditemcolor.orange} onChange={handleCheckboxColorChange} />
                             <div className="colorinput" style={{ backgroundColor: 'orange', width: '20px', height: '20px', borderRadius: '50%', border: '1px solid black' }}></div>
                             Orange
                         </label>
 
-                        <label>
+                        <label className="check">
                             <input type="checkbox" name="silver" checked={checkeditemcolor.silver} onChange={handleCheckboxColorChange} />
                             <div className="colorinput" style={{ backgroundColor: '#C0C0C0', width: '20px', height: '20px', borderRadius: '50%', border: '1px solid black' }}></div>
                             Argent
                         </label>
 
-                        <label>
+                        <label className="check">
                             <input type="checkbox" name="beige" checked={checkeditemcolor.beige} onChange={handleCheckboxColorChange} />
                             <div className="colorinput" style={{ backgroundColor: 'beige', width: '20px', height: '20px', borderRadius: '50%', border: '1px solid black' }}></div>
                             Beige

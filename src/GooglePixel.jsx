@@ -1,6 +1,6 @@
 /* eslint-disable react-hooks/exhaustive-deps */
 import React, {useState,useEffect} from "react";
-import './GooglePixel.css'
+import './Ipad.css'
 
 function GooglePixel() {
 
@@ -465,87 +465,87 @@ function GooglePixel() {
 
                       {/* la partie qui contient les modèles du téléphone */}
                         <div className="ckeck-list">
-                          <label>
+                          <label className="check">
                             <input type="checkbox" name='peuimport'  checked={checkeditem.peuimport}  onChange={handleCheckboxChange}/>
                             Peu import
                           </label>
                               
-                          <label>
+                          <label className="check">
                             <input type="checkbox" name="serie2"  checked={checkeditem.serie2} onChange={handleCheckboxChange}/>
                             Serie 2
                           </label>
                               
-                          <label>
+                          <label className="check">
                             <input type="checkbox" name="serie2XL" checked={checkeditem.serie2XL}  onChange={handleCheckboxChange}/>
                             Serie 2XL
                           </label>
                               
-                          <label>
+                          <label className="check">
                             <input type="checkbox" name="serie3a"  checked={checkeditem.serie3a} onChange={handleCheckboxChange}/>
                             Serie 3a
                           </label>
                               
-                          <label>
+                          <label className="check">
                             <input type="checkbox" name="serie3XL"  checked={checkeditem.serie3XL} onChange={handleCheckboxChange}/>
                             Serie 3XL
                           </label>
 
-                          <label>
+                          <label className="check">
                             <input type="checkbox" name="serie4"  checked={checkeditem.serie4} onChange={handleCheckboxChange}/>
                             Serie 4
                           </label>
 
-                          <label>
+                          <label className="check">
                             <input type="checkbox" name="serie4a"  checked={checkeditem.serie4a} onChange={handleCheckboxChange}/>
                             Serie 4a
                           </label>
 
-                          <label>
+                          <label className="check">
                             <input type="checkbox" name="serie5"  checked={checkeditem.serie5} onChange={handleCheckboxChange}/>
                             Serie 5
                           </label>
 
-                          <label>
+                          <label className="check">
                             <input type="checkbox" name="serie6"  checked={checkeditem.serie6} onChange={handleCheckboxChange}/>
                             Serie 6
                           </label>
 
-                          <label>
+                          <label className="check">
                             <input type="checkbox" name="serie6pro"  checked={checkeditem.serie6pro} onChange={handleCheckboxChange}/>
                             Serie 6 pro
                           </label>
 
-                          <label>
+                          <label className="check">
                             <input type="checkbox" name="serie7"  checked={checkeditem.serie7} onChange={handleCheckboxChange}/>
                             Serie 7
                           </label>
 
-                          <label>
+                          <label className="check">
                             <input type="checkbox" name="serie8"  checked={checkeditem.serie8} onChange={handleCheckboxChange}/>
                             Serie 8
                           </label>
 
-                          <label>
+                          <label className="check">
                             <input type="checkbox" name="serie8pro"  checked={checkeditem.serie8pro} onChange={handleCheckboxChange}/>
                             Serie 8 pro
                           </label>
 
-                          <label>
+                          <label className="check">
                             <input type="checkbox" name="serie9"  checked={checkeditem.serie9} onChange={handleCheckboxChange}/>
                             Serie 9
                           </label>
 
-                          <label>
+                          <label className="check">
                             <input type="checkbox" name="serie9pro"  checked={checkeditem.serie9pro} onChange={handleCheckboxChange}/>
                             Serie 9 pro
                           </label>
 
-                          <label>
+                          <label className="check">
                             <input type="checkbox" name="serieFold"  checked={checkeditem.serieFold} onChange={handleCheckboxChange}/>
                             Serie Fold
                           </label>
 
-                          <label>
+                          <label className="check">
                             <input type="checkbox" name="serie10"  checked={checkeditem.serie10} onChange={handleCheckboxChange}/>
                             Serie 10
                           </label>
@@ -565,85 +565,85 @@ function GooglePixel() {
 
                         {/* la partie qui contient les couleur du téléphone */}
                         <div className="ckeck-list">
-                        <label>
+                        <label className="check">
                             <input type="checkbox" name="black" checked={checkeditemcolor.black} onChange={handleCheckboxColorChange} />
                             <div className="colorinput" style={{ backgroundColor: 'black', width: '20px', height: '20px', borderRadius: '50%', border: '1px solid black' }}></div>
                             Noir
                         </label>
 
-                        <label>
+                        <label className="check">
                             <input type="checkbox" name="lavender" checked={checkeditemcolor.lavender} onChange={handleCheckboxColorChange} />
                             <div className="colorinput" style={{ backgroundColor: 'lavender', width: '20px', height: '20px', borderRadius: '50%', border: '1px solid black' }}></div>
                             Lavande
                         </label>
 
-                        <label>
+                        <label className="check">
                             <input type="checkbox" name="green" checked={checkeditemcolor.green} onChange={handleCheckboxColorChange} />
                             <div className="colorinput" style={{ backgroundColor: 'green', width: '20px', height: '20px', borderRadius: '50%', border: '1px solid black' }}></div>
                             Vert
                         </label>
 
-                        <label>
+                        <label className="check">
                             <input type="checkbox" name="grey" checked={checkeditemcolor.grey} onChange={handleCheckboxColorChange} />
                             <div className="colorinput" style={{ backgroundColor: 'grey', width: '20px', height: '20px', borderRadius: '50%', border: '1px solid black' }}></div>
                             Gris
                         </label>
 
-                        <label>
+                        <label className="check">
                             <input type="checkbox" name="violet" checked={checkeditemcolor.violet} onChange={handleCheckboxColorChange} />
                             <div className="colorinput" style={{ backgroundColor: 'violet', width: '20px', height: '20px', borderRadius: '50%', border: '1px solid black' }}></div>
                             Violet
                         </label>
 
-                        <label>
+                        <label className="check">
                             <input type="checkbox" name="gold" checked={checkeditemcolor.gold} onChange={handleCheckboxColorChange} />
                             <div className="colorinput" style={{ backgroundColor: 'gold', width: '20px', height: '20px', borderRadius: '50%', border: '1px solid black' }}></div>
                             Or
                         </label>
 
-                        <label>
+                        <label className="check">
                             <input type="checkbox" name="blue" checked={checkeditemcolor.blue} onChange={handleCheckboxColorChange} />
                             <div className="colorinput" style={{ backgroundColor: 'blue', width: '20px', height: '20px', borderRadius: '50%', border: '1px solid black' }}></div>
                             Bleu
                         </label>
 
-                        <label>
+                        <label className="check">
                             <input type="checkbox" name="white" checked={checkeditemcolor.white} onChange={handleCheckboxColorChange} />
                             <div className="colorinput" style={{ backgroundColor: 'white', width: '20px', height: '20px', borderRadius: '50%', border: '1px solid black' }}></div>
                             Blanc
                         </label>
 
-                        <label>
+                        <label className="check">
                             <input type="checkbox" name="lime" checked={checkeditemcolor.lime} onChange={handleCheckboxColorChange} />
                             <div className="colorinput" style={{ backgroundColor: 'lime', width: '20px', height: '20px', borderRadius: '50%', border: '1px solid black' }}></div>
                             Lime
                         </label>
 
-                        <label>
+                        <label className="check">
                             <input type="checkbox" name="olive" checked={checkeditemcolor.olive} onChange={handleCheckboxColorChange} />
                             <div className="colorinput" style={{ backgroundColor: 'olive', width: '20px', height: '20px', borderRadius: '50%', border: '1px solid black' }}></div>
                             Olive
                         </label>
 
-                        <label>
+                        <label className="check">
                             <input type="checkbox" name="pink" checked={checkeditemcolor.pink} onChange={handleCheckboxColorChange} />
                             <div className="colorinput" style={{ backgroundColor: 'pink', width: '20px', height: '20px', borderRadius: '50%', border: '1px solid black' }}></div>
                             Rose
                         </label>
 
-                        <label>
+                        <label className="check">
                             <input type="checkbox" name="orange" checked={checkeditemcolor.orange} onChange={handleCheckboxColorChange} />
                             <div className="colorinput" style={{ backgroundColor: 'orange', width: '20px', height: '20px', borderRadius: '50%', border: '1px solid black' }}></div>
                             Orange
                         </label>
 
-                        <label>
+                        <label className="check">
                             <input type="checkbox" name="silver" checked={checkeditemcolor.silver} onChange={handleCheckboxColorChange} />
                             <div className="colorinput" style={{ backgroundColor: '#C0C0C0', width: '20px', height: '20px', borderRadius: '50%', border: '1px solid black' }}></div>
                             Argent
                         </label>
 
-                        <label>
+                        <label className="check">
                             <input type="checkbox" name="beige" checked={checkeditemcolor.beige} onChange={handleCheckboxColorChange} />
                             <div className="colorinput" style={{ backgroundColor: 'beige', width: '20px', height: '20px', borderRadius: '50%', border: '1px solid black' }}></div>
                             Beige

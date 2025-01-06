@@ -3,6 +3,7 @@ import { useNavigate } from "react-router-dom";
 
 import "./Home.css";
 
+
 function addToCart(product) {
   // Récupérer les données utilisateurs depuis le localStorage
 const formData = JSON.parse(localStorage.getItem("formData")) || [];

@@ -7,6 +7,13 @@ const Navbar = ({ isLoggedIn, handleLogout }) => {
   const [activeDropdown, setActiveDropdown] = useState(null);
   const [isLoading, setIsLoading] = useState(false); // État pour gérer l'affichage du chargement
 
+  const scrollToSection = () => {
+    const navbar = document.querySelector('.navbar');
+    if (navbar) {
+      navbar.scrollIntoView({ behavior: 'smooth' });
+    }
+  };
+
   const toggleSidebar = () => {
     setIsSidebarOpen(!isSidebarOpen);
   };
@@ -78,7 +85,7 @@ const iscartempty = currentUser ? (currentUser.cart || []).length === 0 : true;
                       <>
                           <p>Votre panier est vide</p>
                           <Link
-                              to="/panier"
+                              to="/panier" onClick={scrollToSection}
                               style={{
                                   pointerEvents: "none",
                                   cursor: "not-allowed",
@@ -94,6 +101,7 @@ const iscartempty = currentUser ? (currentUser.cart || []).length === 0 : true;
                             <p>Votre panier contient {currentUser.cart.length} article(s)</p>
                             <Link
                                 to="/panier"
+                                onClick={scrollToSection}
                                 style={{
                                     pointerEvents: "auto",
                                     cursor: "pointer",
@@ -106,7 +114,7 @@ const iscartempty = currentUser ? (currentUser.cart || []).length === 0 : true;
                     )
                 ) : (
                     <>
-                        <a href="/connection">Log in</a>
+                        <a href="/connection" onClick={scrollToSection}>Log in</a>
                     </>
                 )}
             </div>
@@ -121,13 +129,13 @@ const iscartempty = currentUser ? (currentUser.cart || []).length === 0 : true;
                 <div className="dropdown-menu login-menu">
                   {!isLoggedIn ? (
                     <>
-                      <a href="/connection">Log in</a>
-                      <a href="/inscription">Sign in</a>
+                      <a href="/connection" onClick={scrollToSection}>Log in</a>
+                      <a href="/inscription" onClick={scrollToSection}>Sign in</a>
                     </>
                   ) : (
                     <>
-                      <Link to={"/profil"}>Profil</Link>
-                      <Link onClick={handleLogoutWithDelay} to={"/"}>
+                      <Link to={"/profil"} onClick={scrollToSection}>Profil</Link>
+                      <Link onClick={handleLogoutWithDelay} to={"/"} >
                         Log out
                       </Link>
                     </>
@@ -143,7 +151,11 @@ const iscartempty = currentUser ? (currentUser.cart || []).length === 0 : true;
           {/* Liens de navigation */}
           <ul className={`nav-links ${isSidebarOpen ? "sidebar-open" : ""}`}>
             <li>
-              <Link className="link" to={"/Smartphones"} onClick={closeSidebar}>
+              <Link className="link" to={"/Smartphones"} 
+                  onClick={() => {
+                    closeSidebar();
+                    scrollToSection();
+                  }}>
                 Smartphones
               </Link>
             </li>
@@ -151,23 +163,34 @@ const iscartempty = currentUser ? (currentUser.cart || []).length === 0 : true;
               <Link
                 className="link"
                 to={"/laptops"}
-                onClick={closeSidebar}
-              >
+                onClick={() => {
+                  closeSidebar();
+                  scrollToSection();
+                }}>
                 Ordinateurs portables
               </Link>
             </li>
             <li>
-              <Link className="link" to={"/Tablettes"} onClick={closeSidebar}>
+              <Link className="link" to={"/Tablettes"} onClick={() => {
+                    closeSidebar();
+                    scrollToSection();
+                  }}>
                 Tablettes
               </Link>
             </li>
             <li>
-              <Link className="link" to={"/Consoles"} onClick={closeSidebar}>
+              <Link className="link" to={"/Consoles"} onClick={() => {
+                    closeSidebar();
+                    scrollToSection();
+                  }}>
                 Consoles
               </Link>
             </li>
             <li>
-              <Link className="link" to={"/Montres"} onClick={closeSidebar}>
+              <Link className="link" to={"/Montres"} onClick={() => {
+                    closeSidebar();
+                    scrollToSection();
+                  }}>
                 Montres connectées
               </Link>
             </li>
