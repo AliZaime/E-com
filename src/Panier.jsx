@@ -12,6 +12,13 @@ const Panier = () => {
         return currentUser ? currentUser.cart || [] : [];
     });
 
+    const scrollToSection = () => {
+        const navbar = document.querySelector('.navbar');
+        if (navbar) {
+          navbar.scrollIntoView({ behavior: 'smooth' });
+        }
+      };
+
     const handleDelete = (index) => {
         // Récupérer les données du localStorage
         const formData = JSON.parse(localStorage.getItem("formData")) || [];
@@ -181,7 +188,7 @@ const Panier = () => {
                             <p>Total TTC</p>
                             <p>{calcultotalprice() + 5}€</p>
                         </div>
-                        <Link to={"/Paiment"} className='continue_payment'>Continuer</Link>
+                        <Link to={"/Paiment"} onClick={scrollToSection} className='continue_payment'>Continuer</Link>
                         <p className='payment_securiser'>
                             <i className="fa-solid fa-lock"></i>
                             paiement sécurisé
