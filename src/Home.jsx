@@ -24,6 +24,13 @@ if (currentUserIndex !== -1) {
 }
 }
 
+const scrollToSection = () => {
+  const navbar = document.querySelector('.navbar');
+  if (navbar) {
+    navbar.scrollIntoView({ behavior: 'smooth' });
+  }
+};
+
 function Home() {
   const [currentIndex, setCurrentIndex] = useState(0);
   const slides = [
@@ -416,7 +423,7 @@ function Home() {
               </p>
               <div className="overlay">
                 <button className="overlay-btn" onClick={() => addToCart(product)}>Ajouter au panier</button>
-                <button className="overlay-btn" onClick={() => handleViewDetails(product)}>Voir le détail</button>
+                <button className="overlay-btn" onClick={() =>{ handleViewDetails(product) ; scrollToSection();}}>Voir le détail</button>
               </div>
             </div>
           ))}
