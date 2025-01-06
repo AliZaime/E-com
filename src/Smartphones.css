@@ -47,7 +47,7 @@ body{
   }
   
   .smartphone-card {
-    background-color: #F5F5DC;
+    background-color: #f2eded;
     border-radius: 10px;
     padding: 20px;
     width: 200px;
@@ -108,7 +108,7 @@ body{
     border: 1px solid #e0e0e0; /* Bordure grise légère */
     border-radius: 10px; /* Coins arrondis */
     padding: 15px; /* Espacement intérieur */
-    background-color: #F5F5DC; /* Fond blanc */
+    background-color: #f2eded; /* Fond blanc */
     box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1); /* Ombre douce */
     transition: transform 0.2s, box-shadow 0.2s; /* Animation au survol */
   }

@@ -8,8 +8,6 @@ const generateImagePath = (productName, color) => {
   return `/Products/${productName}_${sanitizedColor}.png`;
 };
 
-
-
 // Color options
 const colorOptions = [
   { color: 'Black', colorPrimary: '#000', colorSec: '#212121', pic: '' },
@@ -36,6 +34,26 @@ const ProductPage = () => {
   const handleColorChange = (colorOption) => {
     setSelectedColor(colorOption);
   };
+
+  function addToCart(product) {
+    // Récupérer les données utilisateurs depuis le localStorage
+  const formData = JSON.parse(localStorage.getItem("formData")) || [];
+  const loggedInEmail = localStorage.getItem("isLoggedEmail"); // Email de l'utilisateur connecté
+  
+  // Trouver l'utilisateur connecté
+  const currentUserIndex = formData.findIndex(user => user.email === loggedInEmail);
+  
+  if (currentUserIndex !== -1) {
+    // Ajouter le produit au panier de l'utilisateur connecté
+    const currentUser = formData[currentUserIndex];
+    currentUser.cart = currentUser.cart || []; // Initialiser le panier si inexistant
+    currentUser.cart.push(product);
+  
+    // Mettre à jour les données dans formData
+    formData[currentUserIndex] = currentUser;
+    localStorage.setItem("formData", JSON.stringify(formData));
+  }
+  }
 
   return (
     <div className="Product" style={{ background: selectedColor.color }}>
@@ -69,8 +87,8 @@ const ProductPage = () => {
               />
             ))}
           </div>
-          <button className="add-to-cart" style={{ background: selectedColor.colorSec }}>
-            Ajouter au panier
+          <button className="add-to-cart" style={{ background: selectedColor.colorSec }}
+          onClick={() => addToCart(product)}>Ajouter au panier
           </button>
         </div>
       </div>
