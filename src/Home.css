@@ -4,6 +4,10 @@
   background: transparent url("/public/backiee2.jpg") no-repeat;
   background-size: 100% 100%;
 }
+a {
+  text-decoration: none;
+}
+
 
 .overlay {
   position: absolute;
@@ -131,7 +135,7 @@ i {
   border-radius: 10px; /* Bordure arrondie */
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Ombre légère */
   transition: transform 0.3s ease, box-shadow 0.3s ease; /* Animation pour un effet au survol */
-  background-color: #f2eded; /* Couleur de fond blanche */
+  background-color: #9f1818; /* Couleur de fond blanche */
   text-align: center;
   overflow: hidden;
   position: relative;
@@ -190,7 +194,7 @@ i {
   text-align: left;
 }
 .items img{
-  width: 259px;
+
   height: 174px;
   border-radius: 12px;
 }
@@ -269,7 +273,7 @@ gap: 30px;
 .hero-text h1 {
   font-size: 2rem;
   font-weight: bold;
-  color: #000000;
+  color: #f3eded;
 }
 
 /* Category Navigation */
@@ -522,7 +526,7 @@ gap: 30px;
   }
 
   .items img {
-    width: 100%;
+    width: 80%;
     height: 120px;
   }
 
