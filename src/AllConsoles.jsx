@@ -437,7 +437,7 @@ function AllConsoles() {
         <div className="iphonepage">
           {/* la partie qui se situe avant la partie des filtre et du catalogue */}
           <nav className="breadcrumb">
-                <a href="/">Accueil</a> &gt; <a href="/Consoles">Consoles</a> &gt; <span>AllConsoles</span>
+                <a href="/" style={{color:"white"}}>Accueil</a> &gt; <a href="/Consoles" style={{color:"white"}}>Consoles</a> &gt; <span style={{color:"white"}}>AllConsoles</span>
           </nav>
           <div className="container">
               {/* la partie pour savoir ou on se situe */}

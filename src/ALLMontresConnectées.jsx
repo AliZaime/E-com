@@ -335,7 +335,7 @@ function ALLMontresConnectees(){
                 <div className="iphonepage">
                   {/* la partie qui se situe avant la partie des filtre et du catalogue */}
                   <nav className="breadcrumb">
-                        <a href="/">Accueil</a> &gt; <a href="/Montres">Watches</a> &gt; <span>SmartWaches</span>
+                        <a href="/" style={{color:"white"}}>Accueil</a> &gt; <a href="/Montres" style={{color:"white"}}>Watches</a> &gt; <span style={{color:"white"}}>SmartWaches</span>
                   </nav>
                   <div className="container">
                       {/* la partie pour savoir ou on se situe */}
