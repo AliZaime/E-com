@@ -56,7 +56,7 @@ const ProductPage = () => {
   }
 
   return (
-    <div className="Product" style={{ background: selectedColor.color }}>
+    <div className="Product">
       <div key={product.id} className="carte">
         <div className="imgBx" style={{ background: selectedColor.colorSec }}>
           <img

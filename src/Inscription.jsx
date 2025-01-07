@@ -112,7 +112,7 @@ function Inscription() {
             cart: [],
         });
 
-        setSuccessMessage("Registration successful!");
+        setSuccessMessage("Registration successful! Go to Login");
 
         setTimeout(() => {
             setSuccessMessage('');
@@ -207,7 +207,7 @@ function Inscription() {
                         </div>
                         {errors.phone && <p className="error1">{errors.phone}</p>}
                         <div className="form-group1">
-                            <img src="/inscription_pic/adresse.png" alt="img" />
+                            <img id = "adresseimg" src="/inscription_pic/adresse.png" alt="img" />
                             <input
                                 type="text"
                                 id="adresse"

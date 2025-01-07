@@ -638,7 +638,7 @@ function ALLMontresConnectees(){
                                   </div>
                                   {/* la div qui contient le corp du commentaire */}
                                   <div className="message_commentaire">
-                                    <p>{item.commentaire}</p>
+                                    <p className="a12">{item.commentaire}</p>
                                   </div>
                                   {/* la div qui contient la pays d'où le commentaire est écris et la date */}
                                   <div className="pays_dateCommentaire">

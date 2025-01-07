@@ -55,7 +55,6 @@ function Hppage(){
         { id: 7, name: 'HP ZBook 17 G3 17', image: '/laptops_pic/hpzbook17.png',color: ['white','aqua','darkblue','red'], rating: '4/5', reviews: 21, currentPrice: 639.00, oldPrice: 1494.00 ,quantite:1, condition: "Parfait état", vendu_avec: "Câble de chargement"},
     ];
     const [checkeditem, setCheckedItem] = useState({
-            peuimport:false,
             HP_EliteBook_850_G5:false,
             HP_EliteBook_840_G3:false,
             HP_EliteBook_840_G5:false,
@@ -71,7 +70,6 @@ function Hppage(){
             console.log(`${name} is ${checked}`);
             if(checked){
               setCheckedItem({
-                peuimport:name === "peuimport",
                 HP_EliteBook_850_G5:name === "HP_EliteBook_850_G5",
                 HP_EliteBook_840_G3:name === "HP_EliteBook_840_G3",
                 HP_EliteBook_840_G5:name === "HP_EliteBook_840_G5",
@@ -325,11 +323,6 @@ function Hppage(){
     
                           {/* la partie qui contient les modèles du téléphone */}
                             <div className="ckeck-list">
-                              <label>
-                                <input type="checkbox" name='peuimport'  checked={checkeditem.peuimport}  onChange={handleCheckboxChange}/>
-                                Peu import
-                              </label>
-                                  
                               <label>
                                 <input type="checkbox" name="HP_EliteBook_850_G5"  checked={checkeditem.HP_EliteBook_850_G5} onChange={handleCheckboxChange}/>
                                 HP EliteBook 850 G5
