@@ -463,7 +463,7 @@ function AllTablettes() {
             <div className="iphonepage">
               {/* la partie qui se situe avant la partie des filtre et du catalogue */}
               <nav className="breadcrumbb">
-                    <a href="/">Accueil</a> &gt; <a href="/Tablettes">Tablettes</a> &gt; <span>Samsung Tab</span>
+                    <a href="/">Accueil</a> &gt; <a href="/Tablettes">Tablettes</a> &gt; <span>AllTablets</span>
               </nav>
               <div className="container">
                   {/* la partie pour savoir ou on se situe */}
@@ -492,7 +492,7 @@ function AllTablettes() {
                 <div className="intro">
                   {/* une introduction avec un titre et un paragraphe */}
                     <div className="sometextt">
-                      <h1>Ipad reconditionnés</h1>
+                      <h1>All Tablets reconditionnés</h1>
                       <p>Découvrez notre sélection de Samsung Tabs reconditionnées, parfaites pour un usage personnel et professionnel</p>
                     </div>
                     {/* le filtre de trie par prix croissant ou décroissant */}
