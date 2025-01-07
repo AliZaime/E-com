@@ -25,7 +25,6 @@ function IPhone() {
       ];
       /* le usestate pour capturer les modification des input de modele */
       const [checkeditem, setCheckedItem] = useState({
-        peuimport:false,
         iphone11:false,
         iphone11pro:false,
         iphone12:false,
@@ -43,7 +42,6 @@ function IPhone() {
         console.log(`${name} is ${checked}`);
         if(checked){
           setCheckedItem({
-            peuimport:name === "peuimport",
             iphone11:name === "iphone11",
             iphone11pro:name === "iphone11pro",
               iphone12:name === "iphone12",
@@ -303,11 +301,6 @@ function IPhone() {
 
                       {/* la partie qui contient les modèles du téléphone */}
                         <div className="ckeck-list">
-                          <label>
-                            <input type="checkbox" name='peuimport'  checked={checkeditem.peuimport}  onChange={handleCheckboxChange}/>
-                            Peu import
-                          </label>
-                              
                           <label>
                             <input type="checkbox" name="iphone11"  checked={checkeditem.iphone11} onChange={handleCheckboxChange}/>
                             iPhone 11

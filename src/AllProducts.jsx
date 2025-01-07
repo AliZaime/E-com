@@ -101,7 +101,6 @@ function AllProducts() {
     ];
       /* le usestate pour capturer les modification des input de modele */
       const [checkeditem, setCheckedItem] = useState({
-        peuimport:false,
         serie2:false,
         serie2XL:false,
         serie3a:false,
@@ -118,7 +117,6 @@ function AllProducts() {
         serie9pro:false,
         serieFold:false,
         serie10:false,
-        peuimport:false,
         serieA:false,
         serieS:false,
         serieM:false,
@@ -142,7 +140,6 @@ function AllProducts() {
         console.log(`${name} is ${checked}`);
         if(checked){
           setCheckedItem({
-            peuimport: name === "peuimport",
             serie2:name === "serie2",
             serie2XL:name === "serie2XL",
             serie3a:name === "serie3a",
@@ -159,14 +156,12 @@ function AllProducts() {
             serie9pro:name === "serie9pro",
             serieFold:name === "serieFold",
             serie10:name === "serie10",
-            peuimport: name === "peuimport",
             serieA: name === "serieA",
             serieS: name === "serieS",
             serieM: name === "serieM",
             serieZ: name === "serieZ",
             serieNote: name === "serieNote",
             serieJ: name === "serieJ",
-            peuimport:name === "peuimport",
             iphone11:name === "iphone11",
             iphone11pro:name === "iphone11pro",
             iphone12:name === "iphone12",
@@ -381,7 +376,7 @@ function AllProducts() {
             // Filtrage spécifique à la série "SerieS"
           const isSerie9proMatched = 
           checkeditem["serie9pro"]&& 
-          product.name.toLowerCase().startsWith()("google pixel 9 pro");
+          product.name.toLowerCase().startsWith("google pixel 9 pro");
 
           // Filtrage spécifique à la série "SerieS"
           const isSerie9Matched = 
@@ -577,11 +572,6 @@ function AllProducts() {
                       {/* la partie qui contient les modèles du téléphone */}
                         <div className="ckeck-list">
                           <label>
-                            <input type="checkbox" name='peuimport'  checked={checkeditem.peuimport}  onChange={handleCheckboxChange}/>
-                            Peu import
-                          </label>
-                              
-                          <label>
                             <input type="checkbox" name="serie2"  checked={checkeditem.serie2} onChange={handleCheckboxChange}/>
                             Serie 2
                           </label>
@@ -659,10 +649,6 @@ function AllProducts() {
                           <label>
                             <input type="checkbox" name="serie10"  checked={checkeditem.serie10} onChange={handleCheckboxChange}/>
                             Serie 10
-                          </label>
-                          <label>
-                            <input type="checkbox" name='peuimport'  checked={checkeditem.peuimport}  onChange={handleCheckboxChange}/>
-                            Peu import
                           </label>
                               
                           <label>

@@ -66,7 +66,6 @@ function GooglePixel() {
     ];
       /* le usestate pour capturer les modification des input de modele */
       const [checkeditem, setCheckedItem] = useState({
-        peuimport:false,
         serie2:false,
         serie2XL:false,
         serie3a:false,
@@ -91,7 +90,6 @@ function GooglePixel() {
         console.log(`${name} is ${checked}`);
         if(checked){
           setCheckedItem({
-            peuimport: name === "peuimport",
             serie2:name === "serie2",
             serie2XL:name === "serie2XL",
             serie3a:name === "serie3a",
@@ -465,11 +463,6 @@ function GooglePixel() {
 
                       {/* la partie qui contient les modèles du téléphone */}
                         <div className="ckeck-list">
-                          <label className="check">
-                            <input type="checkbox" name='peuimport'  checked={checkeditem.peuimport}  onChange={handleCheckboxChange}/>
-                            Peu import
-                          </label>
-                              
                           <label className="check">
                             <input type="checkbox" name="serie2"  checked={checkeditem.serie2} onChange={handleCheckboxChange}/>
                             Serie 2

@@ -45,7 +45,6 @@ function Mac() {
     
       /* le usestate pour capturer les modification des input de modele */
       const [checkeditem, setCheckedItem] = useState({
-        peuimport:false,
         macAir:false,
         macPro:false,
         imac:false,
