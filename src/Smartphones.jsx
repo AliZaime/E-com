@@ -11,7 +11,6 @@ const Smartphones = () => {
       ];  
     const products = [
         { id: 1, name: 'iPhone 13', image: '/images/iphone13.avif', storage: '128 Go', color: 'Minuit', unlocked: 'Débloqué', rating: '4.4/5', reviews: 21245, currentPrice: 424.0, oldPrice: 749.0 },
-        { id: 2, name: 'Galaxy S21 5G', image: '/images/S21.avif', storage: '128 Go', color: 'Gris', unlocked: 'Débloqué', rating: '4.2/5', reviews: 5042, currentPrice: 255.19, oldPrice: 1059.0 },
         { id: 3, name: 'Google Pixel 7', image: '/images/Googlepixel7.avif', storage: '128 Go', color: 'Vert', unlocked: 'Débloqué', rating: '4.4/5', reviews: 616, currentPrice: 289.68, oldPrice: 649.99 },
         { id: 4, name: 'iPhone 8', image: '/images/iphone8.avif', storage: '64 Go', color: 'Gris sidéral', unlocked: 'Débloqué', rating: '4.2/5', reviews: 2195, currentPrice: 109.74, oldPrice: 299.0 },
         { id: 5, name: 'iPhone 14', image: '/images/iphone14.jpg', storage: '256 Go', color: 'Blanc', unlocked: 'Débloqué', rating: '4.6/5', reviews: 5050, currentPrice: 1029.0, oldPrice: 1200.0 },
